@@ -1,307 +1,288 @@
-<!DOCTYPE html>                                         <!--[if lt IE 7]>
-<html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7">     <![endif]--><!--[if IE 7]>
-<html lang="en" class="no-js lt-ie9 lt-ie8">            <![endif]--><!--[if IE 8]>
-<html lang="en" class="no-js lt-ie9">                   <![endif]--><!--[if gt IE 8]><!--> 
-<html lang="en" class="no-js">                          <!--<![endif]-->
+
+
+<!DOCTYPE html>                                         
+<!--[if lt IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7">
+<![endif]-->
+<!--[if IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8">
+<![endif]--><!--[if IE 8]>
+<html lang="en" class="no-js lt-ie9">
+<![endif]--><!--[if gt IE 8]><!--> 
+<html lang="en" class="no-js">
+<!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <title>Sapient Global Interactive Dev Standards</title>
-  <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Sapient Front End Developers use these to work together smoothly, across geographies and on large scale projects. Not necessarily the only way to do things right when it comes to HTML/CSS/JS/Processes, but working well for us." />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />  
   
-  <link rel="stylesheet" href="stylesheets/all.combined.min.css" type="text/css" />
-<!--   <link rel="stylesheet" href="stylesheets/normalize.css" type="text/css" />
-  <link rel="stylesheet" href="stylesheets/sapient.foundation.css" type="text/css" />
-  <link rel="stylesheet" href="stylesheets/sapient.style.css" type="text/css" />
-  <link rel="stylesheet" href="stylesheets/sapient.prettify.css" type="text/css" /> -->
+  <link rel="stylesheet" href="assets/stylesheets/all.combined.min.css" type="text/css" />
 
-  <link rel="shortcut icon" href="images/favicon.ico" />
-  <link rel="icon" href="images/favicon.ico" />  
+  <link rel="shortcut icon" href="assets/images/favicon.ico" />
+  <link rel="icon" href="assets/images/favicon.ico" />  
   <meta name="google-site-verification" content="zJfA8m1SUdIU5TDrULJOEstqsFXtBdbdbPUYPlKq40I" />
 </head>
 <body class="row">
-  <div class="twelve columns l-document row">
-    <header>
-      <img src="images/logo.jpg" alt="" class="logo" />
-      <h1>Sapient Global Interactive Dev Standards</h1>
+<div class="twelve columns l-document row">
+  <header>
+    <img src="assets/images/logo.jpg" class="logo" />
+    <h1>Sapient Global Interactive Dev Standards</h1>
+    <nav role="navigation">
+  <h2>Table of contents</h2>
+  <div class="row l-slice">
+    <ul class="nav-list">
+      <li><a href="#introduction">Introduction</a></li>
+      <li>
+        <a href="#general">General Stuff</a>
+      </li>
+      <li>
+        <a href="#head">HTML</a>
+      </li>
+      <li>
+        <a href="#css">CSS</a>
+      </li>
+      <li>
+        <a href="#javascript">JavaScript</a>
+      </li>
+      <li>
+        <a href="#accessibility">Accessibility</a>
+      </li>
+      <li>
+        <a href="#responsive-design">Responsive Design</a>
+      </li>
       
-      <nav role="navigation">
-        <h2>Table of contents</h2>
-        <div class="row l-slice">
-          <ul class="nav-list">
-            <li><a href="#introduction">Introduction</a></li>
-            <li>
-              <a href="#general">General Stuff</a>
-            </li>
-            <li>
-              <a href="#head">HTML</a>
-            </li>
-            <li>
-              <a href="#css">CSS</a>
-            </li>
-            <li>
-              <a href="#javascript">JavaScript</a>
-            </li>
-            <li>
-              <a href="#accessibility">Accessibility</a>
-            </li>
-            
-            <li><a href="#credits">Credits</a></li>
-            <!-- li><a href="#footnotes">External links</a></li -->
-          </ul>
-        </div>
-      </nav>
-    </header>
+      <li><a href="#credits">Credits</a></li>
+      <!--li><a href="#footnotes">External links</a></li-->
+    </ul>
+  </div>
+</nav>
+  </header>
 
-    <main role="main">
+  <main role="main">
 
     <h2 id="introduction">Introduction</h2>
-    
-    <p>This document is an overview of Front End development standards that we adhere to at Sapient. These best practices are collected from the experiences we've had with numerous, large-scale projects, as well as a variety of web resources. These standards will help reduce friction in your workflows by providing a common starting point and will serve as a useful intro for both new hires and contractors.</p>
-    
-    <p>If you ever had to merge 103 files with somebody's tabs-to-spaces changes, you'll know what we mean.</p>
-    
-    <p>We're happy to share this with the community and are excited to hear back form you - send us your comments and suggestions please create a fork and submit a pull request to start the conversation.</p>
-    
+
+<p>This document is an overview of Front End development standards that we adhere to at Sapient. These best practices are collected from the experiences we&#39;ve had with numerous, large-scale projects, as well as a variety of web resources. These standards will help reduce friction in your workflows by providing a common starting point and will serve as a useful intro for both new hires and contractors.</p>
+<p>If you ever had to merge 103 files with somebody&#39;s tabs-to-spaces changes, you&#39;ll know what we mean.</p>
+<p>We&#39;re happy to share this with the community and are excited to hear back form you - send us your comments and suggestions please create a fork and submit a pull request to start the conversation.</p>
+
+
     <h2 id="general">General Stuff</h2>
 
-    <p>Here are a few basics to keep a common base in terms of documents and collaboration: </p>
-    
-    <h3 id="general-control">Source Control</h3>
-    
-    <p>All Sapient Projects use source control. While we generally have a self-hosted SVN repository setup, some projects use Git. All members of a team must have access to the SVN repo (yes, including Designers) and are mandated (yes, especially Designers!) to use it.</p>
-    
-    <h3 id="general-utf8">UTF-8</h3>
-    
-    <p>Save your text-based files as UTF-8. For HTML files, <a href="#head-encoding">don't forget to declare it with a meta-tag</a>. Serve them as UTF-8 as well, by working with the backend team to set the right HTTP headers.</p>
-    
-    <h3 id="general-settings">Document Settings</h3>
-    
-    <p>Use Unix line endings <code>LF</code> to make documents. Many DIFF clients choke on mismatched line endings (MS Windows defaults to <code>CR+LF</code>).</p>
-    
-    <h3 id="general-whitespace">Whitespace / Indentation</h3>
-    
-    <p>Only one style should exist across the entire source of your project. Always be consistent in your use of whitespace. Use whitespace to improve the readability of any code.</p>
-    
-    <ul>
-      <li> Never mix spaces and tabs for indentation.</li>
-      <li>Choose between soft indents (spaces) or real tabs. Stick to your choice without fail.</li>
-      <li>If using spaces, choose the number of characters used per indentation level. (Preference: 4 spaces / Tab size 4) </li>
-    </ul>
+<p>Here are a few basics to keep a common base in terms of documents and collaboration:</p>
+<h3 id="general-control">Source Control</h3>
 
-    <!-- p> <mark>(I've removed the preference for spaces as the Vox poll backs tabs. And we'll only argue. - RyanM)</mark> </p -->
+<p>All Sapient Projects use source control. While we generally have a self-hosted SVN repository setup, some projects use Git. All members of a team must have access to the SVN repo (yes, including Designers) and are mandated (yes, especially Designers!) to use it.</p>
+<h3 id="general-utf8">UTF-8</h3>
 
-    <p>Use indentation consistently to enhance the readability of the code. When elements carry over more than one line of code, indent the contents of elements between the start tag and the end tag. This will make it easy to see where the element begins and ends. Also, use indentation to align code at attribute names.</p>
+<p>Save your text-based files as UTF-8. For HTML files, <a href="#head-encoding">don&#39;t forget to declare it with a meta-tag</a>. Serve them as UTF-8 as well, by working with the backend team to set the right HTTP headers.</p>
+<h3 id="general-settings">Document Settings</h3>
 
-    <p>It is a good idea to use no more than two to four spaces for each level in indentation, so as not to use up all the available line length in indentation. If possible, set up the development tool to convert tabs to spaces so that the indentation will be the same when the source is viewed in different editors or as printed output.</p>
+<p>Use Unix line endings <code>LF</code> to make documents. Many DIFF clients choke on mismatched line endings (MS Windows defaults to <code>CR+LF</code>).</p>
+<h3 id="general-whitespace">Whitespace / Indentation</h3>
 
-    <p> Tip: configure your editor to "show invisibles". This will allow you to eliminate end of line whitespace, eliminate unintended blank line whitespace, and avoid polluting commits.</p>
+<p>Only one style should exist across the entire source of your project. Always be consistent in your use of whitespace. Use whitespace to improve the readability of any code.</p>
+<ul>
+<li>Never mix spaces and tabs for indentation.</li>
+<li>Choose between soft indents (spaces) or real tabs. Stick to your choice without fail.</li>
+<li>If using spaces, choose the number of characters used per indentation level. (Preference: 4 spaces / Tab size 4)</li>
+</ul>
+<!--
+    (I've removed the preference for spaces as the Vox poll backs tabs. And we'll only argue. - RyanM)
+-->
 
+<p>Use indentation consistently to enhance the readability of the code. When elements carry over more than one line of code, indent the contents of elements between the start tag and the end tag. This will make it easy to see where the element begins and ends. Also, use indentation to align code at attribute names.</p>
+<p>It is a good idea to use no more than two to four spaces for each level in indentation, so as not to use up all the available line length in indentation. If possible, set up the development tool to convert tabs to spaces so that the indentation will be the same when the source is viewed in different editors or as printed output.</p>
+<p>Tip: configure your editor to &quot;show invisibles&quot;. This will allow you to eliminate end of line whitespace, eliminate unintended blank line whitespace, and avoid polluting commits.</p>
 <h4>Example</h4>
+<pre data-rel="html" class="prettyprint lang-html">
+<code>
+<div>
+  <h3>NEXT MATCH</h3>
+  <div class="contentd"> 
+    <img src="/images/emblems/arsenal.png">
+    <div class="info">
+      <h4 class="fixture">CITY v<br>
+        ARSENAL</h4>
+      <p class="detail"> <strong>Home</strong><br>
+        Barclays Premier League<br>
+        Sat 19 Nov 11, 12:45<br>
+      </p>
+    </div>
+    <div class="matchLinks borderTop">
+      <ul>
+        <li class="divider"><a href="#" class="livePlayer">Listen live on </a></li>
+        <li ><a href="matchPreview.shtml" class="matchPreview">Match preview</a></li>
+        <li class="divider"><a href="#" class="smsAlert">Mobile alerts</a></li>
+        <li ><a href="#" class="buyTickets">Buy tickets</a></li>
+      </ul>
+    </div>
+  </div>  
+</div>
+</code>
+</pre>
 
-<pre data-rel="html" class="prettyprint lang-html"><code>
-&lt;div&gt;
-  &lt;h3&gt;NEXT MATCH&lt;/h3&gt;
-  &lt;div class=&quot;content &quot;&gt; 
-    &lt;img src=&quot;/images/emblems/arsenal.png&quot; alt=&quot;&quot;&gt;
-    &lt;div class=&quot;info&quot;&gt;
-      &lt;h4 class=&quot;fixture&quot;&gt;CITY v&lt;br&gt;
-        ARSENAL&lt;/h4&gt;
-      &lt;p class=&quot;detail&quot;&gt; &lt;strong&gt;Home&lt;/strong&gt;&lt;br&gt;
-        Barclays Premier League&lt;br&gt;
-        Sat 19 Nov 11, 12:45&lt;br&gt;
-      &lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;matchLinks borderTop&quot;&gt;
-      &lt;ul&gt;
-        &lt;li class=&quot;divider&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;livePlayer&quot;&gt;Listen live on &lt;/a&gt;&lt;/li&gt;
-        &lt;li &gt;&lt;a href=&quot;matchPreview.shtml&quot; class=&quot;matchPreview&quot;&gt;Match preview&lt;/a&gt;&lt;/li&gt;
-        &lt;li class=&quot;divider&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;smsAlert&quot;&gt;Mobile alerts&lt;/a&gt;&lt;/li&gt;
-        &lt;li &gt;&lt;a href=&quot;#&quot; class=&quot;buyTickets&quot;&gt;Buy tickets&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;  
-&lt;/div&gt;</code></pre>
 
 
-
-<h3 id="recommendations-validation">Validation</h3>
+    <h3 id="recommendations-validation">Validation</h3>
 
 <p>A reasonable effort should be made to write code that passes validation services and linters. There are exceptions created by third party libraries or by certain back-end systems, but you, as a developer, are responsible for creating standards based, valid HMTL, CSS and JS code.</p>
 
-<h3 id="comments">Comments</h3>
 
-<p>Comments are the lifeblood of a successful development environment. It's a vital communication channel for developers separated by both time and geography.</p>
+    <h3 id="comments">Comments</h3>
 
-<p>More information about commenting style can be found in the HTML, CSS and JavaScript sections.</p> 
+<p>Comments are the lifeblood of a successful development environment. It&#39;s a vital communication channel for developers separated by both time and geography.</p>
+<p>More information about commenting style can be found in the HTML, CSS and JavaScript sections.</p>
 
-<h3 id="responsive-design">Responsive Design</h3>
 
-<p>Responsive Design is an (the) answer for "responding" to the evolving trend in mobile and tablet market and the fact that the web becomes even more ubiquitous (and not turning back). The responsive design approach is accepting that nobody can foresee, what way or what device is going to be used in the future in order to access a website or service. It's creating a flexible (or fluid) base with standard technologies like HTML and CSS(3), that serves accessible content to any client.</p>
-
-<p>The term "responsive design" became a buzz-word recently. It's more than a front-end issue. It's completely changing creative workflows and forcing concept, design and interactive development domains to work closely together. If you want to learn more about the topic, then <a data-reference="true" href="http://www.abookapart.com/products/responsive-web-design/">Responsive Web Design</a> by <a data-reference="true" href="http://ethanmarcotte.com/" title="Ethan Marcotte is a web designer &amp; developer who lives in Boston." >Ethan Marcotte</a> should be your starting point.</p>
-
-<p>From there you should be good to dive deeper into the presentation <a data-reference="true" href="http://www.slideshare.net/stephenhay/mobilism2012">Responsive Design Workflow</a> by <a data-reference="true" href="http://www.the-haystack.com/" title="The Haystack. | Web, design, and web design">Stephen Hay</a>. Make sure you are aware of concepts like <a data-reference="true" href="http://www.abookapart.com/products/mobile-first/">Mobile First</a> by <a data-reference="true" href="http://www.lukew.com/">Luke Wroblewski</a>, or "Content First", which is well described in <a data-reference="true" href="http://www.slideshare.net/stephenhay/structured-content-first">Stephen Hay's slidedeck</a>.</p>
-  
-<p>In case you think responsive design equals boring, maybe you just need some <a data-reference="true" href="http://mediaqueri.es/">mediaqueri.es inspiration</a>.
-
-<p>As this is a developer best-practice document, we're going to focus only on some technical aspects for building responsive websites.</p>
-
-<h4>Viewport Meta Tag</h4>
-
-<p>Mobiles, tablets, desktop screens - all differ especially in size and resolution. Due to displays with higher pixel-density mobile-vendors started to define a "best-viewed-in" resolution, which is usually very reliable. Two must-reads about this topic are PPK's <a data-reference="true" href="http://www.quirksmode.org/mobile/viewports.html">"A tale of two viewports"</a> (+ <a data-reference="true" href="http://www.quirksmode.org/mobile/viewports2.html">"Part II"</a>) and <a data-reference="true" href="http://www.quirksmode.org/blog/archives/2010/09/combining_meta.html">"Combining meta viewport and media queries"</a>.</p>
-
-<p>Based on this information, the best experiences have been made with a very simple viewport-tag definition:</p>
-
-<pre data-rel="html" class="prettyprint lang-html"><code>
-&lt;meta name="viewport" content="width=device-width; initial-scale=1.0"/l&gt;
-</code></pre>
-
-<!-- p>
-  <mark>
-    Why not setting "maximum-scale=1.0"?
-  </mark>
-</p -->
-
-<p><code>maximum-scale=1.0</code> would fix some orientation-change bugs on iOS devices and "assures" some app-like stability, but we recommend not to use it. It's simply an accessibility concern. People (especially with visual impairments) must be allowed to zoom to their favorite level.<br />
-Moreover there are little helpers to fix orientation-change bugs like <a data-reference="true" href="https://github.com/scottjehl/iOS-Orientationchange-Fix">Scott Jehl's iOS-Orientationchange-Fix</a>
-</p>
-
-<p>This simple viewport tag base works on a broad range of mobiles and tablets. Only the Nexus 4G and HTC Sensation (so far) seemed to not provide an optimized viewports which triggers higher resolution layouts (e.g. tablet-layout media queries) on those mobiles.</p>
-
-<h4>Media Queries</h4>
-
-<p>CSS3 media-queries enable you to adjust your (maybe responsively-designed) website modules for specific resolution (device) classes. Please don't blindly follow <a data-reference="true" href="http://stuffandnonsense.co.uk/blog/about/hardboiled_css3_media_queries/">Andy Clarke's - Hardboiled CSS3 Media Queries</a>, which seem to be widely spread across the web. Although it contains a lot of right stuff, it's probably too detailed for your requirements. Moreover it mostly sets min-width and max-width limits, which partly excludes devices. For example a tablet-focused media query with a max-width of 1024px supports an iPad in landscape mode but will be ignored by a LG-V900 (1280px) tablet.</p>
-
-<p>Joshua Johnson has an interesting alternative approach in his article <a data-reference="true" href="http://designshack.net/articles/css/responsive-design-why-youre-doing-it-wrong/">Responsive Design: Why You're Doing It Wrong</a>. It challenges the idea of defining fixed pixel-ranges for a responsive design (actually quite unresponsive, right?!).</p>
-
-<p>When you start from a mobile-first approach, you should be able to define mostly <code>min-width</code> breakpoints only for enhancing your layout on bigger viewports.</p>
-
-<p>For some browsers it's even worth it to define breakpoints in <code>em</code> instead of <code>px</code>. This enables your layout to fall back to a smaller layout when the user has increased the default font size. Can I get an accessibility-high-5?!</p>
-
-<p>Again, that's not working in every browser, but not failing as well. The ones not reacting correctly to increased font-size simply read it like the related pixel value as before. Read more about it in Lyza Gardner's <a data-reference="true" href="http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/">The EMs have it: Proportional Media Queries FTW!</a>.</p>
-
-<pre data-rel="css" class="prettyprint"><code>
-@media screen and ( min-width: 40.625em )  {
-  /**
-   * put here your > 768px styles
-   * (based on 16px default font-size)
-   */
-}
-</code></pre>
-
-<h4>Coding</h4>
-<p>
-Responsive design relies on fluid grids. Thus, you should use the following rules of thumb for front-end coding:
-</p>
-<ul>
-  <li>Avoid <code>px</code> units</li>
-  <li>Use <code>em</code> units for font sizes, line heights and directly text-related padding</li>
-  <li>Use <code>%</code> units for all module and page layouts</li>
-  <li>Decide on a base (might be in <code>px</code> virtually) that allows you to create a (typographic) grid</li>
-  <li>Don't strive for pixel-perfection, maintain proportions!</li>
-</ul>
-<p>
-For responsive designs prototyping is more important than ever. For this and for kick-starting any projects the <a data-reference="true" href="http://foundation.zurb.com/">Foundation library</a> can be of great help. 
-</p>
-<h3>Browser Matrix</h3>
+    <h3>Browser Matrix</h3>
 <p>The typical NA/EU  Brower at Sapient matrix looks like this:</p>
 <h4>Windows XP / Vista / Windows 7/8</h4>
-<table class="browsers plain-table"  border="0"><tbody><tr><th width="180">Internet Explorer</th>
-  <td width="710">8.0* -10.0</td>
-</tr><tr><th width="180">Firefox</th>
-  <td>Latest stable</td></tr><tr><th width="180">Chrome </th><td>Latest stable</td></tr><tr><th width="180">Safari</th><td>no longer supported&nbsp;</td></tr></tbody></table>
+<table class="browsers plain-table"  border="0">
+    <tbody>
+        <tr>
+            <th width="180">Internet Explorer</th>
+              <td width="710">8.0* -10.0</td>
+        </tr>
+        <tr>
+            <th width="180">Firefox</th>
+              <td>Latest stable</td>
+          </tr>
+
+          <tr>
+              <th width="180">Chrome </th>
+              <td>Latest stable</td>
+          </tr>
+          <tr>
+              <th width="180">Safari</th>
+              <td>no longer supported&nbsp;</td>
+          </tr>
+      </tbody>
+</table>
+
 <h4>Mac OS 10.6 - Latest Stable</h4>
-<table class="browsers plain-table" border="0"><tbody><tr><th width="180">Firefox</th><td>Latest stable</td></tr><tr>
-      <th width="180">Chrome </th><td>Latest stable</td></tr><tr><th width="180">Safari</th><td>5†</td></tr></tbody></table>
-<p>Note that based on the client's analytics, sometimes legacy browsers such as Firefox 4.0 might need to be supported. A conversation around this should happen if current usage on the specific site is above 3% for a specific browser and not projected to drop below that until the go live date of the site or if specific business reasons demand support.</p>
-<p>You might also consider a graded approach like described in <a href="http://yuilibrary.com/yui/docs/tutorials/gbs">Yahoo’s graded browser support.</a></p>
+<table class="browsers plain-table" border="0">
+    <tbody>
+        <tr>
+            <th width="180">Firefox</th>
+            <td>Latest stable</td>
+        </tr>
+        <tr>
+              <th width="180">Chrome </th>
+              <td>Latest stable</td>
+          </tr>
+          <tr>
+              <th width="180">Safari</th><td>5†</td>
+          </tr>
+    </tbody>
+</table>
+
+<p>Note that based on the client&#39;s analytics, sometimes legacy browsers such as Firefox 4.0 might need to be supported. A conversation around this should happen if current usage on the specific site is above 3% for a specific browser and not projected to drop below that until the go live date of the site or if specific business reasons demand support.</p>
+<p>You might also consider a graded approach like described in <a href="http://yuilibrary.com/yui/docs/tutorials/gbs">Yahoo’s graded browser support</a>.</p>
+
+
     <h2 id="head">HTML</h2>
 
-    <p>
-      When creating text/html, all you need is a Document Type Declaration or short doctype to trigger standards mode.
-    </p>
+<p>When creating text/html, all you need is a Document Type Declaration or short doctype to trigger standards mode.</p>
+<pre data-rel="html" class="prettyprint lang-html">
+    <code>
+        <!DOCTYPE html>
+    </code>
+</pre>
 
-<pre data-rel="html" class="prettyprint lang-html"><code>
-&lt;!DOCTYPE html&gt;
-</code></pre>
+
 
     <h3 id="head-html5">HTML(5)</h3>
 
-    <p>
-      At Sapient, we write HTML5 code, unless there is a very specific need to use XHTML.
-    </p>
-    <p>When you write any HTML, it has to be:</p>
-    <ul>
-      <li>HTML5 DTD-less DOCTYPE and case-insensitive
-      </li>
-      <li>Well-formed and generally valid (You must use a validator!). No funky nesting.</li>
-      <li>
-        Slim - no unnecessary bloating or extra containers around containers around containers.
-      </li>
-      <li>Separated from presentation (CSS) and behavior (JS).</li>
-      <li>
-        Implemented using the right tags. Further reading here: <a data-reference="true" href="http://www.bbc.co.uk/guidelines/futuremedia/technical/semantic_markup.shtml">right (semantic) tags</a> &trade; (some call it semantics).
-      </li>
-    </ul>
+<p>At Sapient, we write HTML5 code, unless there is a very specific need to use XHTML.</p>
+<p>When you write any HTML, it has to be:</p>
+<ul>
+<li>HTML5 DTD-less DOCTYPE and case-insensitive.</li>
+<li>Well-formed and generally valid (You must use a validator!). No funky nesting.</li>
+<li>Slim - no unnecessary bloating or extra containers around containers around containers.</li>
+<li>Separated from presentation (CSS) and behavior (JS).</li>
+<li>Implemented using the right tags. Further reading here: <a href="http://www.bbc.co.uk/guidelines/futuremedia/technical/semantic_markup.shtml">right (semantic) tags</a> &trade; (some call it semantics).</li>
+</ul>
+<p>Note: HTML5 can written as valid XML, but unlike XHTML it is an option and not a requirement.</p>
 
-    <p>Note: HTML5 can written as valid XML, but unlike XHTML it is an option and not a requirement.</p>
 
-    <h3 id="head-encoding">Character Encoding:</h3>
-    <p>Use UTF-8 to encode your files, and declare it by placing</p>
-<pre data-rel="html" class="prettyprint lang-html"><code>
-&lt;meta charset=&quot;utf-8&quot;&gt;
-</code></pre>
-    right after your
-    <code>&lt;head&gt;</code>
-    -tag (Really - place it right behind it to avoid re-rendering in IE).
-    <p>
-      Unless you chose XHTML (see above - why did you choose it again?) - then you have to use
-    </p>
-<pre data-rel="html" class="prettyprint lang-html"><code>
-&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
-</code></pre>
+    <p><h3 id="head-encoding">Character Encoding:</h3>
+Use UTF-8 to encode your files, and declare it by placing</p>
+<pre data-rel="html" class="prettyprint lang-html">
+    <code>
+        <meta charset="utf-8">
+    </code>
+</pre>
+
+<p>right after your <code>&lt;head&gt;</code>-tag (Really - place it right behind it to avoid re-rendering in IE).</p>
+<p>Unless you chose XHTML (see above - why did you choose it again?) - then you have to use</p>
+<pre data-rel="html" class="prettyprint lang-html">
+    <code>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </code>
+</pre>
+
 
     <h3 id="head-htmltag"><code>&lt;html&gt;</code>-tag</h3>
-    <p>
-      It has proven helpful to use <a data-reference="true" href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/">Paul Irish's</a> and later used and enhanced by <a data-reference="true" href="https://github.com/h5bp/html5-boilerplate/issues/425/#">HTML5 Boilerplate</a> conditional tag bomb around the head-tag, i.e.:
-    </p>
-<pre data-rel="html" class="prettyprint lang-html"><code>
-&lt;!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --&gt;
-&lt;!--[if lt IE 7]&gt; &lt;html class=&quot;no-js lt-ie9 lt-ie8 lt-ie7&quot; lang=&quot;en&quot;&gt; &lt;![endif]--&gt;
-&lt;!--[if IE 7]&gt;    &lt;html class=&quot;no-js lt-ie9 lt-ie8&quot; lang=&quot;en&quot;&gt; &lt;![endif]--&gt;
-&lt;!--[if IE 8]&gt;    &lt;html class=&quot;no-js lt-ie9&quot; lang=&quot;en&quot;&gt; &lt;![endif]--&gt;
-&lt;!--[if gt IE 8]&gt;&lt;!--&gt; &lt;html class=&quot;no-js&quot; lang=&quot;en&quot;&gt; &lt;!--&lt;![endif]--&gt;
-</code></pre>
-        <p>(Note that you shouldn't have to tailor your code to IE9...)</p>
+
+<p>It has proven helpful to use <a href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/">Paul Irish&#39;s</a> and later used and enhanced by <a href="https://github.com/h5bp/html5-boilerplate/issues/425/#">HTML5 Boilerplate</a> conditional tag bomb around the head-tag, i.e.:</p>
+<pre data-rel="html" class="prettyprint lang-html">
+    <code>
+        <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+        <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+        <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+        <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+        <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    </code>
+</pre>
+
+<p>(Note that you shouldn&#39;t have to tailor your code to IE9...)</p>
 
 
     <h3 id="comments-html">HTML Comments</h3>
 
-    <p>HTML comments have the following syntax:</p>
+<p>HTML comments have the following syntax:</p>
+<pre data-rel="html" class="prettyprint lang-html">
+  <code>
+    <!-- this is a comment -->
+    <!-- and so is this one,
+      which occupies more than one line -->
+  </code>
+</pre>
 
+<p>White space is not permitted between the markup declaration open delimiter(&quot;&lt;!&quot;) and the comment open delimiter (&quot;--&quot;), but is permitted between the comment close delimiter (&quot;--&quot;) and the markup declaration close delimiter (&quot;&gt;&quot;).
+A common error is to include a string of hyphens (&quot;---&quot;) within a comment. Authors should avoid putting two or more adjacent hyphens inside comments.
+Information that appears between comments has no special meaning (e.g., character references are not interpreted as such).
+Note that comments are markup.
+Avoid multi-level html comments. (shown below)</p>
+<h4>Incorrect</h4>
 <pre data-rel="html" class="prettyprint lang-html"><code>
-&lt;!-- this is a comment --&gt;
-&lt;!-- and so is this one,
-  which occupies more than one line --&gt;
+&lt;html&gt;
+&lt;head&gt;
+  <!-- Multi-line comment begin
+  <!-- This script does abcxyz -->
+  &lt;script&gt;...&lt;/script&gt;
+  &lt;script&gt;...&lt;/script&gt;
+  Multi-line comment end -->
+  &lt;script&gt;...&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  Hello world!
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
 
-    <p>White space is not permitted between the markup declaration open delimiter("&lt;!") and the comment open delimiter ("--"), but is permitted between the comment close delimiter ("--") and the markup declaration close delimiter ("&gt;"). </p>
-    <p>A common error is to include a string of hyphens ("---") within a comment. Authors should avoid putting two or more adjacent hyphens inside comments.</p>
-    <p>Information that appears between comments has no special meaning (e.g., character references are not interpreted as such).</p>
-    <p>Note that comments are markup.</p>
-    <p>Avoid multi-level html comments. (shown below)</p>
-
-    <h4>Incorrect</h4>
+<h4>Correct</h4>
 <pre data-rel="html" class="prettyprint lang-html"><code>
 &lt;html&gt;
   &lt;head&gt;
-    &lt;!-- Multi-line comment begin
-    &lt;!-- This script does abcxyz --&gt;
+    <!-- Comment begin -->
+    <!-- This script does abcxyz -->
     &lt;script&gt;...&lt;/script&gt;
     &lt;script&gt;...&lt;/script&gt;
-    Multi-line comment end --&gt;
+    <!-- Comment end -->
     &lt;script&gt;...&lt;/script&gt;
   &lt;/head&gt;
   &lt;body&gt;
@@ -310,90 +291,66 @@ For responsive designs prototyping is more important than ever. For this and for
 &lt;/html&gt;
 </code></pre>
 
-    <h4>Correct</h4>
-<pre data-rel="html" class="prettyprint lang-html"><code>
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;!-- Comment begin --&gt;
-    &lt;!-- This script does abcxyz --&gt;
-    &lt;script&gt;...&lt;/script&gt;
-    &lt;script&gt;...&lt;/script&gt;
-    &lt;!-- Comment end --&gt;
-    &lt;script&gt;...&lt;/script&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    Hello world!
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+<p><a href="http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.4">W3 reference on comments</a></p>
 
-    <p><a data-reference="true" href="http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.4">W3 reference on comments</a></p>
 
     <h3 id="comments-conditional">Conditional Comments</h3>
 
-    <p> Conditional comments are the preferred means of differentiating Cascading Style Sheets (CSS) rules intended for specific versions of Internet Explorer.</p>
-    <p>The basic syntax of each type of comment is shown in the following table. The first comment shown is the basic HTML Comment, which is included for the purpose of comparison and to illustrate the different syntax used by each type of conditional comment.</p>
+<p>Conditional comments are the preferred means of differentiating Cascading Style Sheets (CSS) rules intended for specific versions of Internet Explorer.</p>
+<p>The basic syntax of each type of comment is shown in the following table. The first comment shown is the basic HTML Comment, which is included for the purpose of comparison and to illustrate the different syntax used by each type of conditional comment.</p>
+<table class="table-layout">
+  <tr>
+    <th>Comment type</th>
+    <th>Syntax or possible value</th>
+  </tr>
+  <tr>
+    <td>standard HTML comment </td>
+    <td><code>&lt;!-- Comment content  --&gt;</code></td>
+  </tr>
+  <tr>
+    <td><a data-reference="true" href="http://msdn.microsoft.com/en-us/library/ms537512%28v=vs.85%29.aspx#dlhidden">downlevel-hidden</a></td>
+    <td><code>&lt;!--[if expression]&gt; HTML &lt;![endif]--&gt;</code></td>
+  </tr>
+  <tr>
+    <td><a data-reference="true" href="http://msdn.microsoft.com/en-us/library/ms537512%28v=vs.85%29.aspx#dlrevealed">downlevel-revealed</a></td>
+    <td><code>&lt;![if expression]&gt; HTML &lt;![endif]&gt;</code></td>
+  </tr>
+</table>
 
-    <table class="table-layout">
-      <tr>
-        <th>Comment type</th>
-        <th>Syntax or possible value</th>
-      </tr>
-      <tr>
-        <td>standard HTML comment </td>
-        <td><code>&lt;!-- Comment content  --&gt;</code></td>
-      </tr>
-      <tr>
-        <td><a data-reference="true" href="http://msdn.microsoft.com/en-us/library/ms537512%28v=vs.85%29.aspx#dlhidden">downlevel-hidden</a></td>
-        <td><code>&lt;!--[if expression]&gt; HTML &lt;![endif]--&gt;</code></td>
-      </tr>
-      <tr>
-        <td><a data-reference="true" href="http://msdn.microsoft.com/en-us/library/ms537512%28v=vs.85%29.aspx#dlrevealed">downlevel-revealed</a></td>
-        <td><code>&lt;![if expression]&gt; HTML &lt;![endif]&gt;</code></td>
-      </tr>
-    </table>
-
-    <h4>Examples</h4>
-
+<h4>Examples</h4>
 <pre data-rel="html" class="prettyprint lang-html"><code>
-&lt;!--[if IE 8]&gt;
-&lt;p&gt;Welcome to Internet Explorer 8.&lt;/p&gt;
-&lt;![endif]--&gt;
+<!--[if IE 8]>
+  <p>Welcome to Internet Explorer 8.</p>
+<![endif]-->
 
-&lt;!--[if gte IE 7]&gt;
-&lt;SCRIPT LANGUAGE=&quot;javascript&quot;&gt;
-alert(&quot;Congratulations! You are running Internet Explorer 7 or greater.&quot;);
-&lt;/SCRIPT&gt;
-&lt;P&gt;Thank you for closing the message box.&lt;/P&gt;
-&lt;![endif]--&gt;
+<!--[if gte IE 7]>
+  <SCRIPT LANGUAGE="javascript">
+    alert("Congratulations! You are running Internet Explorer 7 or greater.");
+  </SCRIPT>
+    <P>Thank you for closing the message box.</P>
+<![endif]-->
 
-&lt;!-- Will only be read by IE versions less then IE 7--&gt;
-&lt;!--[if lt IE 7]&gt;
-   &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;Demo/iestyles.css&quot; /&gt; 
-&lt;![endif]--&gt; 
-</code></pre>
+<!-- Will only be read by IE versions less then IE 7-->
+<!--[if lt IE 7]>
+   <link rel="stylesheet" type="text/css" href="Demo/iestyles.css" /> 
+<![endif]--> 
+  </code></pre>
 
-    <p><a data-reference="true" href="http://msdn.microsoft.com/en-us/library/ms537512%28v=vs.85%29.aspx">Reference</a></p>
+<p><a href="http://msdn.microsoft.com/en-us/library/ms537512%28v=vs.85%29.aspx">Reference</a></p>
 
-    
 
     <h3 id="head-title"><code>&lt;title&gt;</code></h3>
-    <p>
-      Keep the text of your <code>&lt;title&gt;</code>-tag short and relevant. Make sure it's unique to the current page. It's what visitors from Search engines will see as the big blue link you want them to click on, so it better be sexy, too!
-    </p>
 
-    
+<p>Keep the text of your <code>&lt;title&gt;</code>-tag short and relevant. Make sure it&#39;s unique to the current page. It&#39;s what visitors from Search engines will see as the big blue link you want them to click on, so it better be sexy, too!</p>
 
 
+    <h3 id="markup-syntax-semantics-metatags">Meta tags</h3>
 
 
-<h3 id="markup-syntax-semantics-metatags">Meta tags</h3>
-
-    
   <p>HTML meta tags are officially page data tags that we include between the open and closing head tags in the HTML code of a document.</p>
   <p>The text in these tags is not displayed, but parsable and tells the browsers (or other web services) specific information about the page. Simply, it “explains” the page so a browser can understand it.</p>
   <p>Also using these a great way for web masters to provide search engines with information about their sites.</p>
-  
+
 <details>
 
   <summary>Most commonly used meta tags</summary>
@@ -401,12 +358,12 @@ alert(&quot;Congratulations! You are running Internet Explorer 7 or greater.&quo
 <pre data-rel="html" class="prettyprint lang-html"><code>
 &lt;meta name=&quot;description&quot; content=&quot;goes here...&quot;/&gt;
 </code></pre>
-<p>This tag provides a short description of the page. The description is used as a part of the snippet shown in the search results, so it's definitely relevant - if it's teasing users to click your site in the search results it did the trick. Needs to be tailored to the specific page it's on and should typically be crafted by an editor.</p>
+<p>This tag provides a short description of the page. The description is used as a part of the snippet shown in the search results, so it&#39;s definitely relevant - if it&#39;s teasing users to click your site in the search results it did the trick. Needs to be tailored to the specific page it&#39;s on and should typically be crafted by an editor.</p>
 
 <pre data-rel="html" class="prettyprint lang-html"><code>
 &lt;meta name=&quot;keywords&quot; content=&quot;keyword 1, keyword 2&quot;/&gt;
 </code></pre>
-<p>The keywords are used by some search engines to index your document in addition to words from the title and document body. Typically used for synonyms and alternates of title words. Not quite as relevant for SEO anymore these days as they were hit by a lot of keyword spamming, but if you have tags in say your CMS for a specific page, it's still worth feeding them in here. Should definitely be unique per page. </p>
+<p>The keywords are used by some search engines to index your document in addition to words from the title and document body. Typically used for synonyms and alternates of title words. Not quite as relevant for SEO anymore these days as they were hit by a lot of keyword spamming, but if you have tags in say your CMS for a specific page, it&#39;s still worth feeding them in here. Should definitely be unique per page. </p>
 
 
 <pre data-rel="html" class="prettyprint lang-html"><code>
@@ -416,7 +373,7 @@ alert(&quot;Congratulations! You are running Internet Explorer 7 or greater.&quo
 
 <p><code>name=value, name=value, ...</code></p>
 
-<p>Please note that the "value"s are not enclosed in quotation marks.</p>
+<p>Please note that the &quot;value&quot;s are not enclosed in quotation marks.</p>
 
 <h5>Properties</h5>
 
@@ -435,7 +392,7 @@ alert(&quot;Congratulations! You are running Internet Explorer 7 or greater.&quo
   <dd>user-scalable=yes (default) to allow the user to zoom in or zoom out on the web page or user-scalable=no to prevent the user from zooming in or zooming out</dd>
 </dl>
 
-<p>Note that when a size is specified in pixels, it is not necessarily the number of actual pixels on the device, which can vary from one device to another. It is the number reference pixels, which is defined in CSS as the visual angle of one pixel on a device with a pixel density of 96dpi and a distance from the reader of an arm's length. This allows a web site to be displayed the same on devices with different screen sizes and pixel density.</p>
+<p>Note that when a size is specified in pixels, it is not necessarily the number of actual pixels on the device, which can vary from one device to another. It is the number reference pixels, which is defined in CSS as the visual angle of one pixel on a device with a pixel density of 96dpi and a distance from the reader of an arm&#39;s length. This allows a web site to be displayed the same on devices with different screen sizes and pixel density.</p>
 
 <p>Example:</p>
 <pre data-rel="html" class="prettyprint lang-html"><code>
@@ -448,7 +405,7 @@ alert(&quot;Congratulations! You are running Internet Explorer 7 or greater.&quo
 </code></pre>
 <p>It controls the behavior of search engine crawling and indexing. The robots meta tag applies to all search engines. It is still one of the most important meta tags. </p>
 
-<p>Believe it or not, it is still common for a site to be deindexed because someone accidentally added a noindex tag to the entire site. Understanding this tag is vitally important. The default values are "index, follow" (the same as "all") and do not need to be specified.</p>
+<p>Believe it or not, it is still common for a site to be deindexed because someone accidentally added a noindex tag to the entire site. Understanding this tag is vitally important. The default values are &quot;index, follow&quot; (the same as &quot;all&quot;) and do not need to be specified.</p>
 
 <pre data-rel="html" class="prettyprint lang-html"><code>
 &lt;meta name=&quot;google&quot;/&gt;
@@ -457,48 +414,47 @@ alert(&quot;Congratulations! You are running Internet Explorer 7 or greater.&quo
 
 
 <pre data-rel="html" class="prettyprint lang-html"><code>
-&lt;link rel=&quot;canonical&quot; href=&quot;http://www.example.com/original/&quot; /&gt;
+&lt;link rel=&quot;canonical&quot; href=&quot;<a href="http://www.example.com/original/&amp;quot">http://www.example.com/original/&amp;quot</a>; /&gt;
 </code></pre>
-<p>Not strictly a meta-tag, but still very useful - this allows you to avoid the <a href="http://googlewebmastercentral.blogspot.de/2009/02/specify-your-canonical.html">duplicate-content</a> problem with search engines by telling it that it should list another URI instead of the current one for the content it's seeing on the current page.</p>
+<p>Not strictly a meta-tag, but still very useful - this allows you to avoid the <a href="http://googlewebmastercentral.blogspot.de/2009/02/specify-your-canonical.html">duplicate-content</a> problem with search engines by telling it that it should list another URI instead of the current one for the content it&#39;s seeing on the current page.</p>
 
 
 <pre data-rel="html" class="prettyprint lang-html"><code>
 &lt;meta name=&quot;googlebot&quot;/&gt;
 </code></pre>
-<p>The tag provides a list of search engine directives, consisting of special predefined terms separated by commas, that provide instructions for Google's search engine crawler.</p>
+<p>The tag provides a list of search engine directives, consisting of special predefined terms separated by commas, that provide instructions for Google&#39;s search engine crawler.</p>
 
-<p>The below table represents the values to be used for both “robots” and “googlebot” meta tags. The robots meta tag applies to all search engines, while the "googlebot" meta tag is specific to Google.</p>
+<p>The below table represents the values to be used for both “robots” and “googlebot” meta tags. The robots meta tag applies to all search engines, while the &quot;googlebot&quot; meta tag is specific to Google.</p>
 
 <table class="table-layout">
   <tr>
     <th>noarchive</th>
-    <td>The value noarchive indicates that a current snapshot of the page should not be permanently stored by Google. Otherwise a cached version of a web page, which shows how it looked when the page was last crawled, is available via a "Cache" link on Google's search engine results pages (SERPs).</td>
+    <td>The value noarchive indicates that a current snapshot of the page should not be permanently stored by Google. Otherwise a cached version of a web page, which shows how it looked when the page was last crawled, is available via a &quot;Cache&quot; link on Google&#39;s search engine results pages (SERPs).</td>
   </tr>
   <tr>
     <th>nofollow</th>
-    <td>The value nofollow tells Google's search engine robot that it should not access any web pages linked to by the current page.</td>
+    <td>The value nofollow tells Google&#39;s search engine robot that it should not access any web pages linked to by the current page.</td>
   </tr>
   <tr>
-    
+
     <th>noindex</th>
     <td>The value noindex tells Google to exclude the current page from their results.</td>
   </tr>
   <tr>
-    
+
     <th>noodp</th>
-    <td>The value NOODP indicates that any site information in the Open Directory Project (dmoz.org) should not be used in Google's search engine results.</td>
+    <td>The value NOODP indicates that any site information in the Open Directory Project (dmoz.org) should not be used in Google&#39;s search engine results.</td>
   </tr>
   <tr>
-    
+
     <th>nosnippet</th>
     <td>The value nosnippet indicates that verbatim content from the web page should not be used by Google in the search engine results page (SERP).</td>
   </tr>
-</table>  
-
+</table><br>
 <pre data-rel="html" class="prettyprint lang-html"><code>
 &lt;meta name=&quot;verify&quot;/&gt;
 </code></pre>
-<p>You can use this tag on the top-level page of your site to verify ownership for Webmaster Tools. Please note that while the values of the "name" and "content" attributes must match exactly what is provided to you (including upper and lower case), it doesn't matter if you change the tag from XHTML to HTML or if the format of the tag matches the format of your page.</p>
+<p>You can use this tag on the top-level page of your site to verify ownership for Webmaster Tools. Please note that while the values of the &quot;name&quot; and &quot;content&quot; attributes must match exactly what is provided to you (including upper and lower case), it doesn&#39;t matter if you change the tag from XHTML to HTML or if the format of the tag matches the format of your page.</p>
 
 
 <pre  class="prettyprint lang-html"><code>
@@ -506,13 +462,13 @@ alert(&quot;Congratulations! You are running Internet Explorer 7 or greater.&quo
 </code></pre>
 <p>X-UA-Compatible is used to indicate to an IE browser which version of the rendering engine should be used to display the page. This meta tag does not affect other browsers such as Firefox and Opera, which in general attempt to avoid bloating the size of the browser code by displaying web pages only one way according to established standards (Supporting multiple rendering engines presents some major challenges, especially when content rendered by one engine accesses embedded content rendered by a different engine).</p>
 
-<p>If at all possible it's more bulletproof to serve this directive and as HTTP Header. Here's an example taken from the HMTL5Boilerplate project showing how to do this on Apache</p>
+<p>If at all possible it&#39;s more bulletproof to serve this directive and as HTTP Header. Here&#39;s an example taken from the HMTL5Boilerplate project showing how to do this on Apache</p>
 
 <pre class="prettyprint lang-html"><code>
 &lt;IfModule mod_headers.c&gt;
   Header set X-UA-Compatible &quot;IE=Edge,chrome=1&quot;
-  # mod_headers can&#039;t match by content-type, but we don&#039;t want to send this header on *everything*...
-  &lt;FilesMatch &quot;\.(js|css|gif|png|jpe?g|pdf|xml|oga|ogg|m4a|ogv|mp4|m4v|webm|svg|svgz|eot|ttf|otf|woff|ico|webp|appcache|manifest|htc|crx|oex|xpi|safariextz|vcf)$&quot; &gt;
+  # mod_headers can&#039;t match by content-type, but we don&#039;t want to send this header on <em>everything</em>...
+  &lt;FilesMatch &quot;.(js|css|gif|png|jpe?g|pdf|xml|oga|ogg|m4a|ogv|mp4|m4v|webm|svg|svgz|eot|ttf|otf|woff|ico|webp|appcache|manifest|htc|crx|oex|xpi|safariextz|vcf)$&quot; &gt;
   Header unset X-UA-Compatible
   &lt;/FilesMatch&gt;
 &lt;/IfModule&gt;
@@ -532,12 +488,12 @@ alert(&quot;Congratulations! You are running Internet Explorer 7 or greater.&quo
 <pre data-rel="html" class="prettyprint lang-html"><code>
 &lt;meta name=&quot;format-detection&quot; content=&quot;telephone=yes&quot;/&gt;
 </code></pre>
-<p>(default on Safari in iOS) <code>content="telephone=yes"</code> indicates that telephone numbers in the HTML code should appear as hypertext links that can be clicked to make a phone call.</p>
+<p>(default on Safari in iOS) <code>content=&quot;telephone=yes&quot;</code> indicates that telephone numbers in the HTML code should appear as hypertext links that can be clicked to make a phone call.</p>
 
 <pre data-rel="html" class="prettyprint lang-html"><code>
 &lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot;/&gt;
 </code></pre>
-<p><code>content="telephone=no"</code> indicates that telephone numbers in the HTML code should not appear as hypertext links.</p>
+<p><code>content=&quot;telephone=no&quot;</code> indicates that telephone numbers in the HTML code should not appear as hypertext links.</p>
 
 <pre data-rel="html" class="prettyprint lang-html"><code>
 &lt;meta name=&quot;HandheldFriendly&quot;/&gt;
@@ -558,13 +514,13 @@ alert(&quot;Congratulations! You are running Internet Explorer 7 or greater.&quo
 <pre data-rel="html" class="prettyprint lang-html"><code>
 &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot;/&gt;
 </code></pre>
-<p>This meta tag specifies the style of the status bar for a mobile app. This is relevant only if the this tag with <code>content="yes"</code> is also included.</p>
+<p>This meta tag specifies the style of the status bar for a mobile app. This is relevant only if the this tag with <code>content=&quot;yes&quot;</code> is also included.</p>
 
-<p><code>content="default"</code> - The status bar color is the normal gray gradient and it does not overlap the HTML content.</p>
+<p><code>content=&quot;default&quot;</code> - The status bar color is the normal gray gradient and it does not overlap the HTML content.</p>
 
-<p><code>content="black"</code> - The status bar is black and does not overlap the HTML content.</p>
+<p><code>content=&quot;black&quot;</code> - The status bar is black and does not overlap the HTML content.</p>
 
-<p><code>content="black-translucent"</code> - The status bar is translucent black and overlays a small strip at the top of the HTML content.</p>
+<p><code>content=&quot;black-translucent&quot;</code> - The status bar is translucent black and overlays a small strip at the top of the HTML content.</p>
 
 <pre data-rel="html" class="prettyprint lang-html"><code>
 &lt;link rel=&quot;apple-touch-startup-image&quot;/&gt;
@@ -588,46 +544,55 @@ alert(&quot;Congratulations! You are running Internet Explorer 7 or greater.&quo
 </details>
 
 
-<h3 id="head-including-css-js">Including CSS and JS</h3>
+
+    <p><h3 id="head-including-css-js">Including CSS and JS</h3></p>
 <p>Before you can get started with CSS and JavaScript you need to get them onto the page. This section outlines the best practices surrounding this common and important task. </p>
 
 <h4 id="markup-syntax-semantics-includes-css">Including CSS</h4>
 
 <p>For including CSS use <code>&lt;link&gt;</code> and not <code>@import</code> <a data-reference="true" href="http://www.stevesouders.com/blog/2009/04/09/dont-use-import/">as a standard</a>. This is an important performance consideration. </p>
-<p>Here is an example of the correct way to link a stylesheet:<br />
-  <pre  class="prettyprint lang-html"><code>
-    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;yourStylesheetName.css&quot; /&gt;
-  </code></pre>
-</p>
+<p>Here is an example of the correct way to link a stylesheet:</p>
+
+<pre  class="prettyprint lang-html"><code>
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;yourStylesheetName.css&quot; /&gt;
+</code></pre>
+
 <p>CSS files should always be included in the HEAD of the document. Again, this is important from a performance perspective. This is especially important when you consider the perceived performance of a page. With the CSS rules in place before the body element is reached the browser is able to go about the important task of rendering your markup as early as possible. </p>
 <p>For more information on CSS please see our <a href="#css">CSS Standards</a>.</p>
 
 <h4 id="markup-syntax-semantics-includes-js">Including JS</h4>
 
 <p>For including Javascript use <code>a &lt;script&gt; element.</code></p>
-<p>Here is an example of the correct way to include js:<br />
-  <pre data-rel="HTML 5" class="prettyprint lang-html"><code>
-    &lt;script src=&quot;yourJavascript.js&quot;&gt;&lt;/script&gt;</code></pre><br />
-  <pre data-rel="HTML 4.01" class="prettyprint lang-html"><code>
-    &lt;script type=&quot;text/javascript&quot; src=&quot;yourJavascript.js&quot;&gt;&lt;/script&gt;</code></pre>
-</p>
-  <p>The type attribute that is required in required in HTML 4, is an optional attribute in HTML5.</p>
-<p>JS files should always be included near the END of a document, unless there is specific reason for importing elsewhere in the document. This is to maximize page performance. Keep the number of JS files to a minimum and avoid inline-JS (unless you know why it might be ok, don't do it)</p>
+
+<p>Here is an example of the correct way to include js:</p>
+
+<pre data-rel="HTML 5" class="prettyprint lang-html"><code>
+&lt;script src=&quot;yourJavascript.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+<pre data-rel="HTML 4.01" class="prettyprint lang-html"><code>
+&lt;script type=&quot;text/javascript&quot; src=&quot;yourJavascript.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+<p>The type attribute that is required in required in HTML 4, is an optional attribute in HTML5.</p>
+
+<p>JS files should always be included near the END of a document, unless there is specific reason for importing elsewhere in the document. This is to maximize page performance. Keep the number of JS files to a minimum and avoid inline-JS (unless you know why it might be ok, don&#39;t do it)</p>
 <p>For more information on JS please see our <a href="#javascript">Javascript Standards</a>.</p>
 
-<h3 id="head-favicon">Favicon</h3>
-    <p>
-      Have a designer create a favicon for any site you're working on. It's just part of doing it right&trade;. Your Favicon should have an .ico extension and include a 32x32px and 16x16px version. Read more over at <a data-reference="true" href="http://www.html-kit.com/support/favicon/image-size/">html-kit</a> or <a data-reference="true" href="http://mathiasbynens.be/notes/rel-shortcut-icon">Mathias Bynens</a>
-      .
-    </p>
-    <p>
-      Your Favicon should sit in the root folder - that way you don't need a <code>&lt;link rel=&quot;icon shortcut&quot; href=&quot;&quot;/&gt;</code> in your html. If you have to put the favicon in a different folder, create a redirect rule for it.
-    </p>
 
-    <h3 id="head-touchicons">Apple-touch icons</h3>
-    <p>
-      Have a designer create touch icons for your site. That way your bookmark will look pretty when mobile users place it on their home screens. You should  use this snippet instead of placing the files in the document root:
-    </p>
+
+    <p><h3 id="head-favicon">Favicon</h3></p>
+<p>
+  Have a designer create a favicon for any site you&#39;re working on. It&#39;s just part of doing it right&trade;. Your Favicon should have an .ico extension and include a 32x32px and 16x16px version. Read more over at <a data-reference="true" href="http://www.html-kit.com/support/favicon/image-size/">html-kit</a> or <a data-reference="true" href="http://mathiasbynens.be/notes/rel-shortcut-icon">Mathias Bynens</a>.
+</p>
+<p>
+  Your Favicon should sit in the root folder - that way you don&#39;t need a <code>&lt;link rel=&quot;icon shortcut&quot; href=&quot;&quot;/&gt;</code> in your html. If you have to put the favicon in a different folder, create a redirect rule for it.
+</p>
+
+
+    <p><h3 id="head-touchicons">Apple-touch icons</h3></p>
+<p>
+  Have a designer create touch icons for your site. That way your bookmark will look pretty when mobile users place it on their home screens. You should  use this snippet instead of placing the files in the document root:
+</p>
 <pre data-rel="html" class="prettyprint lang-html"><code>
 &lt;!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: --&gt;
 &lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;apple-touch-icon-precomposed.png&quot;&gt;
@@ -638,11 +603,12 @@ alert(&quot;Congratulations! You are running Internet Explorer 7 or greater.&quo
 &lt;!-- For third-generation iPad with high-resolution Retina display: --&gt;
 &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;144x144&quot; href=&quot;apple-touch-icon-144x144-precomposed.png&quot;&gt;
 </code></pre>
-    <p>
-      Note: if your filename and rel-attribute ends in -precomposed, iOS will not put its fancy gloss over your icon. Read more over at <a data-reference="true" href="http://mathiasbynens.be/notes/touch-icons#sizes">Mathias Bynens</a> or straight from <a data-reference="true" href="https://developer.apple.com/library/safari/documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html">Apple</a>.
-    </p>
+<p>
+  Note: if your filename and rel-attribute ends in -precomposed, iOS will not put its fancy gloss over your icon. Read more over at <a data-reference="true" href="http://mathiasbynens.be/notes/touch-icons#sizes">Mathias Bynens</a> or straight from <a data-reference="true" href="https://developer.apple.com/library/safari/documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html">Apple</a>.
+</p>
 
-<h3>And now - everybody together!</h3>
+
+    <p><h3>And now - everybody together!</h3></p>
 <pre data-rel="standard HTML head structure" class="prettyprint lang-html"><code>
 &lt;!DOCTYPE html&gt;
 &lt;!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --&gt;
@@ -657,7 +623,7 @@ alert(&quot;Congratulations! You are running Internet Explorer 7 or greater.&quo
   &lt;meta name="keywords" content="keyword 1, keyword 2"/&gt;
   &lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/&gt;
   &lt;meta name="robots"/&gt;
-  
+
   &lt;link rel="stylesheet" href="your-single-deployment-stylesheet.css"&gt;
   &lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;apple-touch-icon-precomposed.png&quot;&gt;
   &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;72x72&quot; href=&quot;apple-touch-icon-72x72-precomposed.png&quot;&gt;
@@ -672,7 +638,8 @@ alert(&quot;Congratulations! You are running Internet Explorer 7 or greater.&quo
 &lt;/html&gt;
 </code></pre>
 
-<h3 id="head-deprecated">Avoid deprecated elements</h3>
+
+    <h3 id="head-deprecated">Avoid deprecated elements</h3>
 <p>In general, it's best to avoid deprecated elements. Our goal is to use the best solutions possible. Its going to be a rare case indeed when a dead element from the 1990s is the best available solution. </p>
 
 <h4>How do you handle Deprecated elements</h4>
@@ -990,8 +957,7 @@ a:active { color: red; }<br>
 
 </details>
 
-
-<h2 id="css">CSS</h2>
+    <p><h2 id="css">CSS</h2></p>
 <p>
   The following chapter outlines a reasonable style guide for CSS development. It is liberally based on <a data-reference="true" href="http://nicolasgallagher.com/" class="url" rel="nofollow me" >Nicolas Gallagher </a><a data-reference="true" href="https://github.com/necolas/idiomatic-css">idiomatic-css</a>.
 </p>
@@ -1007,7 +973,7 @@ a:active { color: red; }<br>
     Use separate files (concatenated by a build step) to help break up code for distinct components.
   </li>
   <li>
-    Apply comments liberally, in module files declare any dependencies (there shouldn't be many).
+    Apply comments liberally, in module files declare any dependencies (there shouldn&#39;t be many).
   </li>
   <li>
     Use the standard CSS-file header in each file (see below). You could use <a data-reference="true" href="http://blog.krisrange.com/2010/07/inserting-keywordsvariables-in-subversion-with-auto_props/">SVN variables</a> to populate the values in there or just do it manually.
@@ -1017,65 +983,59 @@ a:active { color: red; }<br>
     If using a preprocessor, abstract common code into variables for color, typography, etc.
   </li>
   <li>
-    Don't forget to merge all CSS files into one and all JS files into another as a step of your build process.
+    Don&#39;t forget to merge all CSS files into one and all JS files into another as a step of your build process.
   </li>
   </ul>
-  <p>Here's a typical set-up for your CSS-files:</p>
+  <p>Here&#39;s a typical set-up for your CSS-files:</p>
   <p>
   <code>/css/framework/framework.css</code>
   (if applicable)
-  <br>      
-  <code>/css/core.client.css</code>
-  (contains your reset basic, coloring, layouting [e.g. framework overwrites or your own declarations] and general declarations that don't belong into the other files)
-  <br>      
-  <code>/css/modules/modulename.client.css</code>
+  <br><br>  <code>/css/core.client.css</code>
+  (contains your reset basic, coloring, layouting [e.g. framework overwrites or your own declarations] and general declarations that don&#39;t belong into the other files)
+  <br><br>  <code>/css/modules/modulename.client.css</code>
   (contains styles for a specific module, only dependent on core and if necessary the framework)
-  <br>      
-  <code>/css/modules/modulename2.client.css</code>
+  <br><br>  <code>/css/modules/modulename2.client.css</code>
   (etc...)
-  <br>      
-  <code>/css/forms/forms.client.css</code>
+  <br><br>  <code>/css/forms/forms.client.css</code>
   (if necessary - generic form declarations)
-  <br>      
-  <code>/css/forms/forms.contact-us.client.css</code>
+  <br><br>  <code>/css/forms/forms.contact-us.client.css</code>
   (for declarations for a specific contact-us module)
   </p>
 <p>
   On each CSS-file, add the standard CSS file header before the first declaration:
 </p>
 <pre data-rel="css" class="prettyprint lang-css"><code>
-/**
-* NAME OF THE STYLESHEET (e.g. core.client.css)
-* The styles in this file represent all basic styles for the &lt;CLIENT&gt; &lt;PROJECTNAME&gt; site.
-* It includes a reset, the basic grid and some default components.
-*<br>* Why we are using the equals sign in the section identifier:
-* stopdesign.com/archive/2005/05/03/css-tip-flags.html
-* 
-* @project   PROJECT NAME
-* @date      YYYY-MM-DD 
-* @author    YOUR NAME, SapientNitro &lt;YOUREMAIL@sapient.com&gt;
-* @licensor  CLIENTNAME
-* @site      PROJECTNAME
-*
-* @dependency framework.css
-* @dependency core.client.css
-*
-*/
+/<em>*
+</em> NAME OF THE STYLESHEET (e.g. core.client.css)
+<em> The styles in this file represent all basic styles for the &lt;CLIENT&gt; &lt;PROJECTNAME&gt; site.
+</em> It includes a reset, the basic grid and some default components.
+<em><br></em> Why we are using the equals sign in the section identifier:
+<em> stopdesign.com/archive/2005/05/03/css-tip-flags.html
+</em> 
+<em> @project   PROJECT NAME
+</em> @date      YYYY-MM-DD 
+<em> @author    YOUR NAME, SapientNitro &lt;YOUREMAIL@sapient.com&gt;
+</em> @licensor  CLIENTNAME
+<em> @site      PROJECTNAME
+</em>
+<em> @dependency framework.css
+</em> @dependency core.client.css
+<em>
+</em>/
 </code></pre>
 
   <p>
   In core.client.css, also include a block that lists out the colors per styleguide.
   </p>
 <pre data-rel="css" class="prettyprint lang-css"><code>
-* USE THIS IN CORE.CLIENT.CSS
-* @colordef  #333; Quasi black (for most of the copy)
-* @colordef  #666; Grey (for some special copy)
-* @colordef  #999; Light grey (toolbar and text color)
-* ..... Replace and enhance with your specific project colors      
-</code></pre>
+<em> USE THIS IN CORE.CLIENT.CSS
+</em> @colordef  #333; Quasi black (for most of the copy)
+<em> @colordef  #666; Grey (for some special copy)
+</em> @colordef  #999; Light grey (toolbar and text color)
+* ..... Replace and enhance with your specific project colors<br></code></pre>
   <h4 id="css-comments">Comment your CSS code</h4>
   <p>
-  Well commented code is extremely important. Take time to describe components, how they work, their limitations, and the way they are constructed. Don't leave others in the team guessing as to the purpose of uncommon or non-obvious code.
+  Well commented code is extremely important. Take time to describe components, how they work, their limitations, and the way they are constructed. Don&#39;t leave others in the team guessing as to the purpose of uncommon or non-obvious code.
   </p>
   <p>
   Comment style should be simple and consistent within a single code base.
@@ -1126,7 +1086,7 @@ a:active { color: red; }<br>
 // Basic comment
 </code></pre>
 
-  <h3 id="css-format">Format</h3>
+<p>  <h3 id="css-format">Format</h3>
   <!-- p>
     <mark>
       (I know that at Sapient a lot of people like the Alphabetical approach - Team should agree at the beginning of a project)
@@ -1139,7 +1099,7 @@ a:active { color: red; }<br>
     <li>is easy to clearly comment</li>
     <li>minimizes the chance of accidentally introducing errors</li>
     <li>results in useful diffs and blames. </li>
-  </ul>
+  </ul></p>
 <p>To that end the following recommendations are made for CSS formatting:</p>
   <ul>
   <li>One discrete selector per line in multi-selector rulesets.</li>
@@ -1178,8 +1138,7 @@ a:active { color: red; }<br>
   <p>
   Declarations should be ordered in accordance with a single principle, the team should initially agree to one of the suggested approaches. There are two basic approaches: alphabetical order and grouping by related properties.</p>
 <p>
-  Alphabetical order is a popular choice and is suggested as a baseline for those who have no strong preference in this matter. Alphabetical order has the benefit of always being in sync across project teams, where the importance or connectedness of properties can change depending on the developer or team making the associations.  
-  </p>
+  Alphabetical order is a popular choice and is suggested as a baseline for those who have no strong preference in this matter. Alphabetical order has the benefit of always being in sync across project teams, where the importance or connectedness of properties can change depending on the developer or team making the associations.<br>  </p>
 <pre data-rel="css" class="prettyprint lang-css"><code>
 .selector {
   background: #000;
@@ -1212,13 +1171,12 @@ a:active { color: red; }<br>
 }
 </code></pre>
 
-  
-  <h4>Exceptions and slight deviations
+
+<p>  <h4>Exceptions and slight deviations
   </h4>
   <p>
     Large blocks of single declarations can use a slightly different, single-line format. In this case, a space should be included after the opening brace and before the closing brace.
-  </p>
-
+  </p></p>
 <pre data-rel="css" class="prettyprint lang-css"><code>
 .selector-1 { width: 10%; }
 .selector-2 { width: 20%; }
@@ -1240,15 +1198,12 @@ background-image:
 }
 </code></pre>
 
-  <h4>Miscellaneous Standards</h4>
+<p>  <h4>Miscellaneous Standards</h4>
   <p>
   Use lowercase hex values, e.g., #aaa.
-  <br>      
-  Use single or double quotes consistently. Preference is for double quotes, e.g., content: &quot;&quot;.
-  <br>      
-  Always quote attribute values in selectors, e.g., input[type=&quot;checkout&quot;].
-  <br>      
-  Where allowed, avoid specifying units for zero-values, e.g., margin: 0.
+  <br><br>  Use single or double quotes consistently. Preference is for double quotes, e.g., content: &quot;&quot;.
+  <br><br>  Always quote attribute values in selectors, e.g., input[type=&quot;checkout&quot;].
+  <br><br>  Where allowed, avoid specifying units for zero-values, e.g., margin: 0.
   </p>
   <h4>Preprocessors: additional format considerations</h4>
   <p>
@@ -1270,8 +1225,7 @@ background-image:
   <li>
     Consider prefixing custom functions with x- or another namespace. This helps to avoid any potential to confuse your function with a native CSS function, or to clash with functions from libraries.
   </li>
-  </ul>
-
+  </ul></p>
 <pre data-rel="css" class="prettyprint lang-css"><code>
 .selector-1 {
   @extend .other-rule;
@@ -1282,12 +1236,11 @@ background-image:
 }
 </code></pre>
 
-  <h3 id="css-naming">Naming</h3>
+<p>  <h3 id="css-naming">Naming</h3>
   <p>
-  We are not human code compiler/compressors, so don't try to be one.
+  We are not human code compiler/compressors, so don&#39;t try to be one.
   Use clear and thoughtful names for HTML classes. Pick an understandable and consistent naming pattern that makes sense both within HTML files and CSS files.
-  </p>
-
+  </p></p>
 <pre data-rel="css" class="prettyprint lang-css"><code>
 /* Example of code with bad names */
 .s-scr {
@@ -1308,10 +1261,9 @@ background-image:
 }
 </code></pre>
 
-  <!-- p> <mark>(I added the following paragraph as the above &quot;understandable and consistent naming pattern&quot; does not avoid the following)</mark> 
+<p>  <!-- p> <mark>(I added the following paragraph as the above &quot;understandable and consistent naming pattern&quot; does not avoid the following)</mark> 
   </p -->
-  <p>Use names that make sense even if design or usage changes.</p>
-  
+  <p>Use names that make sense even if design or usage changes.</p></p>
 <pre data-rel="css" class="prettyprint lang-css"><code>
 /* Example of code with bad names */
 .right-red {
@@ -1328,10 +1280,8 @@ background-image:
 }
 </code></pre>
 
-  <h3 id="css-examples">Practical example</h3>
-  <p>The following example is designed to illustrate the various style conventions. It's not meant to be used as a solution to any specific problem. It's here merely to illustrate coding conventions and style.</p>
-  
-
+<p>  <h3 id="css-examples">Practical example</h3>
+  <p>The following example is designed to illustrate the various style conventions. It&#39;s not meant to be used as a solution to any specific problem. It&#39;s here merely to illustrate coding conventions and style.</p></p>
 <pre data-rel="css" class="prettyprint lang-css"><code>
 /* ==========================================================================
 Grid layout
@@ -1387,13 +1337,13 @@ Grid layout
 }
 </code></pre>
 
-  <h3>How to write good CSS (Selectors)</h3>
+<p>  <h3>How to write good CSS (Selectors)</h3>
   <p>
-  <a data-reference="true" href="http://csswizardry.com/2011/09/writing-efficient-css-selectors/">Writing Efficient CSS selectors</a> is a good article to understand why writing efficient CSS selectors is important. Here's a summary:
+  <a data-reference="true" href="http://csswizardry.com/2011/09/writing-efficient-css-selectors/">Writing Efficient CSS selectors</a> is a good article to understand why writing efficient CSS selectors is important. Here&#39;s a summary:
   </p>
   <ul>
   <li>
-    <a data-reference="true" href="http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html">Keep specificity</a> low (that is, don't write html body .wrapper #content a{} when .content a{} could've done the job).
+    <a data-reference="true" href="http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html">Keep specificity</a> low (that is, don&#39;t write html body .wrapper #content a{} when .content a{} could&#39;ve done the job).
   </li>
   <li>
     The <strong>fewer matches your key selector</strong>
@@ -1403,11 +1353,11 @@ Grid layout
     Try to avoid putting unnecessary classes and IDs in your HTML
   </li>
   <li>
-    Avoid the * selector unless you can explain why you MUST use it.
+    Avoid the <em> selector unless you can explain why you MUST use it.
   </li>
   </ul>
   <p>
-  In terms of performance, memorize Steve Souder's list (Quoted from <a data-reference="true" href="http://stevesouders.com/">Even Faster Websites by Steve Souders</a>) of efficient CSS selectors - ordered from higher to lower efficiency:
+  In terms of performance, memorize Steve Souder&#39;s list (Quoted from <a data-reference="true" href="http://stevesouders.com/">Even Faster Websites by Steve Souders</a>) of efficient CSS selectors - ordered from higher to lower efficiency:
   </p>
   <ol>
   <li>
@@ -1436,11 +1386,11 @@ Grid layout
   </li>
   <li>
     Universal, i.e.
-    <code>*</code>
+    <code></em></code>
   </li>
   <li>
     Attribute, e.g.
-    <code>[type="text"]</code>
+    <code>[type=&quot;text&quot;]</code>
   </li>
   <li>
     Pseudo-classes/-elements, e.g.
@@ -1451,22 +1401,16 @@ Grid layout
   </p>
   <ol>
   <li> <strong>Find patterns in different modules and abstract them out.</strong>
-    <br>      
-    e.g. Two modules that have bulleted lists in them might inherit from a common class, and be adjusted separately with additional rules.
+    <br><br>    e.g. Two modules that have bulleted lists in them might inherit from a common class, and be adjusted separately with additional rules.
   </li>
   <li>
     <strong>When you create a module, let it be flexible so it can be used in a different context</strong> 
-    <br>      
-    This goes hand in hand with &quot;keep specificity low&quot;. When you write CSS for any module, don't tie it to a specific place (or parent) unless you really have to.
+    <br><br>    This goes hand in hand with &quot;keep specificity low&quot;. When you write CSS for any module, don&#39;t tie it to a specific place (or parent) unless you really have to.
   </li>
-  </ol>
+  </ol></p>
 
 
-
-
-
-
-<h2 id="javascript">JavaScript</h2>
+    <h2 id="javascript">JavaScript</h2>
 
 <!-- ol>
 <li><a href="#javascript-styleguide">Styleguide</a></li>
@@ -2159,7 +2103,7 @@ function add(num1, num2) {
   </div>
   <div class="eight columns media-container">
     <figure>
-      <img src="images/jsperf-scope-chain.png" alt="Scope chain">
+      <img src="assets/images/jsperf-scope-chain.png" alt="Scope chain">
       <figcaption>Scope chain for add-function</figcaption>
     </figure>
   </div>
@@ -2174,7 +2118,7 @@ var total = add(5, 10);
   </div>
   <div class="eight columns media-container">
     <figure>
-      <img src="images/jsperf-execution-context.png" alt="Scope chain">
+      <img src="assets/images/jsperf-execution-context.png" alt="Scope chain">
       <figcaption>Scope chain for add-function in execution context</figcaption>
     </figure>
   </div>
@@ -2196,7 +2140,7 @@ var total = add(5, 10);
   </div>
   <div class="eight columns media-container">
     <figure>
-      <img src="images/jsperf-identifier-resolution.png" alt="Scope chain">
+      <img src="assets/images/jsperf-identifier-resolution.png" alt="Scope chain">
       <figcaption>Identifier resolution process</figcaption>
     </figure>
   </div>
@@ -2243,7 +2187,7 @@ var total = add(5, 10);
 </div>
 <div class="six columns media-container">
   <figure>
-    <img src="images/jsperf-with-identifier-resolution.png" alt="Scope chain">
+    <img src="assets/images/jsperf-with-identifier-resolution.png" alt="Scope chain">
     <figcaption>Identifier resolution process</figcaption>
   </figure>
 </div>
@@ -2351,51 +2295,152 @@ Moreover CSS3 animations are optimized by browser-vendors for their reflow/repai
   <li>Dynatrace AJAX</li>
 </ul>
 
+    <h2 id="accessibility">Accessibility</h2>
 
-<h2 id="accessibility">Accessibility</h2>
-
-<p>Accessibility (often abbreviated as a11y) is hugely important in the modern web. It's a legal requirement in many geographies, an excellent indicator of a quality product and shows you care! Projects should set out to develop to meet WCAG 2.0 Level AA. <a data-reference="true" href="http://www.w3.org/WAI/WCAG20/glance/">WCAG 2.0 at a Glance</a></p>
+<p>Accessibility (often abbreviated as a11y) is hugely important in the modern web. It&#39;s a legal requirement in many geographies, an excellent indicator of a quality product and shows you care! Projects should set out to develop to meet WCAG 2.0 Level AA. <a data-reference="true" href="http://www.w3.org/WAI/WCAG20/glance/">WCAG 2.0 at a Glance</a></p>
 
 <p>The start point for an accessible website is always solid, stuctured, semantic markup. Always use headings to convey structure and where possible start to use HTML5 tags such as main, section and aside to add meaning to your content areas. Be cautious. The article tag is easy to misunderstand, the article tag represents a complete or self-contained item. This could be a forum post, a blog entry, an interactive widget, or a user-submitted comment. <a data-reference="true" href="http://css-tricks.com/thinking-async/">W3 reference on the article element</a>.</p>
 
-<p><strong>Do not expect users of assistive technologies to have JavaScript disabled</strong>. Whilst having a non-JS fallback is often good practive it is not longer acceptable to make this your "accessible version". By using using recognised markup, allowing keyboard focus and interaction, and being mindful of user interaction your JS work can be accessible.</p>
+<p><strong>Do not expect users of assistive technologies to have JavaScript disabled</strong>. Whilst having a non-JS fallback is often good practive it is not longer acceptable to make this your &quot;accessible version&quot;. By using using recognised markup, allowing keyboard focus and interaction, and being mindful of user interaction your JS work can be accessible.</p>
 
 
-<h3>The WAI-ARIA Specification &ndash; The Next Level.</h3>
+<p><h3>The WAI-ARIA Specification &ndash; The Next Level.</h3></p>
 <p>The elements introduced in HTML5 have growing but limited accessibilty support in browers. Fortunatly the WAI-ARIA (Web Accessibility Initiative - Accessible Rich Internet Applications) specification has excellent support. Modern web applications are complicated; There are unusual mixes of tags to create UI controls and there are regions on a page which update on screen without a page refresh. ARIA introduces a range of roles (added to tags as attributes) that act as hooks for assistive technologies.</p>
 
 <p><a data-reference="true" href="http://www.w3.org/TR/wai-aria-primer/">WAI-ARIA Primer</a><br />
   <a data-reference="true" href="http://www.w3.org/TR/wai-aria-practices/">WAI-ARIA Best Practices</a></p>
 
-<h3>Accessible Design</h3>
+<p><h3>Accessible Design</h3></p>
 <p>Many of the accessibilty guidelines have a direct impact upon wireframes and designs. Accessibilty is the responsibility of the whole team so <strong>please highlight any issues you spot in the documents supplied to you</strong>.</p>
 <p>A common issue is colour contrast; AA requires a contrast ratio of 4.5:1 for normal text and 3:1 for large text. Level AAA requires a contrast ratio of 7:1 for normal text and 4.5:1 for large text. It may not be possible to correct all issues but it is important for us to be open about these challenges both internally and with our clients.</p>
 
-  
-<h2 id="credits">Credits</h2>
-<p>This document is a joint effort by</p>
+
+
+    <h2 id="responsive-design">Responsive Design</h2>
+
+<p>Responsive / Adaptive Web Design is an approach that aspires to deliver an optimal experience across a wide range of devices. They completely change creative workflows, requiring concept, design and interactive development domains to work closely together. The two terms are often used interchangably but have different priorities.</p>
+
+<dl>
+  <dt>Adaptive Web Design (AWD)</dt>
+  <dd>Layouts are changed at specific breakpoints. Grids may be fixed flexible or fluid.</dd>
+  <dt>Responsive Web Design (RWD)</dt>
+  <dd>Layouts respond to the available space using flexible or fluid grids. Breakpoints may be used to adapt the layout.</dd>
+</dl>
+
+<p>AWD and RWD can be enhanced with server side code, an approach typically referred to as <abbr title="Responsive Design with server-side Components">RESS</abbr>. RESS often attempt to match the user agent string with a record in a device database, if successful we can use the devices specifications to tailer our response.</p>
+
+<p><h3>In-depth reading</h3></p>
 <ul>
-  <li>Gerhard Schoders</li>
-  <li>Rob Larsens</li>
-  <li>Jon Mittlebronns</li>
-  <li>Ryan Fitzers</li>
-  <li>Holger Hellingers</li>
-  <li>Niklas Zillingers</li>
-  <li>Sailesh Raghavans</li>
-  <li>Kumar Gauravs</li>
-  <li>Venkat R Iyers</li>
-  <li>Thomas Cowells </li>
-  <li>Matt Daless</li>
-  <li>Joe Morgans</li>
-  <li>Ryan Mitchells</li>
-  <li>Cesar Perezs</li>
+  <li>
+    <a data-reference="true" href="http://www.abookapart.com/products/responsive-web-design/">Responsive Web Design</a> by <a data-reference="true" href="http://ethanmarcotte.com/" title="Ethan Marcotte is a web designer &amp; developer who lives in Boston." >Ethan Marcotte</a>
+  </li>
+  <li>
+    <a data-reference="true" href="http://www.slideshare.net/stephenhay/mobilism2012">Responsive Design Workflow</a> by <a data-reference="true" href="http://www.the-haystack.com/" title="The Haystack. | Web, design, and web design">Stephen Hay</a>
+  </li>
+  <li>
+    <a data-reference="true" href="http://www.abookapart.com/products/mobile-first/">Mobile First</a> by <a data-reference="true" href="http://www.lukew.com/">Luke Wroblewski</a>
+  </li>
+  <li>
+    <a data-reference="true" href="http://www.slideshare.net/stephenhay/structured-content-first">Content First</a> by Stephen Hay</a>
+  </li>
+  <li>
+    <a data-reference="true" href="http://mediaqueri.es/">mediaqueri.es</a>, a collection of inspirational websites using media queries and responsive web design.</a>
+  </li>
 </ul>
-</main>
 
-  
 
-    <footer>
-      <!-- h2 id="footnotes">External links</h2>
+<p>In responsive design prototyping is more important than ever. For this and for kick-starting any projects using a grid-system, such as the <a data-reference="true" href="http://foundation.zurb.com/">Foundation library</a> or <a data-reference="true" href="http://twitter.github.io/bootstrap/">Bootstrap</a>, can be a great help.</p>
+
+
+
+<p><h3>Coding</h3></p>
+<p>
+Responsive design relies on fluid grids. Thus, you should use the following rules of thumb for front-end coding:
+</p>
+<ul>
+  <li>Avoid <code>px</code> units</li>
+  <li>Use <code>em</code> or <code>rem</code> units for font sizes, line heights and directly text-related padding</li>
+  <li>Use <code>%</code> units for all module and page layouts</li>
+  <li>Consider using <a data-reference="true" href="http://quirksmode.org/css/user-interface/boxsizing.html">box-sizing: border-box</a></li>
+  <li>Decide on a base (might be in <code>px</code> virtually) that allows you to create a (typographic) grid</li>
+  <li>Don&#39;t strive for pixel-perfection, maintain proportions!</li>
+</ul>
+
+<h4>Viewport Meta Tag</h4>
+
+<p>Mobiles, tablets, desktop screens - all differ especially in size and resolution. Due to displays with higher pixel-density mobile-vendors started to define a &quot;best-viewed-in&quot; resolution, which is usually very reliable. Two must-reads about this topic are PPK&#39;s <a data-reference="true" href="http://www.quirksmode.org/mobile/viewports.html">&quot;A tale of two viewports&quot;</a> (+ <a data-reference="true" href="http://www.quirksmode.org/mobile/viewports2.html">&quot;Part II&quot;</a>) and <a data-reference="true" href="http://www.quirksmode.org/blog/archives/2010/09/combining_meta.html">&quot;Combining meta viewport and media queries&quot;</a>.</p>
+
+<p>Based on this information, the best experiences have been made with a very simple viewport-tag definition:</p>
+
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;meta name="viewport" content="width=device-width; initial-scale=1.0"/l&gt;
+</code></pre>
+
+<p><code>maximum-scale=1.0</code> would fix some orientation-change bugs on iOS devices and &quot;assures&quot; some app-like stability, but we recommend not to use it. It&#39;s simply an accessibility concern. People (especially with visual impairments) must be allowed to zoom to their favorite level.<br />
+Moreover there are little helpers to fix orientation-change bugs like <a data-reference="true" href="https://github.com/scottjehl/iOS-Orientationchange-Fix">Scott Jehl&#39;s iOS-Orientationchange-Fix</a>
+</p>
+
+<p>This simple viewport tag base works on a broad range of mobiles and tablets. Only the Nexus 4G and HTC Sensation (so far) seemed to not provide an optimized viewports which triggers higher resolution layouts (e.g. tablet-layout media queries) on those mobiles.</p>
+
+<h4>Media Queries</h4>
+
+<p>CSS3 media-queries enable you to adjust your (maybe responsively-designed) website modules for specific resolution (device) classes. Please don&#39;t blindly follow <a data-reference="true" href="http://stuffandnonsense.co.uk/blog/about/hardboiled_css3_media_queries/">Andy Clarke&#39;s - Hardboiled CSS3 Media Queries</a>, which seem to be widely spread across the web. Although it contains a lot of right stuff, it&#39;s probably too detailed for your requirements. Moreover it mostly sets min-width and max-width limits, which partly excludes devices. For example a tablet-focused media query with a max-width of 1024px supports an iPad in landscape mode but will be ignored by a LG-V900 (1280px) tablet.</p>
+
+<p>Joshua Johnson has an interesting alternative approach in his article <a data-reference="true" href="http://designshack.net/articles/css/responsive-design-why-youre-doing-it-wrong/">Responsive Design: Why You&#39;re Doing It Wrong</a>. It challenges the idea of defining fixed pixel-ranges for a responsive design (actually quite unresponsive, right?!).</p>
+
+<p>When you start from a mobile-first approach, you should be able to define mostly <code>min-width</code> breakpoints only for enhancing your layout on bigger viewports.</p>
+
+<p>For some browsers it&#39;s even worth it to define breakpoints in <code>em</code> instead of <code>px</code>. This enables your layout to fall back to a smaller layout when the user has increased the default font size. Can I get an accessibility-high-5?!</p>
+
+<p>Again, that&#39;s not working in every browser, but not failing as well. The ones not reacting correctly to increased font-size simply read it like the related pixel value as before. Read more about it in Lyza Gardner&#39;s <a data-reference="true" href="http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/">The EMs have it: Proportional Media Queries FTW!</a>.</p>
+
+<pre data-rel="css" class="prettyprint"><code>
+@media screen and ( min-width: 40.625em )  {
+  /**
+   * put here your > 768px styles
+   * (based on 16px default font-size)
+   */
+}
+</code></pre>
+
+
+
+    <h2 id="credits">Credits</h2>
+    <p>This document is a joint effort by</p>
+    <ul>
+      
+        <li>Gerhard Schoder</li>
+      
+        <li>Rob Larsen</li>
+      
+        <li>Jon Mittlebronn</li>
+      
+        <li>Ryan Fitzer</li>
+      
+        <li>Holger Hellinger</li>
+      
+        <li>Niklas Zillinger</li>
+      
+        <li>Sailesh Raghavan</li>
+      
+        <li>Kumar Gaurav</li>
+      
+        <li>Venkat R Iyer</li>
+      
+        <li>Thomas Cowell</li>
+      
+        <li>Matt Dales</li>
+      
+        <li>Joe Morgan</li>
+      
+        <li>Ryan Mitchell</li>
+      
+        <li>Cesar Perez</li>
+      
+    </ul>
+  </main>
+   <footer>
+      <h2 id="footnotes">External links</h2>
       <ol>
 
       </ol -->
@@ -2408,8 +2453,8 @@ Moreover CSS3 animations are optimized by browser-vendors for their reflow/repai
     </footer>
   </div>
   
-<script type="text/javascript" src="javascripts/libs/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="javascripts/plugins/google-prettify/prettify.js"></script>
+<script type="text/javascript" src="assets/javascripts/libs/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="assets/javascripts/plugins/google-prettify/prettify.js"></script>
 
 <script type="text/javascript">
   var _gaq = _gaq || [];
