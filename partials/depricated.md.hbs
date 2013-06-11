@@ -1,0 +1,317 @@
+<h3 id="head-deprecated">Avoid deprecated elements</h3>
+<p>In general, it's best to avoid deprecated elements. Our goal is to use the best solutions possible. Its going to be a rare case indeed when a dead element from the 1990s is the best available solution. </p>
+
+<h4>How do you handle Deprecated elements</h4>
+<p>With the ever evolving technology, there are HTML elements and attributes that have now been declared deprecated by W3C (World Wide Web Consortium is the main international standards organization for the World Wide Web). "Deprecated" means that the elements no longer serve a purpose and have been replaced by other methods, mostly involving cascading stylesheets (CSS). Although it is recommended that web browsers continue to support them, eventually they will become obsolete. This section talks about the most common ones which are deprecated along with the recommended replacements for them.
+</p>
+
+<details>
+
+  <summary>Recommended replacements for deprecated elements</summary>
+
+<h5>The CENTER tag and ALIGN attribute</h5>
+
+<p>Center-align text in an HTML page. These elements have also been replaced by CSS. Deprecated examples include but not limited to be:</p>
+
+<pre class="prettyprint lang-html" data-rel="html">
+  <code>
+&lt;p align="center"&gt;Centered paragraph&lt;/p&gt;
+
+&lt;center&gt;&lt;img src="pic.gif"&gt;&lt;/center&gt;
+  </code>
+</pre>
+
+<p>To align content on a page, the CSS property is text-align. It takes four possibilities: left, right, center and justify. <br>
+<code>.class-name { text-align: center; }</code>
+</p>
+
+<pre class="prettyprint lang-html" data-rel="html">
+  <code>
+&lt;p class="class-name"&gt;Centered text&lt;/p&gt;
+  </code>
+</pre>
+
+<p>This tag works for inline content such as text or images, but block level elements like tables and DIV do not follow the rules above. However, there is a simple yet relatively less-promoted trick to center block elements. The right solution is to set the margin to auto, as in the following code. Change 200px to the width you would like the table to be:</p>
+
+<pre class="prettyprint lang-html" data-rel="html">
+  <code>
+&lt;table cellpadding="0" cellspacing="0" style="margin: auto; width: 200px; border: 1px solid black;"&gt;
+  &lt;tr&gt;
+  &lt;td>Test&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+  </code>
+</pre>
+
+<p>This should work in all browsers except Internet Explorer prior to version 7. Note that the auto value actually only has an effect of the left and right margins; it does not center elements vertically.</p>
+
+<h5>The FONT and BASEFONT tags</h5>
+<p>FONT and BASEFONT  have been deprecated in favor of CSS.<br />
+   The BASEFONT tag specifies a default font-color, font-size, or font-family for all the text in a document, the tag is only supported by Internet Explorer and deprecated in HTML 4.01</p>
+<dl>
+  <dt>face</dt>
+  <dd>The actual font to use, such as Times New Roman or Arial. This has been superseded by the CSS property font-family. You can also specify the type of font (serif, sans-serif, etc).</dd>
+  <dt>size</dt>
+  <dd>The size of the font, relative to the default on the page. This has been replaced by the CSS property font-size. You can use any length value (px, em, in, mm).</dd>
+  <dt>color</dt>
+  <dd>The color of the font. This has been replaced by the CSS property color.</dd>
+</dl>
+
+<p>Deprecated example</p>
+
+<pre class="prettyprint lang-html" data-rel="html">
+  <code>
+&lt;basefont face="Arial" size="+1" color="green">Some text&lt;/basefont&gt;
+  </code>
+</pre>
+
+<p>To set the font for a page using CSS (as per BASEFONT), you should put the following in your style sheet (replace the rules with your chosen CSS rules):
+<br>
+  <code>
+body { font-family: Arial, sans-serif; font-size: 100%; color: green; }
+  </code>
+  
+</p>
+
+<!--h5>The STRIKE element</h5>
+
+<p>These elements primarily used for text formatting have been replaced by the text-decoration CSS property. 
+<br>
+Deprecated examples:
+</p>
+
+<pre class="prettyprint lang-html" data-rel="html">
+  <code>
+&lt;strike&gt;Strikethrough text&lt;/strike&gt;
+  </code>
+</pre>
+
+<p>CSS substitutes and HTML code:  
+<br>
+<br>
+  <code>
+    .u { text-decoration: underline; } <br>
+    .strike { text-decoration: line-through; }
+  </code>
+</p>
+
+<pre class="prettyprint lang-html" data-rel="html">
+  <code>
+&lt;span class="u"&gt;Underlined text&lt;/span&gt;
+&lt;span class="strike"&gt;Strikethrough text&lt;/span&gt;
+  </code>
+</pre>
+
+
+<p>It should also be noted that the HTML specification discourages the use of the B, I, BIG, SMALL and TT tags, in favor of stylesheets, though their use is not formally deprecated. For reference:</p>
+
+<ul>
+  <li>&lt;b&gt; can be replaced by font-weight: bold;</li>
+  <li>&lt;i&gt; can be replaced by font-style: italic;</li>
+  <li>&lt;big&gt; can be replaces by font-size: larger;</li>
+  <li>&lt;small&gt; can be replaced by font-size: smaller;</li>
+  <li>&lt;tt&gt; can be replaced by font-family: monospace;</li>
+</ul-->
+
+<h5>The BACKGROUND and BGCOLOR attribute</h5>
+
+<p>This attribute is used primarily to set a background image or color for the document or an element. The BGCOLOR attribute applies to the TABLE, TR, TD, TH and BODY elements. Fascinatingly, the BACKGROUND attribute was only ever defined for the BODY element, but most browsers support it for the same elements as BGCOLOR.
+</p>
+
+<p>Deprecated example</p>
+<pre class="prettyprint lang-html" data-rel="html">
+<code>
+&lt;table bgcolor="yellow" background="gradient.gif"&gt;
+&lt;tr&gt;
+&lt;th>Col 1&lt;/th&gt;
+&lt;th>Col 2&lt;/th&gt;
+&lt;/tr&gt;
+</code>
+</pre>
+
+
+<p>Both of these attributes can be easily replaced with CSS. The following code sample sets the image gradient.gif as the background to the whole page. However, as per CSS rules, if the image cannot be found, the supplied color (gray) will be used instead.
+  <br>
+  <code>body { background: gray url("gradient.gif"); }</code>
+</p>
+
+<p>Similar styles can be applied to the table attributes:
+  <br>
+  <code>table.class-name { background-color: yellow; }</code>
+</p>
+
+<p>Or, for different heading and data cell colors:
+  <br>
+  <code>table.class-name th { background-color: yellow; } <br>
+  table.class-name td { background-color: yellow; }
+  </code>
+</p>
+
+<pre class="prettyprint lang-html" data-rel="html">
+<code>
+&lt;table class="class-name"&gt;
+&lt;tr&gt;
+&lt;th>Col 1&lt;/th&gt;
+&lt;th>Col 2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Data 1.1&lt;/td&gt;
+&lt;td&gt;Data 1.2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Data 2.1&lt;/td&gt;
+&lt;td&gt;Data 2.2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+</code>
+</pre>
+
+<h5>The BORDER attribute</h5>
+
+<p>Applies a border to an image or object. 
+
+<p>Deprecated example</p>
+<pre class="prettyprint lang-html" data-rel="html">
+<code>
+&lt;img src="image.gif" width="15" height="20" alt="image" border="1"&gt;
+</code>
+</pre>
+<p>
+Border attributes can be easily replaced with CSS. The following code sets the border width and border color to the image or object.
+<br>
+<code>.class-name { border: 1px solid black; }</code>
+</p>
+
+<pre class="prettyprint lang-html" data-rel="html">
+<code>
+&lt;img src="image.gif" width="15" height="20" alt="image" class="class-name"&gt;
+</code>
+</pre>
+
+<!--h5>The TEXT, LINK, VLINK and ALINK attributes</h5>
+
+<p>These attributes are used on the BODY tag to set the text color for the document and links: </p>
+<ul>
+  <li>text sets the default text color</li>
+  <li>link sets the default link color</li>
+  <li>vlink is the color of a visited link</li>
+  <li>alink sets the 'active' link color (shown as the link is clicked). </li>
+</ul>
+<p>They have been replaced by CSS pseudo elements. <br>
+  Deprecated example:
+</p>
+<pre class="prettyprint lang-html" data-rel="html">
+<code>
+&lt;body text="darkblue" link="green" vlink="black" alink="red"&gt;
+&lt;p&gt;Some text in the document...&lt;br&gt;
+&lt;a href="//something.com"&gt;this is link 1&lt;/a&gt;&lt;br&gt;
+&lt;a href="//somethingelse.com"&gt;this is link 2&lt;/a&gt;&lt;br&gt;
+&lt;a href="//google.com"&gt;this is link 3&lt;/a&gt;&lt;/p&gt;
+&lt;/body&gt;
+</code>
+</pre>
+
+<p>CSS replacement for the respective attributes:
+<br>
+<code>
+body { color: darkblue; }<br>
+a:link { color: green; }<br>
+a:visited { color: black; }<br>
+a:active { color: red; }<br>
+</code>
+</p-->
+
+<h5>The HSPACE and VSPACE attributes</h5>
+
+<p>These were used on the IMG and OBJECT tags to sets the horizontal and vertical  space .The same effect can be achieved with margins in CSS.</p>
+
+<pre class="prettyprint lang-html" data-rel="html">
+<code>
+&lt;img src="image.gif" width="15" height="20" alt="image" style="margin: 0 2px 2px 5px;"&gt;
+</code>
+</pre>
+
+<h5>The LANGUAGE attribute</h5>
+
+<p>This attribute is used on the SCRIPT tag to name the type of script being used.</p>
+
+<pre class="prettyprint lang-html" data-rel="html">
+<code>
+&lt;script language="JavaScript"&gt;...&lt;/script&gt;
+</code>
+</pre>
+
+<p>The w3c now states the type attribute should be used instead. The values for every scripting language are likely to be 'text' followed by a forward slash, then the name of the language. JavaScript is really the only scripting language used these days (and the only one supported by every major browser).</p>
+
+<pre class="prettyprint lang-html" data-rel="html">
+<code>
+&lt;script type="text/javascript"&gt;...&lt;/script&gt;
+</code>
+</pre>
+
+<!--h5>The CLEAR attribute</h5>
+
+<p>CLEAR attribute is used on the BR tag to unwrap the wrapping caused by floating elements</p>
+
+<pre class="prettyprint lang-html" data-rel="html">
+<code>
+&lt;br clear="all"&gt;
+</code>
+</pre>
+
+<p>Again, this can be replaced by CSS. The clear property takes the values left, right, both or none.
+  <br>
+<code>
+.unfloat { clear: both; }
+</code>
+</p-->
+
+<h5>The WIDTH and HEIGHT attributes</h5>
+
+<p>HEIGHT applies to TH and TD, WIDTH applies to the TH, TD, HR and PRE tags. These can all be replaced by the simple width and height CSS rules. Note that it is still recommended to use the HTML attributes for images.</p>
+
+<!--h5>The APPLET element</h5>
+
+<p>APPLET has been deprecated in favor of the OBJECT element.</p>
+
+<ul>
+  <li>code or object was the location of the main class file in the APPLET element - use data or classid instead.</li>
+  <li>type or codetype should be used to specify the type of content given in data or classid respectively.</li>
+  <li>codebase, the root location of the objects/code, remains</li>
+  <li>archive, a comma-separated list of objects to preload, remains</li>
+  <li>alt is not a possible attribute for OBJECT; you could use standby, which shows a message while loading</li>
+  <li>"visual presentation" attributes such as width, height and align can be controlled with CSS</li>
+</ul-->
+
+<!--h5>The DIR element</h5>
+
+<pre class="prettyprint lang-html" data-rel="html">
+<code>
+&lt;dir&gt;&lt;li&gt;list element...&lt;/li&gt;&lt;/dir&gt;
+</code>
+</pre>
+
+<p>This element encloses a directory list. The intent is that DIR creates lists of short items, though they should display in the same way as a standard bulleted list. For this reason, they are deprecated in favor of using UL:</p>
+
+<pre class="prettyprint lang-html" data-rel="html">
+<code>
+&lt;ul&gt;&lt;li&gt;list element 1&lt;/li&gt;&lt;/ul&gt;
+</code>
+</pre-->
+
+<!--h5>The ISINDEX element</h5>
+
+<p>ISINDEX was used before the invention of the FORM element to allow the user to enter a text string for processing by a common gateway interface (CGI) program on the server. One should use standard form elements instead.</p-->
+
+<h5>The NOWRAP attribute</h5>
+
+<p>NOWRAP applies to both the TD and TH elements. This attribute unwrap text wrapping. The same effect can be achieved with CSS property white-space</p>
+
+<pre class="prettyprint lang-html" data-rel="html">
+<code>
+&lt;td style="white-space: nowrap"&gt;Let's try long piece of content that could stretch the table cell by quite a bit.&lt;/td&gt;
+</code>
+</pre>
+
+
+</details>

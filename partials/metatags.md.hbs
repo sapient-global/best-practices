@@ -1,0 +1,202 @@
+{{#markdown }}
+<h3 id="markup-syntax-semantics-metatags">Meta tags</h3>
+
+    
+  <p>HTML meta tags are officially page data tags that we include between the open and closing head tags in the HTML code of a document.</p>
+  <p>The text in these tags is not displayed, but parsable and tells the browsers (or other web services) specific information about the page. Simply, it “explains” the page so a browser can understand it.</p>
+  <p>Also using these a great way for web masters to provide search engines with information about their sites.</p>
+  
+<details>
+
+  <summary>Most commonly used meta tags</summary>
+
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;meta name=&quot;description&quot; content=&quot;goes here...&quot;/&gt;
+</code></pre>
+<p>This tag provides a short description of the page. The description is used as a part of the snippet shown in the search results, so it's definitely relevant - if it's teasing users to click your site in the search results it did the trick. Needs to be tailored to the specific page it's on and should typically be crafted by an editor.</p>
+
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;meta name=&quot;keywords&quot; content=&quot;keyword 1, keyword 2&quot;/&gt;
+</code></pre>
+<p>The keywords are used by some search engines to index your document in addition to words from the title and document body. Typically used for synonyms and alternates of title words. Not quite as relevant for SEO anymore these days as they were hit by a lot of keyword spamming, but if you have tags in say your CMS for a specific page, it's still worth feeding them in here. Should definitely be unique per page. </p>
+
+
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;/&gt;
+</code></pre>
+<p>(control zoom in mobile browsers) The <code>&lt;meta name=&quot;viewport&quot;/&gt;</code> meta tag can be used to control how HTML content will appear in mobile browsers. This can have multiple properties with comma-separated.</p>
+
+<p><code>name=value, name=value, ...</code></p>
+
+<p>Please note that the "value"s are not enclosed in quotation marks.</p>
+
+<h5>Properties</h5>
+
+<dl>
+  <dt>width</dt>
+  <dd>width=device-width or width=nnn where nnn is the number of pixels between 200 and 10000 such as in width=980 (default)</dd>
+  <dt>height</dt>
+  <dd>height=device-height or height=nnn where nnn is the number of pixels between 223 and 10000</dd>
+  <dt>minimum-scale</dt>
+  <dd>minimum-scale=f.ff where f.ff is a floating point number between 0.0 and 10.0 such as in minimum-scale=0.25 (default)</dd>
+  <dt>maximum-scale</dt>
+  <dd>maximum-scale=f.ff where f.ff is a floating point number between 0.0 and 10.0 such as in maximum-scale=1.6 (defaut)</dd>
+  <dt>initial-scale</dt>
+  <dd>initial-scale=f.ff where f.ff is a floating point number between minimum-scale and maximum-scale</dd>
+  <dt>user-scalable</dt>
+  <dd>user-scalable=yes (default) to allow the user to zoom in or zoom out on the web page or user-scalable=no to prevent the user from zooming in or zooming out</dd>
+</dl>
+
+<p>Note that when a size is specified in pixels, it is not necessarily the number of actual pixels on the device, which can vary from one device to another. It is the number reference pixels, which is defined in CSS as the visual angle of one pixel on a device with a pixel density of 96dpi and a distance from the reader of an arm's length. This allows a web site to be displayed the same on devices with different screen sizes and pixel density.</p>
+
+<p>Example:</p>
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width; height=device-height; maximum-scale=1.4; initial-scale=1.0; user-scalable=yes&quot;/&gt;
+</code></pre>
+
+<h5>Meta tags for search engine optimization (SEO)</h5>
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;meta name=&quot;robots&quot;/&gt;
+</code></pre>
+<p>It controls the behavior of search engine crawling and indexing. The robots meta tag applies to all search engines. It is still one of the most important meta tags. </p>
+
+<p>Believe it or not, it is still common for a site to be deindexed because someone accidentally added a noindex tag to the entire site. Understanding this tag is vitally important. The default values are "index, follow" (the same as "all") and do not need to be specified.</p>
+
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;meta name=&quot;google&quot;/&gt;
+</code></pre>
+<p>When we recognize that the contents of a page are not in the language that the user is likely to want to read, we often provide a link to a translation in the search results. In general, this gives you the chance to provide your unique and compelling content to a much larger group of users. However, there may be situations where this is not desired.</p>
+
+
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;link rel=&quot;canonical&quot; href=&quot;http://www.example.com/original/&quot; /&gt;
+</code></pre>
+<p>Not strictly a meta-tag, but still very useful - this allows you to avoid the <a href="http://googlewebmastercentral.blogspot.de/2009/02/specify-your-canonical.html">duplicate-content</a> problem with search engines by telling it that it should list another URI instead of the current one for the content it's seeing on the current page.</p>
+
+
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;meta name=&quot;googlebot&quot;/&gt;
+</code></pre>
+<p>The tag provides a list of search engine directives, consisting of special predefined terms separated by commas, that provide instructions for Google's search engine crawler.</p>
+
+<p>The below table represents the values to be used for both “robots” and “googlebot” meta tags. The robots meta tag applies to all search engines, while the "googlebot" meta tag is specific to Google.</p>
+
+<table class="table-layout">
+  <tr>
+    <th>noarchive</th>
+    <td>The value noarchive indicates that a current snapshot of the page should not be permanently stored by Google. Otherwise a cached version of a web page, which shows how it looked when the page was last crawled, is available via a "Cache" link on Google's search engine results pages (SERPs).</td>
+  </tr>
+  <tr>
+    <th>nofollow</th>
+    <td>The value nofollow tells Google's search engine robot that it should not access any web pages linked to by the current page.</td>
+  </tr>
+  <tr>
+    
+    <th>noindex</th>
+    <td>The value noindex tells Google to exclude the current page from their results.</td>
+  </tr>
+  <tr>
+    
+    <th>noodp</th>
+    <td>The value NOODP indicates that any site information in the Open Directory Project (dmoz.org) should not be used in Google's search engine results.</td>
+  </tr>
+  <tr>
+    
+    <th>nosnippet</th>
+    <td>The value nosnippet indicates that verbatim content from the web page should not be used by Google in the search engine results page (SERP).</td>
+  </tr>
+</table>  
+
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;meta name=&quot;verify&quot;/&gt;
+</code></pre>
+<p>You can use this tag on the top-level page of your site to verify ownership for Webmaster Tools. Please note that while the values of the "name" and "content" attributes must match exactly what is provided to you (including upper and lower case), it doesn't matter if you change the tag from XHTML to HTML or if the format of the tag matches the format of your page.</p>
+
+
+<pre  class="prettyprint lang-html"><code>
+&lt;meta http-equiv=&quot;X-UA-Compatible&quot;/&gt;
+</code></pre>
+<p>X-UA-Compatible is used to indicate to an IE browser which version of the rendering engine should be used to display the page. This meta tag does not affect other browsers such as Firefox and Opera, which in general attempt to avoid bloating the size of the browser code by displaying web pages only one way according to established standards (Supporting multiple rendering engines presents some major challenges, especially when content rendered by one engine accesses embedded content rendered by a different engine).</p>
+
+<p>If at all possible it's more bulletproof to serve this directive and as HTTP Header. Here's an example taken from the HMTL5Boilerplate project showing how to do this on Apache</p>
+
+<pre class="prettyprint lang-html"><code>
+&lt;IfModule mod_headers.c&gt;
+  Header set X-UA-Compatible &quot;IE=Edge,chrome=1&quot;
+  # mod_headers can&#039;t match by content-type, but we don&#039;t want to send this header on *everything*...
+  &lt;FilesMatch &quot;\.(js|css|gif|png|jpe?g|pdf|xml|oga|ogg|m4a|ogv|mp4|m4v|webm|svg|svgz|eot|ttf|otf|woff|ico|webp|appcache|manifest|htc|crx|oex|xpi|safariextz|vcf)$&quot; &gt;
+  Header unset X-UA-Compatible
+  &lt;/FilesMatch&gt;
+&lt;/IfModule&gt;
+</code></pre>
+<h5>Meta tags for HTML pages on Mobile / handheld devices</h5>
+
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;link rel=&quot;apple-touch-icon&quot; /&gt;
+</code></pre>
+<p>(for Web Clips) A Web Clip is a link to a web page or content from a web page that has been saved to a device along with an icon on the home screen that can be used to display it.</p>
+
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;meta name=&quot;format-detection&quot;/&gt;
+</code></pre>
+<p>When running in a browser on a mobile phone, this tag determines whether or not telephone numbers in the HTML content will appear as hypertext links. The user can click a link with a telephone number to initiate a phone call to that phone number.</p>
+
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;meta name=&quot;format-detection&quot; content=&quot;telephone=yes&quot;/&gt;
+</code></pre>
+<p>(default on Safari in iOS) <code>content="telephone=yes"</code> indicates that telephone numbers in the HTML code should appear as hypertext links that can be clicked to make a phone call.</p>
+
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot;/&gt;
+</code></pre>
+<p><code>content="telephone=no"</code> indicates that telephone numbers in the HTML code should not appear as hypertext links.</p>
+
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;meta name=&quot;HandheldFriendly&quot;/&gt;
+</code></pre>
+<p>This tag indicates to the browser that the page has been laid out by the developer to be viewable on a small screen, and that the browser should not attempt any further layout enhancements. While somewhat effective, it does not offer any granular control over the layout width – it’s just a true/false flag.</p>
+
+<h5>Meta tags for apps on Mobile / handheld devices</h5>
+
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;meta name=&quot;apple-mobile-web-app-capable&quot;/&gt;
+</code></pre>
+<p>For a mobile app, the apple-mobile-web-app-capable meta tag determines whether the application runs in web mode, with an address bar and navigation bar, or in full screen mode without them.</p>
+
+<p><code>content=”yes”</code> - the application will run in full screen mode, without the address bar at the top and the navigation bar at the bottom. The JavaScript boolean variable window.navigator.standalone will be set to true.</p>
+
+<p><code>content=”no”</code> - the application will run in web mode, with an address bar at the top and a navigation area at the bottom. The JavaScript boolean variable window.navigator.standalone will be set to false.</p>
+
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot;/&gt;
+</code></pre>
+<p>This meta tag specifies the style of the status bar for a mobile app. This is relevant only if the this tag with <code>content="yes"</code> is also included.</p>
+
+<p><code>content="default"</code> - The status bar color is the normal gray gradient and it does not overlap the HTML content.</p>
+
+<p><code>content="black"</code> - The status bar is black and does not overlap the HTML content.</p>
+
+<p><code>content="black-translucent"</code> - The status bar is translucent black and overlays a small strip at the top of the HTML content.</p>
+
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;link rel=&quot;apple-touch-startup-image&quot;/&gt;
+</code></pre>
+<p>This meta tag specifies a startup image, which is an image that is displayed while an offline web application is being launched on the mobile device. For the iPhone and iPod Touch, the image must be in portrait orientation 320 pixels wide by 460 pixels high.</p>
+
+<!--h5>Less common HTML tags include:</h5>
+<ol>
+  <li><code>&lt;meta name=&quot;application-name&quot;/&gt;</code></li>
+  <li><code>&lt;meta name=&quot;author&quot;/&gt;</code></li>
+  <li><code>&lt;meta name=&quot;classification&quot;/&gt;</code></li>
+  <li><code>&lt;meta name=&quot;copyright&quot;/&gt;</code></li>
+  <li><code>&lt;meta name=&quot;formatter&quot;/&gt;</code></li>
+  <li><code>&lt;meta name=&quot;generator&quot;/&gt;</code></li>
+  <li><code>&lt;meta name=&quot;rating&quot;/&gt;</code></li>
+</ol>
+
+<p>There are many other meta tags. You can find a big list at below mentioned URLs. </p>
+<ul><li><a data-reference="true" href="http://www.metatags.info/all_meta_tags">http://www.metatags.info/all_meta_tags</a></li> <li><a data-reference="true" href="http://code.lancepollard.com/complete-list-of-html-meta-tags">http://code.lancepollard.com/complete-list-of-html-meta-tags</a></li></ul-->
+
+</details>
+
+{{/markdown }}

@@ -1,3 +1,9 @@
+'use strict';
+
+var mountFolder = function (connect, dir) {
+    return connect.static(require('path').resolve(dir));
+};
+
 /*global module:false*/
 module.exports = function(grunt) {
 
@@ -8,7 +14,7 @@ module.exports = function(grunt) {
     banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
       '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-      '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
+      '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.authors %>;' +
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     // Task configuration.
     concat: {
@@ -36,6 +42,14 @@ module.exports = function(grunt) {
           '<%= pkg.paths.css %>all.combined.css': ['<%= pkg.paths.css %>*.css','<%= pkg.paths.css %>!*.min.css','<%= pkg.paths.css %>!all.*.css']
         }
       },
+      add_banner: {
+        options: {
+          banner : '<%= banner %>'
+        },
+        files: {
+          '<%= pkg.paths.css %>all.combined.css': ['<%= pkg.paths.css %>all.combined.css']
+        }
+      },
       minify: {
         expand: true,
         cwd: '<%= pkg.paths.css %>',
@@ -44,45 +58,80 @@ module.exports = function(grunt) {
         ext: '.combined.min.css'
       }
     },
-    jshint: {
+    watch: {
+      options:{
+        livereload: true,
+        nosapwn: true
+      },
+      javascripts:{
+        files:['assets/javascripts/*.js'],
+        tasks:['livereload']
+      },
+      stylesheets:{
+        files:['assets/stylesheets/*.css'],
+        tasks:['livereload']
+      },
+      hbs: {
+        files: ['**/*.hbs'],
+        tasks: ['assemble']
+      },  
+    }, //END WATCH
+    assemble: {
       options: {
-        curly: true,
-        eqeqeq: true,
-        immed: true,
-        latedef: true,
-        newcap: true,
-        noarg: true,
-        sub: true,
-        undef: true,
-        unused: true,
-        boss: true,
-        eqnull: true,
-        browser: true,
-        globals: {
-          jQuery: true
+        flatten: true, 
+        assets: 'dist/assets', 
+        partials: 'partials/*.hbs'
+      }, 
+      pages: {
+        options: {
+          data: 'package.json'
+        },
+        files: {
+          'dist/': ['*.hbs']
+        }
+      }
+    }, // END ASSEMBLE
+
+    connect: {
+      options: {
+        port: 9000,
+        hostname: 'localhost',
+        middleware: function (connect) {
+          return [
+            mountFolder(connect, 'dist')
+          ];
         }
       },
-      gruntfile: {
-        src: 'Gruntfile.js'
+      dist: {
+        options: {
+          middleware: function (connect) {
+            return [
+              mountFolder(connect, 'dist')
+            ];
+          }
+        }
       }
-    },
-    watch: {
-      gruntfile: {
-        files: '<%= jshint.gruntfile.src %>',
-        tasks: ['jshint:gruntfile']
+    }, //END CONNECT
+
+    open: {
+      server: {
+        path: 'http://<%= connect.options.hostname %>:<%= connect.options.port %>'
       }
+    }, 
+
+    'gh-pages': {
+      options: { base: 'dist' },
+      src: ['index.html', 'assets/images/**/*', 'assets/stylesheets/all.combined.min.css', 'assets/javascripts/**/*'],
     }
   });
 
-  // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-watch');
+  // Load NPM Tasks.
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+  // Load Assemble
+  grunt.loadNpmTasks('assemble');
 
   // Default task.
-  // grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
-  grunt.registerTask('default', ['cssmin:combine','cssmin:minify']);
+  grunt.registerTask('dev', ['assemble' , 'connect', 'open', 'watch']);
+  grunt.registerTask('build', ['cssmin', 'gh-pages']);
 
 };

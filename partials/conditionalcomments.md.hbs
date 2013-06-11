@@ -1,0 +1,49 @@
+{{#markdown }}
+<h3 id="comments-conditional">Conditional Comments</h3>
+
+Conditional comments are the preferred means of differentiating Cascading Style Sheets (CSS) rules intended for specific versions of Internet Explorer.
+
+The basic syntax of each type of comment is shown in the following table. The first comment shown is the basic HTML Comment, which is included for the purpose of comparison and to illustrate the different syntax used by each type of conditional comment.
+
+<table class="table-layout">
+  <tr>
+    <th>Comment type</th>
+    <th>Syntax or possible value</th>
+  </tr>
+  <tr>
+    <td>standard HTML comment </td>
+    <td>`<!-- Comment content  -->`</td>
+  </tr>
+  <tr>
+    <td><a data-reference="true" href="http://msdn.microsoft.com/en-us/library/ms537512%28v=vs.85%29.aspx#dlhidden">downlevel-hidden</a></td>
+    <td>`<!--[if expression]> HTML <![endif]-->`</td>
+  </tr>
+  <tr>
+    <td><a data-reference="true" href="http://msdn.microsoft.com/en-us/library/ms537512%28v=vs.85%29.aspx#dlrevealed">downlevel-revealed</a></td>
+    <td>`<![if expression]> HTML <![endif]>`</td>
+  </tr>
+</table>
+
+####Examples
+
+<pre data-rel="html" class="prettyprint lang-html"><code>
+<!--[if IE 8]>
+  <p>Welcome to Internet Explorer 8.</p>
+<![endif]-->
+
+<!--[if gte IE 7]>
+  <SCRIPT LANGUAGE="javascript">
+    alert("Congratulations! You are running Internet Explorer 7 or greater.");
+  </SCRIPT>
+    <P>Thank you for closing the message box.</P>
+<![endif]-->
+
+<!-- Will only be read by IE versions less then IE 7-->
+<!--[if lt IE 7]>
+   <link rel="stylesheet" type="text/css" href="Demo/iestyles.css" /> 
+<![endif]--> 
+  </code></pre>
+
+[Reference](http://msdn.microsoft.com/en-us/library/ms537512%28v=vs.85%29.aspx)
+
+{{/markdown }}

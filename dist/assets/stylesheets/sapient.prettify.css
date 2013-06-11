@@ -1,0 +1,112 @@
+/* 
+ * Modified & extended prettify.css
+ * matching Sapient style-guide
+ * 
+ * @project internal
+ * @date 2012-07-20
+ * @author Niklas Zillinger, Sapient GmbH
+ * @licensor Sapient
+ * @site miscellaneous
+ */
+
+/** 
+ * default prettify styles 
+ * SPAN elements with the classes below are added by prettyprint. 
+ */
+.pln { color: #807F83 }  /* plain text */
+
+@media screen {
+	.str { color: #080 }  /* string content */
+	.kwd { color: #D8D9DB }  /* a keyword */
+	.com { color: #807F83 }  /* a comment */
+	.typ { color: #F15D22 }  /* a type name */
+	.lit { color: #F15D22 }  /* a literal value */
+	/* punctuation, lisp open bracket, lisp close bracket */
+	.pun, .opn, .clo { color: #D8D9DB }
+	.tag { color: #D8D9DB }  /* a markup tag name */
+	.atn { color: #D8D9DB }  /* a markup attribute name */
+	.atv { color: #F15D22 }  /* a markup attribute value */
+	.dec, .var { color: #F15D22 }  /* a declaration; a variable name */
+	.fun { color: red }  /* a function name */
+	
+	.lang-css .pln, .lang-js .pln { color: #D8D9DB }
+	.lang-css .str, .lang-css .typ, .lang-css .com,
+	.lang-js .kwd  { color: #F15D22 }
+	
+	.lang-js .str { color: #FFE14F }
+	
+}
+
+/* Use higher contrast and text-weight for printable form. */
+@media print, projection {
+	.str { color: #222 }
+	.kwd { color: #F15D22; font-weight: bold }
+	.com { color: #807F83; font-style: italic }
+	.typ { color: #F15D22; font-weight: bold }
+	.lit { color: #F15D22 }
+	.pun, .opn, .clo { color: #222 }
+	.tag { color: #222; font-weight: bold }
+	.atn { color: #222 }
+	.atv { color: #F15D22 }
+	
+	.lang-css .pln, .lang-js .pln { color: #222 }
+	.lang-css .str, .lang-css .typ {color: #F15D22 }
+	.lang-js .str { color: #222 }
+	p a[href]:after,li a[href]:after { content: " (" attr(href) ")"; }
+}
+
+/* Put a border around prettyprinted code snippets. */
+pre.prettyprint { padding: 2px; border: 1px solid #888 }
+
+/* add an external indicator to data-reference links */
+a[data-reference]:after {
+	content:"ꜛ "; /*&#42779;*/
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0; margin-bottom: 0 } /* IE indents via margin-left */
+li.L0, li.L1, li.L2, li.L3,
+li.L5, li.L6, li.L7, li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1, li.L3, li.L5,
+li.L7, li.L9 { background: #eee }
+
+/**
+ * Sapient custom extensions
+ */
+pre.prettyprint {
+	border: 0;
+	background-color: #222;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding: 0em 1em 1em;
+	margin-bottom: 1.714em;
+	position: relative;
+	line-height: 1.429em;
+}
+pre.prettyprint[data-rel] {
+	padding-top: 2.5em;
+}
+pre.prettyprint[data-rel]:after {
+	content : attr(data-rel);
+	display: block;
+	position: absolute;
+	top: -2px;
+	left: 0;
+	right: 0;
+	padding-left: 1em;
+	font-size: 128.6%;
+	font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: bold;
+	line-height: 2em;
+	text-transform: uppercase;
+	color: #fff;
+	background: #DE2728; /*#F99D31;*/
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-top-right-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}

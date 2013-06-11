@@ -1,0 +1,90 @@
+{{#markdown }}
+
+<h2 id="responsive-design">Responsive Design</h2>
+
+<p>Responsive / Adaptive Web Design is an approach that aspires to deliver an optimal experience across a wide range of devices. They completely change creative workflows, requiring concept, design and interactive development domains to work closely together. The two terms are often used interchangably but have different priorities.</p>
+
+<dl>
+  <dt>Adaptive Web Design (AWD)</dt>
+  <dd>Layouts are changed at specific breakpoints. Grids may be fixed flexible or fluid.</dd>
+  <dt>Responsive Web Design (RWD)</dt>
+  <dd>Layouts respond to the available space using flexible or fluid grids. Breakpoints may be used to adapt the layout.</dd>
+</dl>
+
+<p>AWD and RWD can be enhanced with server side code, an approach typically referred to as <abbr title="Responsive Design with server-side Components">RESS</abbr>. RESS often attempt to match the user agent string with a record in a device database, if successful we can use the devices specifications to tailer our response.</p>
+
+<h3>In-depth reading</h3>
+<ul>
+  <li>
+    <a data-reference="true" href="http://www.abookapart.com/products/responsive-web-design/">Responsive Web Design</a> by <a data-reference="true" href="http://ethanmarcotte.com/" title="Ethan Marcotte is a web designer &amp; developer who lives in Boston." >Ethan Marcotte</a>
+  </li>
+  <li>
+    <a data-reference="true" href="http://www.slideshare.net/stephenhay/mobilism2012">Responsive Design Workflow</a> by <a data-reference="true" href="http://www.the-haystack.com/" title="The Haystack. | Web, design, and web design">Stephen Hay</a>
+  </li>
+  <li>
+    <a data-reference="true" href="http://www.abookapart.com/products/mobile-first/">Mobile First</a> by <a data-reference="true" href="http://www.lukew.com/">Luke Wroblewski</a>
+  </li>
+  <li>
+    <a data-reference="true" href="http://www.slideshare.net/stephenhay/structured-content-first">Content First</a> by Stephen Hay</a>
+  </li>
+  <li>
+    <a data-reference="true" href="http://mediaqueri.es/">mediaqueri.es</a>, a collection of inspirational websites using media queries and responsive web design.</a>
+  </li>
+</ul>
+
+
+<p>In responsive design prototyping is more important than ever. For this and for kick-starting any projects using a grid-system, such as the <a data-reference="true" href="http://foundation.zurb.com/">Foundation library</a> or <a data-reference="true" href="http://twitter.github.io/bootstrap/">Bootstrap</a>, can be a great help.</p>
+
+
+
+<h3>Coding</h3>
+<p>
+Responsive design relies on fluid grids. Thus, you should use the following rules of thumb for front-end coding:
+</p>
+<ul>
+  <li>Avoid <code>px</code> units</li>
+  <li>Use <code>em</code> or <code>rem</code> units for font sizes, line heights and directly text-related padding</li>
+  <li>Use <code>%</code> units for all module and page layouts</li>
+  <li>Consider using <a data-reference="true" href="http://quirksmode.org/css/user-interface/boxsizing.html">box-sizing: border-box</a></li>
+  <li>Decide on a base (might be in <code>px</code> virtually) that allows you to create a (typographic) grid</li>
+  <li>Don't strive for pixel-perfection, maintain proportions!</li>
+</ul>
+
+<h4>Viewport Meta Tag</h4>
+
+<p>Mobiles, tablets, desktop screens - all differ especially in size and resolution. Due to displays with higher pixel-density mobile-vendors started to define a "best-viewed-in" resolution, which is usually very reliable. Two must-reads about this topic are PPK's <a data-reference="true" href="http://www.quirksmode.org/mobile/viewports.html">"A tale of two viewports"</a> (+ <a data-reference="true" href="http://www.quirksmode.org/mobile/viewports2.html">"Part II"</a>) and <a data-reference="true" href="http://www.quirksmode.org/blog/archives/2010/09/combining_meta.html">"Combining meta viewport and media queries"</a>.</p>
+
+<p>Based on this information, the best experiences have been made with a very simple viewport-tag definition:</p>
+
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;meta name="viewport" content="width=device-width; initial-scale=1.0"/l&gt;
+</code></pre>
+
+<p><code>maximum-scale=1.0</code> would fix some orientation-change bugs on iOS devices and "assures" some app-like stability, but we recommend not to use it. It's simply an accessibility concern. People (especially with visual impairments) must be allowed to zoom to their favorite level.<br />
+Moreover there are little helpers to fix orientation-change bugs like <a data-reference="true" href="https://github.com/scottjehl/iOS-Orientationchange-Fix">Scott Jehl's iOS-Orientationchange-Fix</a>
+</p>
+
+<p>This simple viewport tag base works on a broad range of mobiles and tablets. Only the Nexus 4G and HTC Sensation (so far) seemed to not provide an optimized viewports which triggers higher resolution layouts (e.g. tablet-layout media queries) on those mobiles.</p>
+
+<h4>Media Queries</h4>
+
+<p>CSS3 media-queries enable you to adjust your (maybe responsively-designed) website modules for specific resolution (device) classes. Please don't blindly follow <a data-reference="true" href="http://stuffandnonsense.co.uk/blog/about/hardboiled_css3_media_queries/">Andy Clarke's - Hardboiled CSS3 Media Queries</a>, which seem to be widely spread across the web. Although it contains a lot of right stuff, it's probably too detailed for your requirements. Moreover it mostly sets min-width and max-width limits, which partly excludes devices. For example a tablet-focused media query with a max-width of 1024px supports an iPad in landscape mode but will be ignored by a LG-V900 (1280px) tablet.</p>
+
+<p>Joshua Johnson has an interesting alternative approach in his article <a data-reference="true" href="http://designshack.net/articles/css/responsive-design-why-youre-doing-it-wrong/">Responsive Design: Why You're Doing It Wrong</a>. It challenges the idea of defining fixed pixel-ranges for a responsive design (actually quite unresponsive, right?!).</p>
+
+<p>When you start from a mobile-first approach, you should be able to define mostly <code>min-width</code> breakpoints only for enhancing your layout on bigger viewports.</p>
+
+<p>For some browsers it's even worth it to define breakpoints in <code>em</code> instead of <code>px</code>. This enables your layout to fall back to a smaller layout when the user has increased the default font size. Can I get an accessibility-high-5?!</p>
+
+<p>Again, that's not working in every browser, but not failing as well. The ones not reacting correctly to increased font-size simply read it like the related pixel value as before. Read more about it in Lyza Gardner's <a data-reference="true" href="http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/">The EMs have it: Proportional Media Queries FTW!</a>.</p>
+
+<pre data-rel="css" class="prettyprint"><code>
+@media screen and ( min-width: 40.625em )  {
+  /**
+   * put here your > 768px styles
+   * (based on 16px default font-size)
+   */
+}
+</code></pre>
+
+{{/markdown }}

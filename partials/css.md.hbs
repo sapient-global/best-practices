@@ -1,0 +1,471 @@
+{{#markdown }}
+<h2 id="css">CSS</h2>
+<p>
+  The following chapter outlines a reasonable style guide for CSS development. It is liberally based on <a data-reference="true" href="http://nicolasgallagher.com/" class="url" rel="nofollow me" >Nicolas Gallagher </a><a data-reference="true" href="https://github.com/necolas/idiomatic-css">idiomatic-css</a>.
+</p>
+  <h3 id="css-organization">Organization</h3>
+  <p>
+  Code organization is an important part of any CSS code base, and crucial for large code bases.
+  </p>
+  <ul>
+  <li>
+    Logically separate distinct pieces of code, in long CSS files use section identifiers (i.e. =SECTION NAME in a comment).
+  </li>
+  <li>
+    Use separate files (concatenated by a build step) to help break up code for distinct components.
+  </li>
+  <li>
+    Apply comments liberally, in module files declare any dependencies (there shouldn't be many).
+  </li>
+  <li>
+    Use the standard CSS-file header in each file (see below). You could use <a data-reference="true" href="http://blog.krisrange.com/2010/07/inserting-keywordsvariables-in-subversion-with-auto_props/">SVN variables</a> to populate the values in there or just do it manually.
+    <br>
+  </li>
+  <li>
+    If using a preprocessor, abstract common code into variables for color, typography, etc.
+  </li>
+  <li>
+    Don't forget to merge all CSS files into one and all JS files into another as a step of your build process.
+  </li>
+  </ul>
+  <p>Here's a typical set-up for your CSS-files:</p>
+  <p>
+  <code>/css/framework/framework.css</code>
+  (if applicable)
+  <br>      
+  <code>/css/core.client.css</code>
+  (contains your reset basic, coloring, layouting [e.g. framework overwrites or your own declarations] and general declarations that don't belong into the other files)
+  <br>      
+  <code>/css/modules/modulename.client.css</code>
+  (contains styles for a specific module, only dependent on core and if necessary the framework)
+  <br>      
+  <code>/css/modules/modulename2.client.css</code>
+  (etc...)
+  <br>      
+  <code>/css/forms/forms.client.css</code>
+  (if necessary - generic form declarations)
+  <br>      
+  <code>/css/forms/forms.contact-us.client.css</code>
+  (for declarations for a specific contact-us module)
+  </p>
+<p>
+  On each CSS-file, add the standard CSS file header before the first declaration:
+</p>
+<pre data-rel="css" class="prettyprint lang-css"><code>
+/**
+* NAME OF THE STYLESHEET (e.g. core.client.css)
+* The styles in this file represent all basic styles for the &lt;CLIENT&gt; &lt;PROJECTNAME&gt; site.
+* It includes a reset, the basic grid and some default components.
+*<br>* Why we are using the equals sign in the section identifier:
+* stopdesign.com/archive/2005/05/03/css-tip-flags.html
+* 
+* @project   PROJECT NAME
+* @date      YYYY-MM-DD 
+* @author    YOUR NAME, SapientNitro &lt;YOUREMAIL@sapient.com&gt;
+* @licensor  CLIENTNAME
+* @site      PROJECTNAME
+*
+* @dependency framework.css
+* @dependency core.client.css
+*
+*/
+</code></pre>
+
+  <p>
+  In core.client.css, also include a block that lists out the colors per styleguide.
+  </p>
+<pre data-rel="css" class="prettyprint lang-css"><code>
+* USE THIS IN CORE.CLIENT.CSS
+* @colordef  #333; Quasi black (for most of the copy)
+* @colordef  #666; Grey (for some special copy)
+* @colordef  #999; Light grey (toolbar and text color)
+* ..... Replace and enhance with your specific project colors      
+</code></pre>
+  <h4 id="css-comments">Comment your CSS code</h4>
+  <p>
+  Well commented code is extremely important. Take time to describe components, how they work, their limitations, and the way they are constructed. Don't leave others in the team guessing as to the purpose of uncommon or non-obvious code.
+  </p>
+  <p>
+  Comment style should be simple and consistent within a single code base.
+  </p>
+  <ul>
+  <li>Place comments on a new line above their subject.</li>
+  <li>Avoid end of line comments.</li>
+  <li>Keep line-length to a sensible maximum, e.g., 80 columns.</li>
+  <li>Make liberal use of comments to break CSS code into discrete sections.</li>
+  <li>Use &quot;sentence case&quot; comments and consistent text indentation.</li>
+  </ul>
+  <p>
+  Tip: configure your editor to provide you with shortcuts to output agreed-upon comment patterns.
+  </p>
+  <p>CSS example:</p>
+
+<pre data-rel="css" class="prettyprint lang-css"><code>
+/* ==========================================================================
+=SECTIONNAME 
+========================================================================== */
+
+/* =SUB-SECTION NAME comment block
+========================================================================== */
+
+/*
+* Group comment block.
+* Ideal for multi-line explanations and documentation.
+
+
+/* Basic comment */
+</code></pre>
+
+  <p>SCSS example:</p>
+
+<pre data-rel="css" class="prettyprint lang-css"><code>
+// ==========================================================================
+// Section comment block
+// ==========================================================================
+
+// Sub-section comment block
+// ==========================================================================
+
+//
+// Group comment block
+// Ideal for multi-line explanations and documentation.
+//
+
+// Basic comment
+</code></pre>
+
+  <h3 id="css-format">Format</h3>
+  <!-- p>
+    <mark>
+      (I know that at Sapient a lot of people like the Alphabetical approach - Team should agree at the beginning of a project)
+    </mark>
+  </p -->
+  <p>
+  The chosen code format must ensure that code: </p>
+  <ul>
+    <li>is easy to read</li>
+    <li>is easy to clearly comment</li>
+    <li>minimizes the chance of accidentally introducing errors</li>
+    <li>results in useful diffs and blames. </li>
+  </ul>
+<p>To that end the following recommendations are made for CSS formatting:</p>
+  <ul>
+  <li>One discrete selector per line in multi-selector rulesets.</li>
+  <li>A single space before the opening brace of a ruleset.</li>
+  <li>One declaration per line in a declaration block.</li>
+  <li>One level of indentation for each declaration.</li>
+  <li>A single space after the colon of a declaration.</li>
+  <li>
+    Always include a semicolon at the end of the last declaration in a declaration block.
+  </li>
+  <li>
+    Place the closing brace of a ruleset in the same column as the first character of the ruleset.
+  </li>
+  <li>Separate each ruleset by a blank line.</li>
+  <li>
+    Seperating words in a class name or id only with &quot;-&quot;
+  </li>
+  <li>
+    Rules with various vendor-prefixes should always be next to each other
+  </li>
+  </ul>
+<pre data-rel="css" class="prettyprint lang-css"><code>
+.selector-1,
+.selector-2,
+.selector-3 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  color: #333;
+  background: #fff;
+}
+</code></pre>
+
+  <h4>Declaration order</h4>
+  <p>
+  Declarations should be ordered in accordance with a single principle, the team should initially agree to one of the suggested approaches. There are two basic approaches: alphabetical order and grouping by related properties.</p>
+<p>
+  Alphabetical order is a popular choice and is suggested as a baseline for those who have no strong preference in this matter. Alphabetical order has the benefit of always being in sync across project teams, where the importance or connectedness of properties can change depending on the developer or team making the associations.  
+  </p>
+<pre data-rel="css" class="prettyprint lang-css"><code>
+.selector {
+  background: #000;
+  border: 0;
+  color: #fff
+  display: block;
+  height: 100px;
+  margin: 10px;
+  padding: 10px;
+  position: relative;
+  width: 50%;
+}
+</code></pre>
+
+<p>
+   Alternatively, the approach is for related properties to be grouped together and for structurally important properties (e.g. positioning and box-model) to be declared prior to typographic, background, and color properties.
+  </p>
+
+<pre data-rel="css" class="prettyprint lang-css"><code>
+.selector {
+  position: relative;
+  display: block;
+  width: 50%;
+  height: 100px;
+  padding: 10px;
+  border: 0;
+  margin: 10px;
+  color: #fff
+  background: #000;
+}
+</code></pre>
+
+  
+  <h4>Exceptions and slight deviations
+  </h4>
+  <p>
+    Large blocks of single declarations can use a slightly different, single-line format. In this case, a space should be included after the opening brace and before the closing brace.
+  </p>
+
+<pre data-rel="css" class="prettyprint lang-css"><code>
+.selector-1 { width: 10%; }
+.selector-2 { width: 20%; }
+.selector-3 { width: 30%; }
+</code></pre>
+
+  <p>
+  Long, comma separated property values - such as collections of gradients or shadows - can be arranged across multiple lines in an effort to improve readability and produce more useful diffs. There are various formats that could be used; one example is shown below.
+  </p>
+
+<pre data-rel="css" class="prettyprint lang-css"><code>
+.selector {
+box-shadow:
+  1px 1px 1px #000,
+  2px 2px 1px 1px #ccc inset;
+background-image:
+  linear-gradient(#fff, #ccc),
+  linear-gradient(#f3c, #4ec);
+}
+</code></pre>
+
+  <h4>Miscellaneous Standards</h4>
+  <p>
+  Use lowercase hex values, e.g., #aaa.
+  <br>      
+  Use single or double quotes consistently. Preference is for double quotes, e.g., content: &quot;&quot;.
+  <br>      
+  Always quote attribute values in selectors, e.g., input[type=&quot;checkout&quot;].
+  <br>      
+  Where allowed, avoid specifying units for zero-values, e.g., margin: 0.
+  </p>
+  <h4>Preprocessors: additional format considerations</h4>
+  <p>
+  Different CSS preprocessors have different features, functionality, and syntax. Your conventions should be extended to accommodate the particularities of any preprocessor in use. The following guidelines are in reference to Sass.
+  </p>
+  <ul>
+  <li>
+    Limit nesting to 1 level deep. Reassess any nesting more than 2 levels deep. This prevents overly specific CSS selectors.
+    <br></li>
+  <li>
+    Avoid large numbers of nested rules. Break them up when readability starts to be affected. Preference to avoid nesting that spreads over more than 20 lines.
+    <br></li>
+  <li>
+    Always place @extend statements on the first lines of a declaration block.
+    <br></li>
+  <li>
+    Where possible, group @include statements at the top of a declaration block, after any @extend statements.
+    <br></li>
+  <li>
+    Consider prefixing custom functions with x- or another namespace. This helps to avoid any potential to confuse your function with a native CSS function, or to clash with functions from libraries.
+  </li>
+  </ul>
+
+<pre data-rel="css" class="prettyprint lang-css"><code>
+.selector-1 {
+  @extend .other-rule;
+  @include clearfix();
+  @include box-sizing(border-box);
+  width: x-grid-unit(1);
+  // other declarations
+}
+</code></pre>
+
+  <h3 id="css-naming">Naming</h3>
+  <p>
+  We are not human code compiler/compressors, so don't try to be one.
+  Use clear and thoughtful names for HTML classes. Pick an understandable and consistent naming pattern that makes sense both within HTML files and CSS files.
+  </p>
+
+<pre data-rel="css" class="prettyprint lang-css"><code>
+/* Example of code with bad names */
+.s-scr {
+  overflow: auto;
+}
+.cb {
+  background: #000;
+}
+</code></pre>
+
+<pre data-rel="css" class="prettyprint lang-css"><code>
+/* Example of code with better names */
+.is-scrollable {
+  overflow: auto;
+}
+.column-body {
+  background: #000;
+}
+</code></pre>
+
+  <!-- p> <mark>(I added the following paragraph as the above &quot;understandable and consistent naming pattern&quot; does not avoid the following)</mark> 
+  </p -->
+  <p>Use names that make sense even if design or usage changes.</p>
+  
+<pre data-rel="css" class="prettyprint lang-css"><code>
+/* Example of code with bad names */
+.right-red {
+  float: right;
+  color: red;
+}
+</code></pre>
+
+<pre data-rel="css" class="prettyprint lang-css"><code>
+/* Example of code with better names */
+.text-highlight {
+  float: right;
+  color: red;
+}
+</code></pre>
+
+  <h3 id="css-examples">Practical example</h3>
+  <p>The following example is designed to illustrate the various style conventions. It's not meant to be used as a solution to any specific problem. It's here merely to illustrate coding conventions and style.</p>
+  
+
+<pre data-rel="css" class="prettyprint lang-css"><code>
+/* ==========================================================================
+Grid layout
+========================================================================== */
+/*
+* Example HTML:
+*
+* &lt;ul class=&quot;grid&quot;&gt;
+*     &lt;li class=&quot;cell cell-5&quot;&gt;&lt;/li&gt;
+*     &lt;li class=&quot;cell cell-5&quot;&gt;&lt;/li&gt;
+* &lt;/ul&gt;
+*/
+.grid {
+  font-size: 0;
+  height: 100%;
+  overflow: visible;
+  /* Prevent inline-block cells wrapping */
+  white-space: nowrap;
+  /* Remove inter-cell whitespace */
+}
+.cell {
+  border: 2px solid #333;
+  box-sizing: border-box;
+  /* Reset font-size */
+  font-size: 16px;  height: 100%;
+  overflow: hidden;
+  /* Set the inter-cell spacing */
+  padding: 0 10px;
+  position: relative;
+  vertical-align: top;
+  width: 20%;
+  /* Reset white-space */
+  white-space: normal;
+
+}
+/* Cell states */
+.cell.is-animating {
+  background-color: #fffdec;
+}
+/* Cell dimensions
+========================================================================== */
+.cell-1 { width: 10%; }
+.cell-2 { width: 20%; }
+.cell-3 { width: 30%; }
+.cell-4 { width: 40%; }
+.cell-5 { width: 50%; }
+
+/* Cell modifiers
+========================================================================== */
+.cell--detail,
+.cell--important {
+  border-width: 4px;
+}
+</code></pre>
+
+  <h3>How to write good CSS (Selectors)</h3>
+  <p>
+  <a data-reference="true" href="http://csswizardry.com/2011/09/writing-efficient-css-selectors/">Writing Efficient CSS selectors</a> is a good article to understand why writing efficient CSS selectors is important. Here's a summary:
+  </p>
+  <ul>
+  <li>
+    <a data-reference="true" href="http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html">Keep specificity</a> low (that is, don't write html body .wrapper #content a{} when .content a{} could've done the job).
+  </li>
+  <li>
+    The <strong>fewer matches your key selector</strong>
+    (the one to the very right hand side of your selector) has, the faster your selector will be overall.
+  </li>
+  <li>
+    Try to avoid putting unnecessary classes and IDs in your HTML
+  </li>
+  <li>
+    Avoid the * selector unless you can explain why you MUST use it.
+  </li>
+  </ul>
+  <p>
+  In terms of performance, memorize Steve Souder's list (Quoted from <a data-reference="true" href="http://stevesouders.com/">Even Faster Websites by Steve Souders</a>) of efficient CSS selectors - ordered from higher to lower efficiency:
+  </p>
+  <ol>
+  <li>
+    ID, e.g.
+    <code>#header</code>
+  </li>
+  <li>
+    Class, e.g.
+    <code>.promo</code>
+  </li>
+  <li>
+    Type, e.g.
+    <code>div</code>
+  </li>
+  <li>
+    Adjacent sibling, e.g.
+    <code>h2 + p</code>
+  </li>
+  <li>
+    Child, e.g.
+    <code>li &gt; ul</code>
+  </li>
+  <li>
+    Descendant, e.g.
+    <code>ul a</code>
+  </li>
+  <li>
+    Universal, i.e.
+    <code>*</code>
+  </li>
+  <li>
+    Attribute, e.g.
+    <code>[type="text"]</code>
+  </li>
+  <li>
+    Pseudo-classes/-elements, e.g.
+    <code>a:hover</code></li>
+  </ol>
+  <p>
+  There is much to be said around how to architect the HTML and subsequently the CSS for a larger site. Here are a few good pointers to keep in mind:
+  </p>
+  <ol>
+  <li> <strong>Find patterns in different modules and abstract them out.</strong>
+    <br>      
+    e.g. Two modules that have bulleted lists in them might inherit from a common class, and be adjusted separately with additional rules.
+  </li>
+  <li>
+    <strong>When you create a module, let it be flexible so it can be used in a different context</strong> 
+    <br>      
+    This goes hand in hand with &quot;keep specificity low&quot;. When you write CSS for any module, don't tie it to a specific place (or parent) unless you really have to.
+  </li>
+  </ol>
+{{/markdown }}

@@ -1,7 +1,7 @@
 {
   "name": "sapient-interactive-development-best-practices",
-  "version": "0.1.2",
-  "homepage":"http://sapient.com",
+  "version": "0.2.0",
+  "homepage": "http://sapient.com",
   "description": "This document is an overview of Front End development standards that we adhere to at Sapient. These best practices are collected from the experiences we've had with numerous, large-scale projects, as well as a variety of web resources. These standards will help reduce friction in your workflows by providing a common starting point and will serve as a useful intro for both new hires and contractors.",
   "main": "index.html",
   "dependencies": {
@@ -35,10 +35,10 @@
     "Ryan Mitchell",
     "Cesar Perez"
   ],
-  "paths":{
-    "css":"stylesheets/",
-    "js":"javascripts/",
-    "images":"images/"
+  "paths": {
+    "css": "dist/assets/stylesheets/",
+    "js": "dist/assets/javascripts/",
+    "images": "dist/assets/images/"
   },
   "license": "MIT",
   "readmeFilename": "README.md",
@@ -48,6 +48,11 @@
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-watch": "~0.4.4",
     "grunt-contrib-uglify": "~0.2.1",
-    "grunt-contrib-jshint": "~0.5.4"
+    "grunt-contrib-jshint": "~0.5.4",
+    "matchdep": "~0.1.2",
+    "assemble": "~0.3.80",
+    "grunt-contrib-connect": "~0.3.0",
+    "grunt-open": "~0.2.0",
+    "grunt-gh-pages": "~0.5.1"
   }
 }

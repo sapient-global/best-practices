@@ -1,0 +1,21 @@
+{{#markdown }}
+<h2 id="accessibility">Accessibility</h2>
+
+<p>Accessibility (often abbreviated as a11y) is hugely important in the modern web. It's a legal requirement in many geographies, an excellent indicator of a quality product and shows you care! Projects should set out to develop to meet WCAG 2.0 Level AA. <a data-reference="true" href="http://www.w3.org/WAI/WCAG20/glance/">WCAG 2.0 at a Glance</a></p>
+
+<p>The start point for an accessible website is always solid, stuctured, semantic markup. Always use headings to convey structure and where possible start to use HTML5 tags such as main, section and aside to add meaning to your content areas. Be cautious. The article tag is easy to misunderstand, the article tag represents a complete or self-contained item. This could be a forum post, a blog entry, an interactive widget, or a user-submitted comment. <a data-reference="true" href="http://css-tricks.com/thinking-async/">W3 reference on the article element</a>.</p>
+
+<p><strong>Do not expect users of assistive technologies to have JavaScript disabled</strong>. Whilst having a non-JS fallback is often good practive it is not longer acceptable to make this your "accessible version". By using using recognised markup, allowing keyboard focus and interaction, and being mindful of user interaction your JS work can be accessible.</p>
+
+
+<h3>The WAI-ARIA Specification &ndash; The Next Level.</h3>
+<p>The elements introduced in HTML5 have growing but limited accessibilty support in browers. Fortunatly the WAI-ARIA (Web Accessibility Initiative - Accessible Rich Internet Applications) specification has excellent support. Modern web applications are complicated; There are unusual mixes of tags to create UI controls and there are regions on a page which update on screen without a page refresh. ARIA introduces a range of roles (added to tags as attributes) that act as hooks for assistive technologies.</p>
+
+<p><a data-reference="true" href="http://www.w3.org/TR/wai-aria-primer/">WAI-ARIA Primer</a><br />
+  <a data-reference="true" href="http://www.w3.org/TR/wai-aria-practices/">WAI-ARIA Best Practices</a></p>
+
+<h3>Accessible Design</h3>
+<p>Many of the accessibilty guidelines have a direct impact upon wireframes and designs. Accessibilty is the responsibility of the whole team so <strong>please highlight any issues you spot in the documents supplied to you</strong>.</p>
+<p>A common issue is colour contrast; AA requires a contrast ratio of 4.5:1 for normal text and 3:1 for large text. Level AAA requires a contrast ratio of 7:1 for normal text and 4.5:1 for large text. It may not be possible to correct all issues but it is important for us to be open about these challenges both internally and with our clients.</p>
+
+{{/markdown }}

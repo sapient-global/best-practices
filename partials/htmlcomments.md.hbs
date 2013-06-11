@@ -1,0 +1,57 @@
+{{#markdown }}
+<h3 id="comments-html">HTML Comments</h3>
+
+HTML comments have the following syntax:
+
+<pre data-rel="html" class="prettyprint lang-html">
+  <code>
+    <!-- this is a comment -->
+    <!-- and so is this one,
+      which occupies more than one line -->
+  </code>
+</pre>
+
+White space is not permitted between the markup declaration open delimiter("<!") and the comment open delimiter ("--"), but is permitted between the comment close delimiter ("--") and the markup declaration close delimiter (">").
+A common error is to include a string of hyphens ("---") within a comment. Authors should avoid putting two or more adjacent hyphens inside comments.
+Information that appears between comments has no special meaning (e.g., character references are not interpreted as such).
+Note that comments are markup.
+Avoid multi-level html comments. (shown below)
+
+####Incorrect
+
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;html&gt;
+&lt;head&gt;
+  <!-- Multi-line comment begin
+  <!-- This script does abcxyz -->
+  &lt;script&gt;...&lt;/script&gt;
+  &lt;script&gt;...&lt;/script&gt;
+  Multi-line comment end -->
+  &lt;script&gt;...&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  Hello world!
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+####Correct
+
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;html&gt;
+  &lt;head&gt;
+    <!-- Comment begin -->
+    <!-- This script does abcxyz -->
+    &lt;script&gt;...&lt;/script&gt;
+    &lt;script&gt;...&lt;/script&gt;
+    <!-- Comment end -->
+    &lt;script&gt;...&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    Hello world!
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+[W3 reference on comments](http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.4)
+{{/markdown}}

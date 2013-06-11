@@ -1,0 +1,21 @@
+{{#markdown }}
+
+<h3 id="head-encoding">Character Encoding:</h3>
+Use UTF-8 to encode your files, and declare it by placing
+
+<pre data-rel="html" class="prettyprint lang-html">
+	<code>
+		<meta charset="utf-8">
+	</code>
+</pre>
+
+right after your `<head>`-tag (Really - place it right behind it to avoid re-rendering in IE).
+
+Unless you chose XHTML (see above - why did you choose it again?) - then you have to use
+
+<pre data-rel="html" class="prettyprint lang-html">
+	<code>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</code>
+</pre>
+{{/markdown }}

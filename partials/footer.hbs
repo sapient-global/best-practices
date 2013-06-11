@@ -1,0 +1,72 @@
+   <footer>
+      <h2 id="footnotes">External links</h2>
+      <ol>
+
+      </ol -->
+      <nav id="legalese-footer" class="inline-list">
+        <a href="http://www.sapient.com">&copy; SAPIENTNITRO - 2013</a>
+        <a href="http://www.sapient.com/en-us/terms-of-use.html">Terms of Use</a>
+        <a href="http://www.sapient.com/en-us/privacy-policy.html">Privacy Policy</a>/<a href="http://www.sapient.com/de-de/Privacy-Policy.html">Datenschutzerklärung</a>
+        <a href="http://www.sapient.com/de-de/Imprint.html">Impressum (Deutsch)</a>
+      </nav>
+    </footer>
+  </div>
+  
+<script type="text/javascript" src="{{assets}}/javascripts/libs/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="{{assets}}/javascripts/plugins/google-prettify/prettify.js"></script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34737353-1']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_gat._anonymizeIp']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  /**
+   * doing it inline for now - if there is more JS required, 
+   * I'll create a clean namespace structure
+   */
+  $(document).ready(function(){
+    var html;
+    // stringify the example html-tags for presentation
+    $("pre.lang-html > code").each(function(){
+      html = $(this).html().replace(/[<>]/g, function(m) { return {'<':'&lt;','>':'&gt;'}[m]});
+      $(this).html(html);
+    });
+    prettyPrint();
+    /*
+    var ref = $("a[data-reference='true']"),
+      lis = "",
+      refList = $("footer ol");
+    
+    ref.each(function(i,v){
+      i = i+1;
+      var _this = $(v),
+        href = _this.attr("href"),
+        text = _this.text(),
+        refa = '<a href="#footnotes-'+i+'">[ref: '+i+']</a>';
+
+      if(href.length>0) {
+        $(refa).insertAfter(_this);
+        lis += '<li id="footnotes-'+i+'"><a data-reference="true" href="'+href+'">'+text+'</a></li>';
+      }
+      
+    });
+    refList.html(lis);
+    */
+    //Instead of using ugly target attribut
+    $("body").on("click","a[data-reference='true']", function(e){
+      e.preventDefault();
+      window.open($(this).attr("href"));
+    });
+
+  });
+</script>
+
+</body>
+</html>
