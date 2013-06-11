@@ -67,7 +67,7 @@ module.exports = function(grunt) {
       },
       stylesheets:{
         files:['assets/stylesheets/*.css'],
-        tasks:['livereload']
+        tasks:['clean:css','minify','livereload']
       },
       hbs: {
         files: ['partials/*.hbs'],
