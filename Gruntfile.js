@@ -36,18 +36,16 @@ module.exports = function(grunt) {
         dest: 'dist/<%= pkg.name %>.min.js'
       }
     },
+    clean:{
+      css:['<%= pkg.paths.css %>all.combined.min.css', '<%= pkg.paths.css %>all.combined.css']
+    },
     cssmin:{
-      combine: {
-        files: {
-          '<%= pkg.paths.css %>all.combined.css': ['<%= pkg.paths.css %>*.css','<%= pkg.paths.css %>!*.min.css','<%= pkg.paths.css %>!all.*.css']
-        }
-      },
       add_banner: {
         options: {
           banner : '<%= banner %>'
         },
         files: {
-          '<%= pkg.paths.css %>all.combined.css': ['<%= pkg.paths.css %>all.combined.css']
+          '<%= pkg.paths.css %>all.combined.css': ['<%= pkg.paths.css %>*.css']
         }
       },
       minify: {
@@ -72,7 +70,7 @@ module.exports = function(grunt) {
         tasks:['livereload']
       },
       hbs: {
-        files: ['**/*.hbs'],
+        files: ['partials/*.hbs'],
         tasks: ['assemble']
       },  
     }, //END WATCH
@@ -131,7 +129,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('assemble');
 
   // Default task.
-  grunt.registerTask('dev', ['assemble' , 'connect', 'open', 'watch']);
+  grunt.registerTask('dev', ['assemble' ,'clean:css','cssmin', 'connect', 'open', 'watch']);
   grunt.registerTask('build', ['cssmin', 'gh-pages']);
 
 };
