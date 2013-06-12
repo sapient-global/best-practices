@@ -10,7 +10,7 @@ If you ever had to merge 103 files with somebody's tabs-to-spaces changes, you'l
 
 We're happy to share this with the community and are excited to hear back form you - send us your comments and suggestions please create a fork and submit a pull request to start the conversation.
 
-This document is hosted here http://sapient-interactive-development.github.com/best-practices.
+This document is hosted here http://sapient-interactive-development.github.io/best-practices.
 
 Running Local Version + Adding to document
 ===
