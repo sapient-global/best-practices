@@ -59,7 +59,7 @@ module.exports = function(grunt) {
     watch: {
       options:{
         livereload: true,
-        nosapwn: true
+        nospawn: true
       },
       javascripts:{
         files:['assets/javascripts/*.js'],
