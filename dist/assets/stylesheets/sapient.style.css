@@ -75,6 +75,10 @@ p + pre {
 	margin-top: 0;
 }
 
+.no-js pre {
+    color: white;
+}
+
 img {
 	width: 100%;
 }
