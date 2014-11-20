@@ -247,8 +247,8 @@ Avoid multi-level html comments. (shown below)</p>
 <pre data-rel="html" class="prettyprint lang-html"><code>
 &lt;html&gt;
 &lt;head&gt;
-  <!-- Multi-line comment begin
-  <!-- This script does abcxyz -->
+  &lt;!-- Multi-line comment begin
+  &lt;!-- This script does abcxyz --&gt;
   &lt;script&gt;...&lt;/script&gt;
   &lt;script&gt;...&lt;/script&gt;
   Multi-line comment end -->
@@ -264,11 +264,11 @@ Avoid multi-level html comments. (shown below)</p>
 <pre data-rel="html" class="prettyprint lang-html"><code>
 &lt;html&gt;
   &lt;head&gt;
-    <!-- Comment begin -->
-    <!-- This script does abcxyz -->
+    &lt;!-- Comment begin --&gt;
+    &lt;!-- This script does abcxyz --&gt;
     &lt;script&gt;...&lt;/script&gt;
     &lt;script&gt;...&lt;/script&gt;
-    <!-- Comment end -->
+    &lt;!-- Comment end --&gt;
     &lt;script&gt;...&lt;/script&gt;
   &lt;/head&gt;
   &lt;body&gt;
