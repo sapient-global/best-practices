@@ -1,21 +1,32 @@
 {{#markdown}}
-<h2 id="general">General Stuff</h2>
+
+<a id="general" aria-hidden="true"></a>
+
+## General Stuff
 
 Here are a few basics to keep a common base in terms of documents and collaboration:
 
-<h3 id="general-control">Source Control</h3>
+<a id="general-control" aria-hidden="true"></a>
 
-All Sapient Projects use source control. While we generally have a self-hosted SVN repository setup, some projects use Git. All members of a team must have access to the SVN repo (yes, including Designers) and are mandated (yes, especially Designers!) to use it.
+### Source Control
 
-<h3 id="general-utf8">UTF-8</h3>
+All Sapient Projects use source control. While we generally have a self-hosted SVN repository setup, some projects use Git. All members of a team must have access to the repo (yes, including Designers) and are mandated (yes, especially Designers!) to use it.
+
+<a id="general-utf8" aria-hidden="true"></a>
+
+### UTF-8
 
 Save your text-based files as UTF-8. For HTML files, [don't forget to declare it with a meta-tag](#head-encoding). Serve them as UTF-8 as well, by working with the backend team to set the right HTTP headers.
 
-<h3 id="general-settings">Document Settings</h3>
+<a id="general-settings" aria-hidden="true"></a>
+
+### Document Settings
 
 Use Unix line endings `LF` to make documents. Many DIFF clients choke on mismatched line endings (MS Windows defaults to `CR+LF`).
 
-<h3 id="general-whitespace">Whitespace / Indentation</h3>
+<a id="general-whitespace" aria-hidden="true"></a>
+
+### Whitespace / Indentation
 
 Only one style should exist across the entire source of your project. Always be consistent in your use of whitespace. Use whitespace to improve the readability of any code.
 
@@ -23,44 +34,36 @@ Only one style should exist across the entire source of your project. Always be 
 - Choose between soft indents (spaces) or real tabs. Stick to your choice without fail.
 - If using spaces, choose the number of characters used per indentation level. (Preference: 4 spaces / Tab size 4)
 
-
-<!--
-    (I've removed the preference for spaces as the Vox poll backs tabs. And we'll only argue. - RyanM)
--->
-
 Use indentation consistently to enhance the readability of the code. When elements carry over more than one line of code, indent the contents of elements between the start tag and the end tag. This will make it easy to see where the element begins and ends. Also, use indentation to align code at attribute names.
 
 It is a good idea to use no more than two to four spaces for each level in indentation, so as not to use up all the available line length in indentation. If possible, set up the development tool to convert tabs to spaces so that the indentation will be the same when the source is viewed in different editors or as printed output.
 
 Tip: configure your editor to "show invisibles". This will allow you to eliminate end of line whitespace, eliminate unintended blank line whitespace, and avoid polluting commits.
 
-####Example
+#### Example
 
-<pre data-rel="html" class="prettyprint lang-html">
-<code>
-<div>
-  <h3>NEXT MATCH</h3>
-  <div class="contentd"> 
-    <img src="/images/emblems/arsenal.png">
-    <div class="info">
-      <h4 class="fixture">CITY v<br>
-        ARSENAL</h4>
-      <p class="detail"> <strong>Home</strong><br>
-        Barclays Premier League<br>
-        Sat 19 Nov 11, 12:45<br>
-      </p>
-    </div>
-    <div class="matchLinks borderTop">
-      <ul>
-        <li class="divider"><a href="#" class="livePlayer">Listen live on </a></li>
-        <li ><a href="matchPreview.shtml" class="matchPreview">Match preview</a></li>
-        <li class="divider"><a href="#" class="smsAlert">Mobile alerts</a></li>
-        <li ><a href="#" class="buyTickets">Buy tickets</a></li>
-      </ul>
-    </div>
-  </div>  
-</div>
-</code>
-</pre>
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;div&gt;
+  &lt;h3&gt;NEXT MATCH&lt;/h3&gt;
+  &lt;div class=&quot;contentd&quot;&gt;
+    &lt;div class=&quot;info&quot;&gt;
+      &lt;h4 class=&quot;fixture&quot;&gt;CITY v&lt;br&gt;
+        ARSENAL&lt;/h4&gt;
+      &lt;p class=&quot;detail&quot;&gt; &lt;strong&gt;Home&lt;/strong&gt;&lt;br&gt;
+        Barclays Premier League&lt;br&gt;
+        Sat 19 Nov 11, 12:45&lt;br&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;matchLinks borderTop&quot;&gt;
+      &lt;ul&gt;
+        &lt;li class=&quot;divider&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;livePlayer&quot;&gt;Listen live on &lt;/a&gt;&lt;/li&gt;
+        &lt;li &gt;&lt;a href=&quot;matchPreview.shtml&quot; class=&quot;matchPreview&quot;&gt;Match preview&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;divider&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;smsAlert&quot;&gt;Mobile alerts&lt;/a&gt;&lt;/li&gt;
+        &lt;li &gt;&lt;a href=&quot;#&quot; class=&quot;buyTickets&quot;&gt;Buy tickets&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;  
+&lt;/div&gt;
+</code></pre>
 
 {{/markdown}}

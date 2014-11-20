@@ -129,7 +129,22 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('assemble');
 
   // Default task.
-  grunt.registerTask('dev', ['assemble' ,'clean:css','cssmin', 'connect', 'open', 'watch']);
-  grunt.registerTask('build', ['cssmin', 'gh-pages']);
+  grunt.registerTask( 'default', [
+      'assemble',
+      'clean:css',
+      'cssmin'
+  ]);
+  grunt.registerTask( 'dev', [
+      'assemble',
+      'clean:css',
+      'cssmin',
+      'connect',
+      'open',
+      'watch'
+  ]);
+  grunt.registerTask( 'build', [
+      'cssmin',
+      'gh-pages'
+  ]);
 
 };
