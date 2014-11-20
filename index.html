@@ -97,31 +97,29 @@
 <p>It is a good idea to use no more than two to four spaces for each level in indentation, so as not to use up all the available line length in indentation. If possible, set up the development tool to convert tabs to spaces so that the indentation will be the same when the source is viewed in different editors or as printed output.</p>
 <p>Tip: configure your editor to &quot;show invisibles&quot;. This will allow you to eliminate end of line whitespace, eliminate unintended blank line whitespace, and avoid polluting commits.</p>
 <h4 id="example">Example</h4>
-<pre data-rel="html" class="prettyprint lang-html">
-<code>
-<div>
-  <h3>NEXT MATCH</h3>
-  <div class="contentd">
-    <div class="info">
-      <h4 class="fixture">CITY v<br>
-        ARSENAL</h4>
-      <p class="detail"> <strong>Home</strong><br>
-        Barclays Premier League<br>
-        Sat 19 Nov 11, 12:45<br>
-      </p>
-    </div>
-    <div class="matchLinks borderTop">
-      <ul>
-        <li class="divider"><a href="#" class="livePlayer">Listen live on </a></li>
-        <li ><a href="matchPreview.shtml" class="matchPreview">Match preview</a></li>
-        <li class="divider"><a href="#" class="smsAlert">Mobile alerts</a></li>
-        <li ><a href="#" class="buyTickets">Buy tickets</a></li>
-      </ul>
-    </div>
-  </div>  
-</div>
-</code>
-</pre>
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;div&gt;
+  &lt;h3&gt;NEXT MATCH&lt;/h3&gt;
+  &lt;div class=&quot;contentd&quot;&gt;
+    &lt;div class=&quot;info&quot;&gt;
+      &lt;h4 class=&quot;fixture&quot;&gt;CITY v&lt;br&gt;
+        ARSENAL&lt;/h4&gt;
+      &lt;p class=&quot;detail&quot;&gt; &lt;strong&gt;Home&lt;/strong&gt;&lt;br&gt;
+        Barclays Premier League&lt;br&gt;
+        Sat 19 Nov 11, 12:45&lt;br&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;matchLinks borderTop&quot;&gt;
+      &lt;ul&gt;
+        &lt;li class=&quot;divider&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;livePlayer&quot;&gt;Listen live on &lt;/a&gt;&lt;/li&gt;
+        &lt;li &gt;&lt;a href=&quot;matchPreview.shtml&quot; class=&quot;matchPreview&quot;&gt;Match preview&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;divider&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;smsAlert&quot;&gt;Mobile alerts&lt;/a&gt;&lt;/li&gt;
+        &lt;li &gt;&lt;a href=&quot;#&quot; class=&quot;buyTickets&quot;&gt;Buy tickets&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;  
+&lt;/div&gt;
+</code></pre>
 
 
 
@@ -207,13 +205,13 @@
 <h3 id="character-encoding-">Character Encoding:</h3>
 <p>Use UTF-8 to encode your files, and declare it by placing</p>
 <pre data-rel="html" class="prettyprint lang-html"><code>
-<meta charset="utf-8">
+&lt;meta charset=&quot;utf-8&quot;&gt;
 </code></pre>
 
 <p>right after your <code>&lt;head&gt;</code>-tag (Really - place it right behind it to avoid re-rendering in IE).</p>
 <p>Unless you chose XHTML (see above - why did you choose it again?) - then you have to use</p>
 <pre data-rel="html" class="prettyprint lang-html"><code>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
 </code></pre>
 
 
@@ -502,6 +500,7 @@ Avoid multi-level html comments. (shown below)</p>
 <pre data-rel="html" class="prettyprint lang-html"><code>
 &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot;/&gt;
 </code></pre>
+
 <p>This meta tag specifies the style of the status bar for a mobile app. This is relevant only if the this tag with <code>content=&quot;yes&quot;</code> is also included.</p>
 
 <p><code>content=&quot;default&quot;</code> - The status bar color is the normal gray gradient and it does not overlap the HTML content.</p>
@@ -997,7 +996,7 @@ a:active { color: red; }<br>
 </em> NAME OF THE STYLESHEET (e.g. core.client.css)
 <em> The styles in this file represent all basic styles for the &lt;CLIENT&gt; &lt;PROJECTNAME&gt; site.
 </em> It includes a reset, the basic grid and some default components.
-<em><br></em> Why we are using the equals sign in the section identifier:
+<em>&lt;br&gt;</em> Why we are using the equals sign in the section identifier:
 <em> stopdesign.com/archive/2005/05/03/css-tip-flags.html
 </em> 
 <em> @project   PROJECT NAME
@@ -1012,51 +1011,50 @@ a:active { color: red; }<br>
 </em>/
 </code></pre>
 
-  <p>
-  In core.client.css, also include a block that lists out the colors per styleguide.
-  </p>
+<p>In core.client.css, also include a block that lists out the colors per styleguide.</p>
+
 <pre data-rel="css" class="prettyprint lang-css"><code>
-<em> USE THIS IN CORE.CLIENT.CSS
-</em> @colordef  #333; Quasi black (for most of the copy)
-<em> @colordef  #666; Grey (for some special copy)
-</em> @colordef  #999; Light grey (toolbar and text color)
-* ..... Replace and enhance with your specific project colors<br></code></pre>
-  <h4 id="css-comments">Comment your CSS code</h4>
-  <p>
-  Well commented code is extremely important. Take time to describe components, how they work, their limitations, and the way they are constructed. Don&#39;t leave others in the team guessing as to the purpose of uncommon or non-obvious code.
-  </p>
-  <p>
-  Comment style should be simple and consistent within a single code base.
-  </p>
-  <ul>
+* USE THIS IN CORE.CLIENT.CSS
+* @colordef  #333; Quasi black (for most of the copy)
+* @colordef  #666; Grey (for some special copy)
+* @colordef  #999; Light grey (toolbar and text color)
+* ..... Replace and enhance with your specific project colors      
+</code></pre>
+
+<h4 id="css-comments">Comment your CSS code</h4>
+<p>Well commented code is extremely important. Take time to describe components, how they work, their limitations, and the way they are constructed. Don&#39;t leave others in the team guessing as to the purpose of uncommon or non-obvious code.</p>
+
+<p>Comment style should be simple and consistent within a single code base.</p>
+
+<ul>
   <li>Place comments on a new line above their subject.</li>
   <li>Avoid end of line comments.</li>
   <li>Keep line-length to a sensible maximum, e.g., 80 columns.</li>
   <li>Make liberal use of comments to break CSS code into discrete sections.</li>
   <li>Use &quot;sentence case&quot; comments and consistent text indentation.</li>
-  </ul>
-  <p>
-  Tip: configure your editor to provide you with shortcuts to output agreed-upon comment patterns.
-  </p>
-  <p>CSS example:</p>
+</ul>
+
+<p>Tip: configure your editor to provide you with shortcuts to output agreed-upon comment patterns.</p>
+
+<p>CSS example:</p>
 
 <pre data-rel="css" class="prettyprint lang-css"><code>
-/* ==========================================================================
+/<em> ==========================================================================
 =SECTIONNAME 
-========================================================================== */
+========================================================================== </em>/
 
-/* =SUB-SECTION NAME comment block
-========================================================================== */
+/<em> =SUB-SECTION NAME comment block
+========================================================================== </em>/
 
-/*
-* Group comment block.
-* Ideal for multi-line explanations and documentation.
+/<em>
+</em> Group comment block.
+<em> Ideal for multi-line explanations and documentation.
 
 
-/* Basic comment */
+/</em> Basic comment */
 </code></pre>
 
-  <p>SCSS example:</p>
+<p>SCSS example:</p>
 
 <pre data-rel="css" class="prettyprint lang-css"><code>
 // ==========================================================================
@@ -1074,41 +1072,36 @@ a:active { color: red; }<br>
 // Basic comment
 </code></pre>
 
-<p>  <h3 id="css-format">Format</h3>
-  <!-- p>
-    <mark>
-      (I know that at Sapient a lot of people like the Alphabetical approach - Team should agree at the beginning of a project)
-    </mark>
-  </p -->
-  <p>
-  The chosen code format must ensure that code: </p>
-  <ul>
-    <li>is easy to read</li>
-    <li>is easy to clearly comment</li>
-    <li>minimizes the chance of accidentally introducing errors</li>
-    <li>results in useful diffs and blames. </li>
-  </ul></p>
+<h3 id="css-format">Format</h3>
+<!-- p>
+  <mark>
+    (I know that at Sapient a lot of people like the Alphabetical approach - Team should agree at the beginning of a project)
+  </mark>
+</p -->
+<p>The chosen code format must ensure that code:</p>
+
+<ul>
+  <li>is easy to read</li>
+  <li>is easy to clearly comment</li>
+  <li>minimizes the chance of accidentally introducing errors</li>
+  <li>results in useful diffs and blames.</li>
+</ul>
+
 <p>To that end the following recommendations are made for CSS formatting:</p>
-  <ul>
+
+<ul>
   <li>One discrete selector per line in multi-selector rulesets.</li>
   <li>A single space before the opening brace of a ruleset.</li>
   <li>One declaration per line in a declaration block.</li>
   <li>One level of indentation for each declaration.</li>
   <li>A single space after the colon of a declaration.</li>
-  <li>
-    Always include a semicolon at the end of the last declaration in a declaration block.
-  </li>
-  <li>
-    Place the closing brace of a ruleset in the same column as the first character of the ruleset.
-  </li>
+  <li>Always include a semicolon at the end of the last declaration in a declaration block.</li>
+  <li>Place the closing brace of a ruleset in the same column as the first character of the ruleset.</li>
   <li>Separate each ruleset by a blank line.</li>
-  <li>
-    Seperating words in a class name or id only with &quot;-&quot;
-  </li>
-  <li>
-    Rules with various vendor-prefixes should always be next to each other
-  </li>
-  </ul>
+  <li>Seperating words in a class name or id only with &quot;-&quot;</li>
+  <li>Rules with various vendor-prefixes should always be next to each other</li>
+</ul>
+
 <pre data-rel="css" class="prettyprint lang-css"><code>
 .selector-1,
 .selector-2,
@@ -1122,11 +1115,12 @@ a:active { color: red; }<br>
 }
 </code></pre>
 
-  <h4>Declaration order</h4>
-  <p>
-  Declarations should be ordered in accordance with a single principle, the team should initially agree to one of the suggested approaches. There are two basic approaches: alphabetical order and grouping by related properties.</p>
-<p>
-  Alphabetical order is a popular choice and is suggested as a baseline for those who have no strong preference in this matter. Alphabetical order has the benefit of always being in sync across project teams, where the importance or connectedness of properties can change depending on the developer or team making the associations.<br>  </p>
+<h4>Declaration order</h4>
+
+<p>Declarations should be ordered in accordance with a single principle, the team should initially agree to one of the suggested approaches. There are two basic approaches: alphabetical order and grouping by related properties.</p>
+
+<p>Alphabetical order is a popular choice and is suggested as a baseline for those who have no strong preference in this matter. Alphabetical order has the benefit of always being in sync across project teams, where the importance or connectedness of properties can change depending on the developer or team making the associations.</p>
+
 <pre data-rel="css" class="prettyprint lang-css"><code>
 .selector {
   background: #000;
@@ -1141,9 +1135,7 @@ a:active { color: red; }<br>
 }
 </code></pre>
 
-<p>
-   Alternatively, the approach is for related properties to be grouped together and for structurally important properties (e.g. positioning and box-model) to be declared prior to typographic, background, and color properties.
-  </p>
+<p>Alternatively, the approach is for related properties to be grouped together and for structurally important properties (e.g. positioning and box-model) to be declared prior to typographic, background, and color properties.</p>
 
 <pre data-rel="css" class="prettyprint lang-css"><code>
 .selector {
@@ -1159,21 +1151,17 @@ a:active { color: red; }<br>
 }
 </code></pre>
 
+<h4>Exceptions and slight deviations</h4>
 
-<p>  <h4>Exceptions and slight deviations
-  </h4>
-  <p>
-    Large blocks of single declarations can use a slightly different, single-line format. In this case, a space should be included after the opening brace and before the closing brace.
-  </p></p>
+<p>Large blocks of single declarations can use a slightly different, single-line format. In this case, a space should be included after the opening brace and before the closing brace.</p>
+
 <pre data-rel="css" class="prettyprint lang-css"><code>
 .selector-1 { width: 10%; }
 .selector-2 { width: 20%; }
 .selector-3 { width: 30%; }
 </code></pre>
 
-  <p>
-  Long, comma separated property values - such as collections of gradients or shadows - can be arranged across multiple lines in an effort to improve readability and produce more useful diffs. There are various formats that could be used; one example is shown below.
-  </p>
+<p>Long, comma separated property values - such as collections of gradients or shadows - can be arranged across multiple lines in an effort to improve readability and produce more useful diffs. There are various formats that could be used; one example is shown below.</p>
 
 <pre data-rel="css" class="prettyprint lang-css"><code>
 .selector {
@@ -1186,34 +1174,26 @@ background-image:
 }
 </code></pre>
 
-<p>  <h4>Miscellaneous Standards</h4>
-  <p>
-  Use lowercase hex values, e.g., #aaa.
-  <br><br>  Use single or double quotes consistently. Preference is for double quotes, e.g., content: &quot;&quot;.
-  <br><br>  Always quote attribute values in selectors, e.g., input[type=&quot;checkout&quot;].
-  <br><br>  Where allowed, avoid specifying units for zero-values, e.g., margin: 0.
-  </p>
-  <h4>Preprocessors: additional format considerations</h4>
-  <p>
-  Different CSS preprocessors have different features, functionality, and syntax. Your conventions should be extended to accommodate the particularities of any preprocessor in use. The following guidelines are in reference to Sass.
-  </p>
-  <ul>
-  <li>
-    Limit nesting to 1 level deep. Reassess any nesting more than 2 levels deep. This prevents overly specific CSS selectors.
-    <br></li>
-  <li>
-    Avoid large numbers of nested rules. Break them up when readability starts to be affected. Preference to avoid nesting that spreads over more than 20 lines.
-    <br></li>
-  <li>
-    Always place @extend statements on the first lines of a declaration block.
-    <br></li>
-  <li>
-    Where possible, group @include statements at the top of a declaration block, after any @extend statements.
-    <br></li>
-  <li>
-    Consider prefixing custom functions with x- or another namespace. This helps to avoid any potential to confuse your function with a native CSS function, or to clash with functions from libraries.
-  </li>
-  </ul></p>
+<h4>Miscellaneous Standards</h4>
+
+<p>Use lowercase hex values, e.g., #aaa.
+  <br>Use single or double quotes consistently. Preference is for double quotes, e.g., content: &quot;&quot;.
+  <br>Always quote attribute values in selectors, e.g., input[type=&quot;checkout&quot;].
+  <br>Where allowed, avoid specifying units for zero-values, e.g., margin: 0.
+</p>
+
+<h4>Preprocessors: additional format considerations</h4>
+
+<p>Different CSS preprocessors have different features, functionality, and syntax. Your conventions should be extended to accommodate the particularities of any preprocessor in use. The following guidelines are in reference to Sass.</p>
+
+<ul>
+  <li>Limit nesting to 1 level deep. Reassess any nesting more than 2 levels deep. This prevents overly specific CSS selectors.</li>
+  <li>Avoid large numbers of nested rules. Break them up when readability starts to be affected. Preference to avoid nesting that spreads over more than 20 lines.</li>
+  <li>Always place @extend statements on the first lines of a declaration block.</li>
+  <li>Where possible, group @include statements at the top of a declaration block, after any @extend statements.</li>
+  <li>Consider prefixing custom functions with x- or another namespace. This helps to avoid any potential to confuse your function with a native CSS function, or to clash with functions from libraries.</li>
+</ul>
+
 <pre data-rel="css" class="prettyprint lang-css"><code>
 .selector-1 {
   @extend .other-rule;
@@ -1224,11 +1204,10 @@ background-image:
 }
 </code></pre>
 
-<p>  <h3 id="css-naming">Naming</h3>
-  <p>
-  We are not human code compiler/compressors, so don&#39;t try to be one.
-  Use clear and thoughtful names for HTML classes. Pick an understandable and consistent naming pattern that makes sense both within HTML files and CSS files.
-  </p></p>
+<h3 id="css-naming">Naming</h3>
+
+<p>We are not human code compiler/compressors, so don&#39;t try to be one. Use clear and thoughtful names for HTML classes. Pick an understandable and consistent naming pattern that makes sense both within HTML files and CSS files.</p>
+
 <pre data-rel="css" class="prettyprint lang-css"><code>
 /* Example of code with bad names */
 .s-scr {
@@ -1249,9 +1228,9 @@ background-image:
 }
 </code></pre>
 
-<p>  <!-- p> <mark>(I added the following paragraph as the above &quot;understandable and consistent naming pattern&quot; does not avoid the following)</mark> 
-  </p -->
-  <p>Use names that make sense even if design or usage changes.</p></p>
+<p><!-- p> <mark>(I added the following paragraph as the above &quot;understandable and consistent naming pattern&quot; does not avoid the following)</mark> </p --></p>
+<p>Use names that make sense even if design or usage changes.</p>
+
 <pre data-rel="css" class="prettyprint lang-css"><code>
 /* Example of code with bad names */
 .right-red {
@@ -1268,8 +1247,10 @@ background-image:
 }
 </code></pre>
 
-<p>  <h3 id="css-examples">Practical example</h3>
-  <p>The following example is designed to illustrate the various style conventions. It&#39;s not meant to be used as a solution to any specific problem. It&#39;s here merely to illustrate coding conventions and style.</p></p>
+<h3 id="css-examples">Practical example</h3>
+
+<p>The following example is designed to illustrate the various style conventions. It&#39;s not meant to be used as a solution to any specific problem. It&#39;s here merely to illustrate coding conventions and style.</p>
+
 <pre data-rel="css" class="prettyprint lang-css"><code>
 /* ==========================================================================
 Grid layout
@@ -1325,77 +1306,43 @@ Grid layout
 }
 </code></pre>
 
-<p>  <h3>How to write good CSS (Selectors)</h3>
-  <p>
-  <a data-reference="true" href="http://csswizardry.com/2011/09/writing-efficient-css-selectors/">Writing Efficient CSS selectors</a> is a good article to understand why writing efficient CSS selectors is important. Here&#39;s a summary:
-  </p>
-  <ul>
-  <li>
-    <a data-reference="true" href="http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html">Keep specificity</a> low (that is, don&#39;t write html body .wrapper #content a{} when .content a{} could&#39;ve done the job).
+<h3>How to write good CSS (Selectors)</h3>
+
+<p><a data-reference="true" href="http://csswizardry.com/2011/09/writing-efficient-css-selectors/">Writing Efficient CSS selectors</a> is a good article to understand why writing efficient CSS selectors is important. Here&#39;s a summary:</p>
+
+<ul>
+  <li><a data-reference="true" href="http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html">Keep specificity</a> low (that is, don&#39;t write <code>html body .wrapper #content a{}</code> when <code>.content a{}</code> could&#39;ve done the job).</li>
+  <li>The <strong>fewer matches your key selector</strong>
+  (the one to the very right hand side of your selector) has, the faster your selector will be overall.</li>
+  <li>Try to avoid putting unnecessary classes and IDs in your HTML</li>
+  <li>Avoid the <code>*</code> selector unless you can explain why you MUST use it.</li>
+</ul>
+
+<p>In terms of performance, memorize Steve Souder&#39;s list (Quoted from <a data-reference="true" href="http://stevesouders.com/">Even Faster Websites by Steve Souders</a>) of efficient CSS selectors - ordered from higher to lower efficiency:</p>
+
+<ol>
+  <li>ID, e.g. <code>#header</code> </li>
+  <li>Class, e.g. <code>.promo</code> </li>
+  <li>Type, e.g. <code>div</code></li>
+  <li>Adjacent sibling, e.g. <code>h2 + p</code></li>
+  <li>Child, e.g. <code>li &gt; ul</code></li>
+  <li>Descendant, e.g. <code>ul a</code></li>
+  <li>Universal, i.e. <code>*</code></li>
+  <li>Attribute, e.g. <code>[type=&quot;text&quot;]</code></li>
+  <li>Pseudo-classes/-elements, e.g. <code>a:hover</code></li>
+</ol>
+
+<p>There is much to be said around how to architect the HTML and subsequently the CSS for a larger site. Here are a few good pointers to keep in mind:</p>
+
+<ol>
+  <li><strong>Find patterns in different modules and abstract them out.</strong>
+    <br> e.g. Two modules that have bulleted lists in them might inherit from a common class, and be adjusted separately with additional rules.
   </li>
-  <li>
-    The <strong>fewer matches your key selector</strong>
-    (the one to the very right hand side of your selector) has, the faster your selector will be overall.
+  <li><strong>When you create a module, let it be flexible so it can be used in a different context</strong>
+    <br>This goes hand in hand with &quot;keep specificity low&quot;. When you write CSS for any module, don&#39;t tie it to a specific place (or parent) unless you really have to.
   </li>
-  <li>
-    Try to avoid putting unnecessary classes and IDs in your HTML
-  </li>
-  <li>
-    Avoid the <em> selector unless you can explain why you MUST use it.
-  </li>
-  </ul>
-  <p>
-  In terms of performance, memorize Steve Souder&#39;s list (Quoted from <a data-reference="true" href="http://stevesouders.com/">Even Faster Websites by Steve Souders</a>) of efficient CSS selectors - ordered from higher to lower efficiency:
-  </p>
-  <ol>
-  <li>
-    ID, e.g.
-    <code>#header</code>
-  </li>
-  <li>
-    Class, e.g.
-    <code>.promo</code>
-  </li>
-  <li>
-    Type, e.g.
-    <code>div</code>
-  </li>
-  <li>
-    Adjacent sibling, e.g.
-    <code>h2 + p</code>
-  </li>
-  <li>
-    Child, e.g.
-    <code>li &gt; ul</code>
-  </li>
-  <li>
-    Descendant, e.g.
-    <code>ul a</code>
-  </li>
-  <li>
-    Universal, i.e.
-    <code></em></code>
-  </li>
-  <li>
-    Attribute, e.g.
-    <code>[type=&quot;text&quot;]</code>
-  </li>
-  <li>
-    Pseudo-classes/-elements, e.g.
-    <code>a:hover</code></li>
-  </ol>
-  <p>
-  There is much to be said around how to architect the HTML and subsequently the CSS for a larger site. Here are a few good pointers to keep in mind:
-  </p>
-  <ol>
-  <li> <strong>Find patterns in different modules and abstract them out.</strong>
-    <br><br>    e.g. Two modules that have bulleted lists in them might inherit from a common class, and be adjusted separately with additional rules.
-  </li>
-  <li>
-    <strong>When you create a module, let it be flexible so it can be used in a different context</strong> 
-    <br><br>    This goes hand in hand with &quot;keep specificity low&quot;. When you write CSS for any module, don&#39;t tie it to a specific place (or parent) unless you really have to.
-  </li>
-  </ol></p>
+</ol>
+
 
 
     <h2 id="javascript">JavaScript</h2>
