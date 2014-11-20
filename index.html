@@ -101,8 +101,7 @@
 <code>
 <div>
   <h3>NEXT MATCH</h3>
-  <div class="contentd"> 
-    <img src="assets/images/emblems/arsenal.png">
+  <div class="contentd">
     <div class="info">
       <h4 class="fixture">CITY v<br>
         ARSENAL</h4>
@@ -144,25 +143,24 @@
     <tbody>
         <tr>
             <th width="180">Internet Explorer</th>
-              <td width="710">9 - 10</td>
+            <td width="710">9 - 11</td>
         </tr>
         <tr>
             <th width="180">Firefox</th>
-              <td>Latest stable</td>
-          </tr>
-
-          <tr>
-              <th width="180">Chrome</th>
-              <td>Latest stable</td>
-          </tr>
-          <tr>
-              <th width="180">Safari</th>
-              <td>no longer supported&nbsp;</td>
-          </tr>
-      </tbody>
+            <td>Latest stable</td>
+        </tr>
+        <tr>
+            <th width="180">Chrome</th>
+            <td>Latest stable</td>
+        </tr>
+        <tr>
+            <th width="180">Safari</th>
+            <td>no longer supported&nbsp;</td>
+        </tr>
+    </tbody>
 </table>
 
-<h4 id="mac-os-10-9-latest-stable">Mac OS 10.9 - Latest Stable</h4>
+<h4 id="mac-os-10-9-10-10">Mac OS 10.9 - 10.10</h4>
 <table class="browsers plain-table" border="0">
     <tbody>
         <tr>
@@ -170,27 +168,24 @@
             <td>Latest stable</td>
         </tr>
         <tr>
-              <th width="180">Chrome </th>
-              <td>Latest stable</td>
-          </tr>
-          <tr>
-              <th width="180">Safari</th><td>5†</td>
-          </tr>
-    </tbody>
+      <th width="180">Chrome </th>
+      <td>Latest stable</td>
+    </tr>
+    <tr>
+      <th width="180">Safari</th><td>7 - 8</td>
+    </tr>
+  </tbody>
 </table>
 
 <p>Note that based on the client&#39;s analytics, sometimes legacy browsers such as Firefox 4.0 might need to be supported. A conversation around this should happen if current usage on the specific site is above 3% for a specific browser and not projected to drop below that until the go live date of the site or if specific business reasons demand support.</p>
 <p>You might also consider a graded approach like described in <a href="http://yuilibrary.com/yui/docs/tutorials/gbs">Yahoo’s graded browser support</a>.</p>
 
 
-    <h2 id="head">HTML</h2>
-
+    <h2 id="html">HTML</h2>
 <p>When creating text/html, all you need is a Document Type Declaration or short doctype to trigger standards mode.</p>
-<pre data-rel="html" class="prettyprint lang-html">
-    <code>
-        <!DOCTYPE html>
-    </code>
-</pre>
+<pre data-rel="html" class="prettyprint lang-html"><code>
+&lt;!DOCTYPE html&gt;
+</code></pre>
 
 
 
@@ -210,33 +205,27 @@
 
     <p><h3 id="head-encoding">Character Encoding:</h3>
 Use UTF-8 to encode your files, and declare it by placing</p>
-<pre data-rel="html" class="prettyprint lang-html">
-    <code>
-        <meta charset="utf-8">
-    </code>
-</pre>
+<pre data-rel="html" class="prettyprint lang-html"><code>
+<meta charset="utf-8">
+</code></pre>
 
 <p>right after your <code>&lt;head&gt;</code>-tag (Really - place it right behind it to avoid re-rendering in IE).</p>
 <p>Unless you chose XHTML (see above - why did you choose it again?) - then you have to use</p>
-<pre data-rel="html" class="prettyprint lang-html">
-    <code>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    </code>
-</pre>
+<pre data-rel="html" class="prettyprint lang-html"><code>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</code></pre>
 
 
     <h3 id="head-htmltag"><code>&lt;html&gt;</code>-tag</h3>
 
 <p>It has proven helpful to use <a href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/">Paul Irish&#39;s</a> and later used and enhanced by <a href="https://github.com/h5bp/html5-boilerplate/issues/425/#">HTML5 Boilerplate</a> conditional tag bomb around the head-tag, i.e.:</p>
-<pre data-rel="html" class="prettyprint lang-html">
-    <code>
-        <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-        <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-        <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-        <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-        <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-    </code>
-</pre>
+<pre data-rel="html" class="prettyprint lang-html"><code>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+</code></pre>
 
 <p>(Note that you shouldn&#39;t have to tailor your code to IE9...)</p>
 
@@ -244,13 +233,11 @@ Use UTF-8 to encode your files, and declare it by placing</p>
     <h3 id="comments-html">HTML Comments</h3>
 
 <p>HTML comments have the following syntax:</p>
-<pre data-rel="html" class="prettyprint lang-html">
-  <code>
-    <!-- this is a comment -->
-    <!-- and so is this one,
-      which occupies more than one line -->
-  </code>
-</pre>
+<pre data-rel="html" class="prettyprint lang-html"><code>
+<!-- this is a comment -->
+<!-- and so is this one,
+  which occupies more than one line -->
+</code></pre>
 
 <p>White space is not permitted between the markup declaration open delimiter(&quot;&lt;!&quot;) and the comment open delimiter (&quot;--&quot;), but is permitted between the comment close delimiter (&quot;--&quot;) and the markup declaration close delimiter (&quot;&gt;&quot;).
 A common error is to include a string of hyphens (&quot;---&quot;) within a comment. Authors should avoid putting two or more adjacent hyphens inside comments.
@@ -553,7 +540,7 @@ Avoid multi-level html comments. (shown below)</p>
 <p>For including CSS use <code>&lt;link&gt;</code> and not <code>@import</code> <a data-reference="true" href="http://www.stevesouders.com/blog/2009/04/09/dont-use-import/">as a standard</a>. This is an important performance consideration. </p>
 <p>Here is an example of the correct way to link a stylesheet:</p>
 
-<pre  class="prettyprint lang-html"><code>
+<pre data-rel="HTML" class="prettyprint lang-html"><code>
 &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;yourStylesheetName.css&quot; /&gt;
 </code></pre>
 
@@ -1521,12 +1508,10 @@ function sample( arg, bar ) {
 
 <p>For example, if a developer wrote <code>if ( foo == null ) {...}</code>, did he intend other falsey values (such as false, 0, '', or undefined) to pass this conditional?</p>
 
-<pre data-rel="js" class="prettyprint lang-js">
-  <code>
-  a === b  // strict equality 
-  a !== b  // strict inequality 
-  </code>
-</pre>
+<pre data-rel="js" class="prettyprint lang-js"><code>
+a === b  // strict equality 
+a !== b  // strict inequality 
+</code></pre>
 
 
 <h4>Use object literal notation</h4>
@@ -1593,12 +1578,12 @@ var foo = {
 
 <h5>Sample anonymous closure (1.0)</h5>
 
-<pre data-rel="js" class="prettyprint lang-js">
+<pre data-rel="js" class="prettyprint lang-js"><code>
 (function( window, undefined ) {
   var foo = 1; //private variable
 
 })( window );
-</pre>
+</code></pre>
 
 <p>The closure in 1.0 is created using a self-executing function (complicated name: immediately invoked function expression). You can find this style all over the web, infact this is the first and last lines of the jQuery source code.</p>
 
@@ -1606,7 +1591,7 @@ var foo = {
 
 <h5>Sample namespace (1.1)</h5>
 
-<pre data-rel="js" class="prettyprint lang-js">
+<pre data-rel="js" class="prettyprint lang-js"><code>
 (function (window, $, undefined) {
   //example namespace, in this case an object literal
   var namespaceObject = {
@@ -1617,14 +1602,14 @@ var foo = {
   window.projectName = namespaceObject;
   
 }(window, jQuery)); 
-</pre>
+</code></pre>
 
 <p>In 1.1 we define our namespace as an object before exposing it to the global scope by adding it as a property of the window object. We could have set this as global by removing the var keyword, but this could easily be misunderstood as a mistake. In this case we have a basic object as our namespace, although it could be a more complex pattern.</p>
 
 <p>This example also passes the jQuery object as a parameter, this ensures that the $ variable refers to the jQuery object inside the closure.</p>
 
 <h5>Sample module export (1.2)</h5>
-<pre data-rel="js" class="prettyprint lang-js">
+<pre data-rel="js" class="prettyprint lang-js"><code>
 var projectName = (function (window, undefined) {
   //example namespace, but this could also be a module
   var namespaceObject = {
@@ -1635,7 +1620,7 @@ var projectName = (function (window, undefined) {
   return namespaceObject;
   
 }(window, jQuery)); 
-</pre>
+</code></pre>
 
 <p>In 1.2 we again use a closure to protect our namespace, but we are returning the object itself from the function call allowing us to set to the projectName variable. This form is most useful when your code is already inside of a closure and have no need to expose the namespace to global scope.</p>
 
@@ -1644,7 +1629,7 @@ var projectName = (function (window, undefined) {
 <p>Putting thought into the structure and organization of your JavaScript enables you to write code that is easier to maintain, more reusable, easier to read, and less likely to cause collisions with other scripts. There are almost as many ways to effectively organize code as there are developers, but several tried and true patterns have emerged over the years</p>
 
 <h5>Sample object literal (2.1)</h5>
-<pre data-rel="js" class="prettyprint lang-js">
+<pre data-rel="js" class="prettyprint lang-js"><code>
 //namespace object
 var namespaceObject = {
   //object properties set on creation
@@ -1656,12 +1641,12 @@ namespaceObject.property2 = 2;
 namespaceObject.initFunction = function () {
   //function code;
 };
-</pre>
+</code></pre>
 
 <p>This is a basic starting point for code organization, our properties and functions are grouped into a root object. A limitation of this approach is that the object properties are all public, and even when calling a property from inside the object you have to include it's full path or use the this keyword (discussed elsewhere).</p>
 
 <h5>Sample object literal created within a closure (2.2)</h5>
-<pre data-rel="js" class="prettyprint lang-js">
+<pre data-rel="js" class="prettyprint lang-js"><code>
 //namespace object
 var namespaceObject = function () {
   //creating the new namespace object
@@ -1680,7 +1665,7 @@ var namespaceObject = function () {
 
   return _namespace;
 }();
-</pre>
+</code></pre>
 
 <p>This pattern will give you control over the visibility of your variables, just as we had in the namespace closure.</p>
 
@@ -1688,7 +1673,7 @@ var namespaceObject = function () {
 
 <h5>Sample class definition (2.3)</h5>
 <p> ( cribbed from http://stackoverflow.com/questions/1635116/javascript-class-method-vs-class-prototype-method ) </p>
-<pre data-rel="js" class="prettyprint lang-js">
+<pre data-rel="js" class="prettyprint lang-js"><code>
 // class constructor function
 function MyClass () {
   var property1 = 1; // private variable, only available within the constructor fn
@@ -1712,7 +1697,7 @@ var myObj = new MyClass(); // new object instance
 myObj.publicMethod();
 myObj.privilegedMethod();
 MyClass.classMethod();
-</pre>
+</code></pre>
 
 
 <h3 id="javascript-performance">Performance</h3>
@@ -1723,66 +1708,59 @@ MyClass.classMethod();
 
 <p>This section sets a spotlight on different aspects of JavaScript, each with some basic context knowledge. So you can choose the most appropriate approach for your solutions and gaining some starting points for performance improvements.</p>
 
-
 <h4>Coding</h4>
 <p>Obviously the very core of using JavaScript is coding. As mentioned above, saving some bytes at the cost of readability is not reasonable. Modern JavaScript engines have a lot build-in optimizations for sub-optimal code. However, following a certain coding style will assure a good performance by default.</p>
 
 <h5>Read/Write values</h5>
-<p>
-The kind of storing and accessing values differs in terms of speed. This can have different impacts depending on having many read/write operations (real-time calculations) versus storing large amounts of data (state caching). <br />
-As a rule of thumb take this order:
-</p>
-<pre data-rel="js" class="prettyprint lang-js">
-  <code>
-  // literals
-  [ ], “ ”, { }    // ... are faster than ...
-  // variables
-  var x            //... are faster than ...
-  // arrays | objects
-  {property : "value"}
-  </code>
-</pre>
+<p>The kind of storing and accessing values differs in terms of speed. This can have different impacts depending on having many read/write operations (real-time calculations) versus storing large amounts of data (state caching). <br />
+As a rule of thumb take this order:</p>
+
+<pre data-rel="js" class="prettyprint lang-js"><code>
+// literals
+[ ], '', { }    // ... are faster than ...
+// variables
+var x            //... are faster than ...
+// arrays | objects
+{property : "value"}
+</code></pre>
+
 <p>As a general note, try to use literals as often as possible. Especially when it comes to declaration of arrays/objects.</p>
-<pre data-rel="js" class="prettyprint lang-js">
-  <code>
-  // Don't...
-  var array = new Array,
-    object = new Object;
-  
-  // ... better to use
-  var array = [ ],
-    object = { };
-  </code>
-</pre>
+<pre data-rel="js" class="prettyprint lang-js"><code>
+// Don't...
+var array = new Array,
+  object = new Object;
+
+// ... better to use
+var array = [ ],
+  object = { };
+</code></pre>
 
 <h5>Loops</h5>
 <p>
   In general the common "for" and "while" loops should be the preferred options. Apart from the loop-type it's way more important to cut down the amount of operations that happen in each iteration. <br />
   A usual scenario is looping over an array, which can be optimized like this (maybe moving the var statement to the top of your function for readability and happy lint'ing):
 </p>
-<pre data-rel="js" class="prettyprint lang-js">
-  <code>
-  // calculating the constant array-length in every iteration 
-  // - makes our JS engine a dull boy :(
-  for(var i = 0; i &lt; arr.length; i++){ 
-     do_sth();
-  }
-    
-  // calculating the constant array-length once
-  // - sounds like a pro way :)
-  for(var i = 0, len = arr.length; i &lt; len; i++){ 
-     do_sth();
-  }
-    
-  // if the process order doesn't matter
-  // - you can go the rockstar way :P ...
-  for(var i = arr.length ; i-- ; ){ 
-     do_sth();
-  }
-  // ... this has only one operation per iteration
-  // and the loop stops at 0 (false) automatically
-  </code>
-</pre>
+<pre data-rel="js" class="prettyprint lang-js"><code>
+// calculating the constant array-length in every iteration 
+// - makes our JS engine a dull boy :(
+for(var i = 0; i &lt; arr.length; i++){ 
+   do_sth();
+}
+  
+// calculating the constant array-length once
+// - sounds like a pro way :)
+for(var i = 0, len = arr.length; i &lt; len; i++){ 
+   do_sth();
+}
+  
+// if the process order doesn't matter
+// - you can go the rockstar way :P ...
+for(var i = arr.length ; i-- ; ){ 
+   do_sth();
+}
+// ... this has only one operation per iteration
+// and the loop stops at 0 (false) automatically
+</code></pre>
 
 <h5>Don't repeat yourself (DRY) when writing code</h5>
 <p>
@@ -1791,37 +1769,35 @@ As a rule of thumb take this order:
 <p>
   Special advice: If you happen to repeat a lot of testing for the very same condition, maybe conditional advance loading is something for you.
 </p>
-<pre data-rel="js" class="prettyprint lang-js">
-  <code>
-  // doing the 'isModernBrowser' test with every function call
-  // - makes our JS engine a dull boy :(
-  function webGl() {
-    if (isModernBrowser) {
-      startSomeAssKicking3DGame();
-    } else {
-      openMinesweeper(); 
-    }
+<pre data-rel="js" class="prettyprint lang-js"><code>
+// doing the 'isModernBrowser' test with every function call
+// - makes our JS engine a dull boy :(
+function webGl() {
+  if (isModernBrowser) {
+    startSomeAssKicking3DGame();
+  } else {
+    openMinesweeper(); 
   }
-  function localStorage() {
-    if (isModernBrowser) {
-      saveSomeGameStats(); 
-    } else {
-      printCopy();
-    }
+}
+function localStorage() {
+  if (isModernBrowser) {
+    saveSomeGameStats(); 
+  } else {
+    printCopy();
   }
-  
-  
-  // doing the 'isModernBrowser' test once on initial load
-  // - sounds pro, bro' (sis') :)
-  var webGl = (isModernBrowser) ? 
-        startSomeAssKicking3DGame :
-        openMinesweeper;
-  
-  var localStorage = (isModernBrowser) ? 
-             saveSomeGameStats :
-             printCopy;
-  </code>
-</pre>
+}
+
+
+// doing the 'isModernBrowser' test once on initial load
+// - sounds pro, bro' (sis') :)
+var webGl = (isModernBrowser)
+            ? startSomeAssKicking3DGame
+            : openMinesweeper;
+
+var localStorage = (isModernBrowser)
+                   ? saveSomeGameStats
+                   : printCopy;
+</code></pre>
 
 <h4>DOM</h4>
 <p>A lot of nowadays script running times are rather spent on DOM operations / manipulations than on anything else. Due to the great achievements of JavaScript libraries and frameworks (jQuery, backbone, etc.) those impacts have been reduced. However, even while using those tools, you can improve the overall performance of your code by taking care for the DOM.</p>
@@ -1831,10 +1807,10 @@ As a rule of thumb take this order:
 <p>
   A lot of the following best-practices around the DOM topic refer to the mechanisms of reflow and repaint. It's essential to understand those effects when building modern (application-like) web-interfaces. A very(!) abbreviate description is:
 </p>
-  <ul class="inline-list">
-    <li>Reflow: triggered by changing the document's structure/layout due to reordering/adding/removing elements, changing their size, margins or position.</li>
-    <li>Repaint: triggered by changing the outer appearance of an element, for example color and background.</li>
-  </ul>
+<ul class="inline-list">
+  <li>Reflow: triggered by changing the document's structure/layout due to reordering/adding/removing elements, changing their size, margins or position.</li>
+  <li>Repaint: triggered by changing the outer appearance of an element, for example color and background.</li>
+</ul>
 <p>
   A reflow is almost always bound to a repaint and quite expensive, thus it can hurt the user experience. Reducing reflows/repaints to a minimum is a great source for sensible performance improvements.<br />
   If you are not aware of reflow / repaint mechanisms you should find further details here: <a data-reference="true" href="http://www.phpied.com/rendering-repaint-reflowrelayout-restyle/">Stoyan Stefanov - Rendering: repaint, reflow/relayout, restyle</a>
@@ -1846,56 +1822,52 @@ As a rule of thumb take this order:
   Usually this is a good thing, as it's improving the user-experience due to less (visible) changes on the user-interface. Leveraging this batch method can improve your overall performance significantly. For realizing this, it's crucial not to trigger the rendering and not to flush the batch unintended.<br />
 Find further details, about what triggers reflows here: <a data-reference="true" href="http://gent.ilcore.com/2011/03/how-not-to-trigger-layout-in-webkit.html">How (not) to trigger a layout in Webkit</a>
 </p>
-<pre data-rel="js" class="prettyprint lang-js">
-  <code>
-  // causes two reflows due to flushing the batch
-  // - makes our JS engine a dull boy :(
-  var fullWidth = document.body.clientWidth;
-  fullSizeDiv.style.width = fullWidth + 'px'; 
-  var fullHeight = document.body.clientHeight; 
-  fullSizeDiv.style.height = fullHeight + 'px';
+<pre data-rel="js" class="prettyprint lang-js"><code>
+// causes two reflows due to flushing the batch
+// - makes our JS engine a dull boy :(
+var fullWidth = document.body.clientWidth;
+fullSizeDiv.style.width = fullWidth + 'px'; 
 
+var fullHeight = document.body.clientHeight; 
+fullSizeDiv.style.height = fullHeight + 'px';
 
-  // leveraging the batch mechanism, causes a single reflow
-  // - is the pro way :)
-  var fullWidth = document.body.clientWidth;
-  var fullHeight = document.body.clientHeight; 
-  fullSizeDiv.style.width = fullWidth + 'px'; 
-  fullSizeDiv.style.height = fullHeight + 'px';
-  </code>
-</pre>
+// leveraging the batch mechanism, causes a single reflow
+// - is the pro way :)
+var fullWidth = document.body.clientWidth;
+var fullHeight = document.body.clientHeight; 
 
-
+fullSizeDiv.style.width = fullWidth + 'px'; 
+fullSizeDiv.style.height = fullHeight + 'px';
+</code></pre>
 
 <h5>DOM injection &amp; manipulation</h5>
+
 <p>The short announcement: Bundle your DOM operations!<br />
 For injections, you can either create your HTML block with string concatenation or with a so called documentFragment. Either way, you should create the entire block before appending (prepending, replacing) it into the DOM. The same is true for canvas drawings, which should happen in one go, too.<br />
 When you need to develop for older browsers (especially Internet Explorer &lt; IE9), there is a performance benefit in using the string concatenation approach. Nevertheless, this can get messy very quickly, so generally you should prefer the document-fragment, as this gets a lot of optimizations in modern browsers (now and in future). You can learn more about the documentFragment here: <a data-reference="true" href="http://ejohn.org/blog/dom-documentfragments/">John Resig - DOM DocumentFragment</a> <br />
 When using a library like jQuery anyway, you can use the build-in mechanism, which abstract the native approaches including performance improvements.
 </p>
 
-<pre data-rel="js" class="prettyprint lang-js">
-  <code>
-  // the string concatenation approach
-  // is helping IE performing better :-/
-  var sHTML = ["&lt;h1&gt;","Quotes by Yoda","&lt;h1&gt;"].join();
-    document.getElementsByTagName('body').item(0).appendChild(sHTML);
-  
-  
-  // the elegant document-fragment approach
-  // - is preferable :)
-  var fragment = document.createDocumentFragment();
-  var heading = fragment.appendChild(document.createElement('h1')); 
-    heading.appendChild(document.createTextNode('Quotes by Yoda'));
-    document.getElementsByTagName('body').item(0).appendChild(fragment);
-  
-  
-  // the jQuery approach
-  // - if you have it, use it ;)
-  var eHTML = $("&lt;h1&gt;&lt;/h1&gt;").text("Quotes by Yoda");
-    $("body").append(eHTML);
-  </code>
-</pre>
+<pre data-rel="js" class="prettyprint lang-js"><code>
+// the string concatenation approach
+// is helping IE performing better :-/
+var sHTML = ["&lt;h1&gt;","Quotes by Yoda","&lt;h1&gt;"].join();
+document.getElementsByTagName('body').item(0).appendChild(sHTML);
+
+// the elegant document-fragment approach
+// - is preferable :)
+var fragment = document.createDocumentFragment();
+var heading = fragment.appendChild(document.createElement('h1')); 
+
+heading.appendChild(document.createTextNode('Quotes by Yoda'));
+document.getElementsByTagName('body').item(0).appendChild(fragment);
+
+// the jQuery approach
+// - if you have it, use it ;)
+var eHTML = $("&lt;h1&gt;&lt;/h1&gt;").text("Quotes by Yoda");
+
+$("body").append(eHTML);
+</code></pre>
 
 
 <h5>Traversing</h5>
@@ -1905,201 +1877,180 @@ Nevertheless, it's crucial to write efficient selectors and cache (static) resul
 <h6>Write efficient query selectors</h6>
 <p>For JavaScript query selectors you can apply the same rules as for CSS Selectors. The query for an id serves better performance than for classes or tag-names.
 </p>
-<pre data-rel="js" class="prettyprint lang-js">
-  <code>
-  // selector based on an id
-  document.getElementById(id)
-  // selector based on a tag name
-  document.getElementsByTagName(tagName)  // returns live node-list
-  // selector based on a css-selector (since IE8)
-  document.querySelectorAll(css-selector) // returns node-list
-  // selector based on a css-selector (since IE8)
-  document.querySelector(css-selector)    // returns first element
-  </code>
-</pre>
+<pre data-rel="js" class="prettyprint lang-js"><code>
+// selector based on an id
+document.getElementById(id)
+// selector based on a tag name
+document.getElementsByTagName(tagName)  // returns live node-list
+// selector based on a css-selector (since IE8)
+document.querySelectorAll(css-selector) // returns node-list
+// selector based on a css-selector (since IE8)
+document.querySelector(css-selector)    // returns first element
+</code></pre>
+
 <p>If you think about the fact, that those native JS selectors are underlying libraries like jQuery, it's obvious why for example a query for a class-name is one of the slowest in performance.<br />
 Overall jQuery selectors are fast, thus for readability and simplicity it's absolutely acceptable to also use less performant selectors. The following best-practices are only a hint at where to gain some performance wins:
 </p>
-<pre data-rel="js" class="prettyprint lang-js">
-  <code>
-  // try selecting with id or ...
-  $("#id");
-  // ... descending from an id ...
-  $("#id p");
-  // ... better: improve specificity
-  $("#id").find("p");
-  
-  // try to avoid complexity ...
-  $("#page div.article p.intro:first-child");
-  // ... class or ...
-  $(".class");
-  // ... attribute selectors
-  $("[data-attribute]");
-</code>
-</pre>
+<pre data-rel="js" class="prettyprint lang-js"><code>
+// try selecting with id or ...
+$("#id");
+// ... descending from an id ...
+$("#id p");
+// ... better: improve specificity
+$("#id").find("p");
+
+// try to avoid complexity ...
+$("#page div.article p.intro:first-child");
+// ... class or ...
+$(".class");
+// ... attribute selectors
+$("[data-attribute]");
+</code></pre>
 
 <h6>Cache query selector results</h6>
 <p>Way more important than finding the most efficient selector is caching your results for repeating tasks. Instead of traversing the same DOM tree branch over and over again, you should cache the results on initialization (if static) or after a related DOM update (f. e. after AJAX insert). Using jQuery here as an example, but the same is true for native JS or any other library/framework.</p>
-<pre data-rel="js" class="prettyprint lang-js">
-<code>
-  // traversing for "#myList" 2x on every click
-  // - makes our JS engine a dull boy :(
-  $("#myButton").on('click', function (e) {
-    if ($("#myList").hasClass("active")) {
-      $("#myList").removeClass("active");
-    } else {
-      $("#myList").addClass("active");
-    }
-  });
-  
-  
-  // caching the "#myList" Object once
-  // - is the way to do it :)
-  var myList = $("#myList");
-  $("#myButton").on('click', function (e) {
-    if (myList.hasClass("active")) {
-      myList.removeClass("active");
-    } else {
-      myList.addClass("active");
-    }
-  });
-</code>
-</pre>
+
+<pre data-rel="js" class="prettyprint lang-js"><code>
+// traversing for "#myList" 2x on every click
+// - makes our JS engine a dull boy :(
+$("#myButton").on('click', function (e) {
+  if ($("#myList").hasClass("active")) {
+    $("#myList").removeClass("active");
+  } else {
+    $("#myList").addClass("active");
+  }
+});
+
+// caching the "#myList" Object once
+// - is the way to do it :)
+var myList = $("#myList");
+$("#myButton").on('click', function (e) {
+  if (myList.hasClass("active")) {
+    myList.removeClass("active");
+  } else {
+    myList.addClass("active");
+  }
+});
+</code></pre>
+
 <p>Another library specific (f. e. jQuery) performance optimization could be chaining:</p>
-<pre data-rel="js" class="prettyprint lang-js">
-<code>
-  // instead of multiple operations on one HTML object ...
-  var myList = $("#myList");
-  myList.hide();
-  myList.css("background-color","#bada55");
-  myList.show();
-  
-  
-  // ... chain it and leverage built-in optimizations
-  $("#myList").hide()
-        .css("background-color","#bada55")
-        .show();
-</code>
-</pre>
+
+<pre data-rel="js" class="prettyprint lang-js"><code>
+// instead of multiple operations on one HTML object ...
+var myList = $("#myList");
+myList.hide();
+myList.css("background-color","#bada55");
+myList.show();
+
+// ... chain it and leverage built-in optimizations
+$("#myList").hide()
+      .css("background-color","#bada55")
+      .show();
+</code></pre>
 
 <h6>Beware of live collections (node-lists)</h6>
 <p>A common trap (especially when using document.getElementsByTagName) is handling a live node-list. As the name indicates this collection holds a live-reference pointing to the DOM node(s) instead of holding a cached (non synched) copy.
 Rarely this might be an intended scenario, but in most cases it causes serious problems due to unexpected changes to the collections reference. Due to its live characteristics a collection is updated and "re-traversed" with every read/write access or manipulation, respectively. This can become a big performance impact. Thus - as a general rule of thumb - avoid a live-collection, unless you know exactly how to use it.</p>
-<pre data-rel="js" class="prettyprint lang-js">
-<code>
-  // jQuery's default behavior is returning a cached copy
-  var coll = jQuery(“div”); 
-  
-  // assuming a collection of 5 elements ...
-  for (var i=0; i &lt; coll.length; i++) { 
-    // ... we do 5 iterations, ending up with 10 div elements
-    document.body.appendChild(document.createElement(“div”));
-  }
-  
-  
-  // the native JavaScript behavior is returning a live-collection
-  var coll = document.getElementsByTagName(“div”);
-  
-  // assuming a collection of 5 elements ...
-  for (var i=0; i &lt; coll.length; i++){ 
-    // we create an infinite loop, ending up with a stack-overflow error
-    document.body.appendChild(document.createElement(“div”));
-  }
-</code>
-</pre>
+
+<pre data-rel="js" class="prettyprint lang-js"><code>
+// jQuery's default behavior is returning a cached copy
+var coll = jQuery(“div”); 
+
+// assuming a collection of 5 elements ...
+for (var i=0; i &lt; coll.length; i++) { 
+  // ... we do 5 iterations, ending up with 10 div elements
+  document.body.appendChild(document.createElement(“div”));
+}
+
+// the native JavaScript behavior is returning a live-collection
+var coll = document.getElementsByTagName(“div”);
+
+// assuming a collection of 5 elements ...
+for (var i=0; i &lt; coll.length; i++){ 
+  // we create an infinite loop, ending up with a stack-overflow error
+  document.body.appendChild(document.createElement(“div”));
+}
+</code></pre>
 
 <h4>Event delegation</h4>
 <p>Delegating your events (precisely: their handling) is not only improving the response time of your interface but increasing the readability, maintainability and re-usability. Creating autonomic modules which handle related events on their own, is a big step towards object oriented development.</p>
 <p><strong>In JavaScript events bubble up</strong>. That means, when an event is triggered on an DOM element, it is also subsequently triggered on all parent-elements up to the root (window), as described in the following abstract example of a website navigation:</p>
-<pre data-rel="pseudo" class="prettyprint lang-js">
-<code>
-  window                   // click
-   document               // click
-      #nav            // click
-         a           |
-         a  // click |
-         a
-</code>
-</pre>
+<pre data-rel="pseudo" class="prettyprint lang-js"><code>
+window                  // click
+ document             // click
+    #nav            // click
+       a           |
+       a  // click |
+       a
+</code></pre>
+
 <p>The above pseudo code should visualize, why it might be a bad idea to bind all event-handlers to the window or document object (as f. e. in jQuery's live() function). If all events are only handled on the root level, they always need to bubble the whole way up before a response to the user(-interface) can be determined. Thus binding the event-handler for example to the "#nav" reduces the distance to one level.
 </p>
-<pre data-rel="js" class="prettyprint lang-js">
-<code>
-  // binding handlers to the window 
-  // forces the event to bubble up every time :(
-  window.addEventListener('click', handleClick, true);
-  window.attachEvent('click', handleClick);  // IE6 - 8
-  
-  
-  // binding handlers to the parent element 
-  // fires the response faster, which makes the user happy :)
-  var nav = document.getElementById('nav');
-  nav.addEventListener('click', handleClick, true);
-  nav.attachEvent('click', handleClick);  // IE6 - 8
-</code>
-</pre>
-<p>
-Apart from the responsiveness, re-usability is another benefit. Having all events handled on a related parent (or any other sensible) node, enables you to reuse your code for the same markup in any other context.
-</p>
+
+<pre data-rel="js" class="prettyprint lang-js"><code>
+// binding handlers to the window 
+// forces the event to bubble up every time :(
+window.addEventListener('click', handleClick, true);
+window.attachEvent('click', handleClick);  // IE6 - 8
+
+// binding handlers to the parent element 
+// fires the response faster, which makes the user happy :)
+var nav = document.getElementById('nav');
+nav.addEventListener('click', handleClick, true);
+nav.attachEvent('click', handleClick);  // IE6 - 8
+</code></pre>
+
+<p>Apart from the responsiveness, re-usability is another benefit. Having all events handled on a related parent (or any other sensible) node, enables you to reuse your code for the same markup in any other context.</p>
+
 <h5>bind, live or delegate? - Put it 'on'!</h5>
-<p>
-  Due to the big distribution of jQuery and the frequent usage in Sapient projects, it's worth to make a note about event delegation in jQuery. Before version 1.7 there were three ways of event-handler binding. The methods bind(), live() and delegate() differ in the way they are bound, handled and preserved when the related elements are destroyed.
+<p>Due to the big distribution of jQuery and the frequent usage in Sapient projects, it's worth to make a note about event delegation in jQuery. Before version 1.7 there were three ways of event-handler binding. The methods bind(), live() and delegate() differ in the way they are bound, handled and preserved when the related elements are destroyed.
 </p>
-<p>
-  If you need to work in an environment with a jQuery version &lt; 1.7, you should use delegate() in most case, because it does precisely what it says and what is described above. The following comparison of event binding methods shall demonstrate their benefits and pitfalls (assuming a navigation with 3 anchor elements).
-</p>
-<pre data-rel="js" class="prettyprint lang-js">
-<code>
-  // creates 3 event-handlers, binds directly to anchors, 
-  // anchor elements must(!) exist on binding,  
-  // can't handle new anchor elements (f. e. added later with JS) 
-  $("#nav").find("a").bind("click", handleClick); 
-  
-  
-  // creates 1 event-handler, binds to window object, 
-  // anchor elements don't need to exist on binding,  
-  // can handle new anchor elements (f. e. added later with JS) 
-  $("#nav").find("a").live("click", handleClick);
-  
-  
-  // creates 1 event-handler, binds to #nav element, 
-  // anchor elements don't need to exist on binding,  
-  // can handle new anchor elements (f. e. added later with JS) 
-  $("#nav").delegate("a", "click", handleClick);
-  
-  
-  // unifies all former methods to one syntax, depends on how you use it
-  $("#nav").find("a").on("click",handleClick);   // bind()
-  $(document).on("click","#nav a", handleClick); // live()
-  $("#nav").on("click","a", handleClick);        // delegate()
-</code>
-</pre>
-<p>
-  If you can work with jQuery 1.7 or higher you should most definitely use on(), because this function abstract all of the former three methods and detects based on the used syntax, which binding is appropriate for the specific situation.<br />
-  For further details see this <a data-reference="true" href="http://www.elijahmanor.com/2012/02/differences-between-jquery-bind-vs-live.html">comparison of bind(), live(), delegate() and on()</a>.
-</p>
+
+<p>If you need to work in an environment with a jQuery version &lt; 1.7, you should use delegate() in most case, because it does precisely what it says and what is described above. The following comparison of event binding methods shall demonstrate their benefits and pitfalls (assuming a navigation with 3 anchor elements).</p>
+
+<pre data-rel="js" class="prettyprint lang-js"><code>
+// creates 3 event-handlers, binds directly to anchors, 
+// anchor elements must(!) exist on binding,  
+// can't handle new anchor elements (f. e. added later with JS) 
+$("#nav").find("a").bind("click", handleClick); 
+
+// creates 1 event-handler, binds to window object, 
+// anchor elements don't need to exist on binding,  
+// can handle new anchor elements (f. e. added later with JS) 
+$("#nav").find("a").live("click", handleClick);
+
+// creates 1 event-handler, binds to #nav element, 
+// anchor elements don't need to exist on binding,  
+// can handle new anchor elements (f. e. added later with JS) 
+$("#nav").delegate("a", "click", handleClick);
+
+// unifies all former methods to one syntax, depends on how you use it
+$("#nav").find("a").on("click",handleClick);   // bind()
+$(document).on("click","#nav a", handleClick); // live()
+$("#nav").on("click","a", handleClick);        // delegate()
+</code></pre>
+<p>If you can work with jQuery 1.7 or higher you should most definitely use on(), because this function abstract all of the former three methods and detects based on the used syntax, which binding is appropriate for the specific situation.<br />
+  For further details see this <a data-reference="true" href="http://www.elijahmanor.com/2012/02/differences-between-jquery-bind-vs-live.html">comparison of bind(), live(), delegate() and on()</a>.</p>
 
 <h4>Animation</h4>
 <p>With modern web-technologies there is also a higher demand for animations within a web-interface. Those animations only appear smoothly when a frame is drawn in less than 16ms or to put it in another way, an animation should happen at 60 frames per second. Due to the "one thread" design of browser engines and the pretty slow manipulation (reflow/repaint) of the DOM, this rate can hardly be reached with pure JavaScript functionality.<br />
 Modern browsers have introduced the requestAnimationFrame API, which draws the interface at a rate of 60 frames/s and enables you to execute code (animations) for each of those frames. You can read Paul Irish's article <a data-reference="true" href="http://paulirish.com/2011/requestanimationframe-for-smart-animating/">'requestAnimationFrame' for smart animating</a> to get more details and to learn how to overcome differences in vendor implementations (naming).</p>
 
-
 <h4>Scope chain &amp; execution context</h4>
 <p>Fundamental principles of modern JavaScript development are closures, the scope chain and execution context, respectively.
 As the explanation of those principles is out of scope (Ha-Ha: what a wordplay) for this document, there is only a abbreviate description of the necessary context (Ha-Ha again) for the following topics. Recommendations for further reading are <a data-reference="true" href="http://jibbering.com/faq/notes/closures/">Jim Ley's FAQ on closures (including scope-chain and execution context)</a> as well as the <a data-reference="true" href="http://javascript.info/tutorial/closures/">JavaScript closure tutorial</a>.
 </p>
-<p>The core idea in JavaScript is: "everything is an object". Thus every function(-object) receives a scope property, that holds references to the global object. When the function is executed, an activation-object (execution context) is created and moved to the first place in the scope-chain. For better understanding a simple example:
-</p>
+
+<p>The core idea in JavaScript is: "everything is an object". Thus every function(-object) receives a scope property, that holds references to the global object. When the function is executed, an activation-object (execution context) is created and moved to the first place in the scope-chain. For better understanding a simple example:</p>
+
 <div class="row media-txt l-slice">
   <div class="four columns txt-container">
-<pre data-rel="js" class="prettyprint lang-js">
-<code>
+<pre data-rel="js" class="prettyprint lang-js"><code>
 function add(num1, num2) {
   var sum = num1 + num2;
   return sum;
 };
-</code>
-</pre>
+</code></pre>
   </div>
   <div class="eight columns media-container">
     <figure>
@@ -2110,11 +2061,9 @@ function add(num1, num2) {
 </div>
 <div class="row media-txt l-slice">
   <div class="four columns txt-container">
-<pre data-rel="js" class="prettyprint lang-js">
-<code>
+<pre data-rel="js" class="prettyprint lang-js"><code>
 var total = add(5, 10);
-</code>
-</pre>
+</code></pre>
   </div>
   <div class="eight columns media-container">
     <figure>
@@ -2127,12 +2076,8 @@ var total = add(5, 10);
 <h4>Use local variables</h4>
 <div class="row media-txt l-slice">
   <div class="four columns txt-container">
-    <p>
-      Giving the fact about how the scope chain works, it becomes obvious why local variables should be used. Referencing to a variable (identifier) that lies outside the scope of a function (f. e. within the global object) forces the JS engine to run down the scope chain in order to access the related value. This process can slow down your performance and gets worse the deeper your function is nested within other functions (scopes).
-    </p>
-    <p>
-      That said, in modern JavaScript development patterns it's absolutely usual to nest functions into each other for module (object) creation. It's even appreciated, as there are benefits like public/private patterns, namespace encapsulation and similar benefits of object-oriented development. To sum up, take this two rules of thumb:
-    </p>
+    <p>Giving the fact about how the scope chain works, it becomes obvious why local variables should be used. Referencing to a variable (identifier) that lies outside the scope of a function (f. e. within the global object) forces the JS engine to run down the scope chain in order to access the related value. This process can slow down your performance and gets worse the deeper your function is nested within other functions (scopes).</p>
+    <p>That said, in modern JavaScript development patterns it's absolutely usual to nest functions into each other for module (object) creation. It's even appreciated, as there are benefits like public/private patterns, namespace encapsulation and similar benefits of object-oriented development. To sum up, take this two rules of thumb:</p>
     <ul>
       <li>Nest functions where you can get benefits like encapsulation, value integrity, modularisation, etc.</li>
       <li>When using a variable (value) outside of your current scope more than once, store it in a local variable!</li>
@@ -2145,45 +2090,41 @@ var total = add(5, 10);
     </figure>
   </div>
 </div>
-<pre data-rel="js" class="prettyprint lang-js">
-<code>
-  // access the document identifier 2x 
-  // in the global object :(
-  function add(num1, num2) {
-    var sum = num1 + num2;
-    document.getElementsByTagName('body').item(0).appendChild(sum);
-    document.body.style.backgroundColor = "#0F0";
-  };
-  
-  // access the document identifier 1x 
-  // in the global object :)
-  function add(num1, num2) {
-    var sum = num1 + num2;
-    var doc = document;
-    doc.getElementsByTagName('body').item(0).appendChild(sum);
-    doc.body.style.backgroundColor = "#0F0";
-  };
-</code>
-</pre>
+<pre data-rel="js" class="prettyprint lang-js"><code>
+// access the document identifier 2x 
+// in the global object :(
+function add(num1, num2) {
+  var sum = num1 + num2;
+  document.getElementsByTagName('body').item(0).appendChild(sum);
+  document.body.style.backgroundColor = "#0F0";
+};
+
+// access the document identifier 1x 
+// in the global object :)
+function add(num1, num2) {
+  var sum = num1 + num2;
+  var doc = document;
+  doc.getElementsByTagName('body').item(0).appendChild(sum);
+  doc.body.style.backgroundColor = "#0F0";
+};
+</code></pre>
 
 <h4>Avoid `with`</h4>
 <div class="row media-txt l-slice">
 <div class="six columns txt-container">
   <p>A 'with' statement in JavaScript inserts an object at the front scope chain, so any property/variable references will first try to be resolved against this object. That means you add another level to the resolving process, which can impact your overall performance. Moreover conflicting identifier names can cause serious problems. Compare the following figure for with-statement</p>
-<pre data-rel="js" class="prettyprint lang-js">
-<code>
-  function add(num1,num2){
-    with(document){
-      var sum = num1 + num2,
-      n = createTextNode(sum),
-      p = getElementById(“t1”);
-      p.appendChild(n);
-      return sum;
-    }
+<pre data-rel="js" class="prettyprint lang-js"><code>
+function add(num1,num2){
+  with(document){
+    var sum = num1 + num2,
+    n = createTextNode(sum),
+    p = getElementById(“t1”);
+    p.appendChild(n);
+    return sum;
   }
-  var total = add(5, 10);
-</code>
-</pre>
+}
+var total = add(5, 10);
+</code></pre>
 </div>
 <div class="six columns media-container">
   <figure>
@@ -2192,56 +2133,44 @@ var total = add(5, 10);
   </figure>
 </div>
 </div>
+
 <h4>Minimize use of try/catch</h4>
-<p>
-  Upfront: Sometimes it's recommended to use a try/catch block for stability and adequate error handling. Thus, if you're sure it's the appropriate solution, by all means - use it.<br />
+<p>Upfront: Sometimes it's recommended to use a try/catch block for stability and adequate error handling. Thus, if you're sure it's the appropriate solution, by all means - use it.<br />
   However, from a performance perspective the try/catch block acts similar to the 'with' statement and creates an Activation object at the top of your scope chain, including the above mentioned identifier resolution issues. Thus you should try to minimize its usage as much as you can.
 </p>
 
 <h4>Avoid 'eval'</h4>
 <p>The well known JavaScript rule "eval is evil" is there for a reason. You should avoid, unless you're 100% (better make it 1000%) sure, you are facing one of the rare exceptions in which it's appropriate.<br />
-  The eval() function in javascript is a way to run arbitrary code at run-time. That means you're running any (!) kind of code within the current scope and execution context. This violates the integrity of your variable values (identifier conflicts) and is a serious thread to the security of your code or even your entire website.
-</p>
-
+  The eval() function in javascript is a way to run arbitrary code at run-time. That means you're running any (!) kind of code within the current scope and execution context. This violates the integrity of your variable values (identifier conflicts) and is a serious thread to the security of your code or even your entire website.</p>
 
 <h4>UI-thread</h4>
 <p>Browser engines are implemented in a "one thread" design. That means it can only do one task at a time (no multitasking ;). The handling of user-input is your highest priority for a fast responding interface and a good user-experience. Thus you need to make sure, that other JS operations &amp; calculations work in quickly "digestible" chunks.<br />
   According to usability expert Jakob Nielsen, every interface needs to respond within 100ms, otherwise the user feels disconnected (progress-bars can stretch this time-slot ;). Because of this user-inputs have the highest priority in the UI-Thread. Either they are processed immediately or they are set next in row, if another JavaScript function is currently executed.<br />
-  However, when you need to process a huge amount of data for example, it's likely to take more than 100ms. In this case try to cut down the process in several tasks and if that's not possible use setTimeout/setInterval for example in order to process one block of data in a defined interval. In this way the UI-Thread is released frequently for handling (&amp; responding to) any user-input.
-</p>
-<p>
-  If you can work for a target-group, which supports modern HTML5 technologies you can have a look into web-workers. That's an API, which enables you to create parallel threads for processing large amount of data without bothering the UI-thread for this.
-  This <a data-reference="true" href="http://www.html5rocks.com/en/tutorials/workers/basics/">HTML5 rocks' article</a> is a good starting point to dive deeper into this topic.
-</p>
+  However, when you need to process a huge amount of data for example, it's likely to take more than 100ms. In this case try to cut down the process in several tasks and if that's not possible use setTimeout/setInterval for example in order to process one block of data in a defined interval. In this way the UI-Thread is released frequently for handling (&amp; responding to) any user-input.</p>
+<p>If you can work for a target-group, which supports modern HTML5 technologies you can have a look into web-workers. That's an API, which enables you to create parallel threads for processing large amount of data without bothering the UI-thread for this. This <a data-reference="true" href="http://www.html5rocks.com/en/tutorials/workers/basics/">HTML5 rocks' article</a> is a good starting point to dive deeper into this topic.</p>
 
 <h4>Load scripts asynchronously</h4>
 <p>The less there is to initialize and to process in the beginning, the faster your website loads. This is not directly affecting your JavaScript performance, but at the end of the day the user only cares about the performance of your website.<br />
 Based on your requirements and how sophisticated your JS environment (framework) is set up, there are different ways for asynchronously (or deferred / lazy) load your scripts. Moreover asynchronous script loading is especially beneficial when it comes to 3rd party code (ads, social media plugins).<br />
 Chris Coyier shows different approaches to this problem in his <a data-reference="true" href="http://css-tricks.com/thinking-async/">Thinking async article</a>.
 </p>
-<p>
-Please note, that this is only relevant when it comes to a certain level of Javascript in size and complexity. For the majority of websites, it's usually recommend to save additional requests and combine &amp; minify your JavaScript into one file as well as compress (gzip) it for delivery. This is also the easiest way to leverage caching mechanisms of browsers.</p>
+
+<p>Please note, that this is only relevant when it comes to a certain level of Javascript in size and complexity. For the majority of websites, it's usually recommend to save additional requests and combine &amp; minify your JavaScript into one file as well as compress (gzip) it for delivery. This is also the easiest way to leverage caching mechanisms of browsers.</p>
 
 <h4>Don't use JavaScript</h4>
 <p>This might sound ridiculous, but saved JavaScript code obviously boosts your performance. ;P<br />
 To be more serious about it, classical css-selectors (:hover, :focus) and new CSS3 features (:target, transition, transform, keyframe animation) enable you to do stunning effects and create immediate interface-responses without any use of JavaScript. The more your website (user-interface) can act self-sustainingly the more your JavaScript can focus on the background work.<br />
-Moreover CSS3 animations are optimized by browser-vendors for their reflow/repaint process, so you don't need to bother with those impacts as you would do with JavaScript.
-</p>
-
+Moreover CSS3 animations are optimized by browser-vendors for their reflow/repaint process, so you don't need to bother with those impacts as you would do with JavaScript.</p>
 
 <h3 id="javascript-libraries">JavaScript Libraries and Tools</h3>
-
 <p>This section describes our most often used used tools.</p>
 
-
 <h4>General utility/DOM abstraction</h4>
-<p>jQuery: Mostly used tool for DOM abstraction and aligning Browser capabillities. <a data-reference="true" href="http://jquery.com/">jQuery</a></p>
-  
-  
+<p>jQuery: Mostly used tool for DOM abstraction and aligning Browser capabilities. <a data-reference="true" href="http://jquery.com/">jQuery</a></p>
+
 <h4>Browser Normalization and Feature Detection</h4>
 <p>Modernizr contains a range of feature detection tests and a HTML5 shiv for IE support. It should be customised to include only the features you require. <a data-reference="true" href="http://modernizr.com/">Modernizr</a></p>
   
-
 <h4>Build Scripts and Templates</h4>
 <p>Templates and Build Scripts we use for a starting point and additional build scripts, that helps getting better results in deploy processes.</p>
   
@@ -2249,19 +2178,18 @@ Moreover CSS3 animations are optimized by browser-vendors for their reflow/repai
   <a data-reference="true" href="http://html5boilerplate.com/">HTML5 Boilerplate</a><br />
   <a data-reference="true" href="http://gruntjs.com/">Grunt</a>
 </p>
-  
 
 <h4>Asynchronous Loading</h4>
 
 <p>Asynchronous Module Definition (AMD) specifies a mechanism for defining ressources that can be asynchronously loaded. Synchronous loading of modules incurs performance, usability, debugging, and cross-domain access problems.</p>
   
-<p><a data-reference="true" href="https://github.com/amdjs/amdjs-api/wiki/AMD">AMD</a><br />
-<a data-reference="true" href="http://requirejs.org/">Requirejs</a><br />
-<a data-reference="true" href="https://github.com/cujojs/curl">curl.js</a></p>
-  
+<p>
+  <a data-reference="true" href="https://github.com/amdjs/amdjs-api/wiki/AMD">AMD</a><br />
+  <a data-reference="true" href="http://requirejs.org/">Requirejs</a><br />
+  <a data-reference="true" href="https://github.com/cujojs/curl">curl.js</a>
+</p>
 
 <h4>Scalable Architecture</h4>
-  
 <ul>
   <li>MVC (MV*)</li>
   <li>Backbone.js, AngularJS</li>
@@ -2273,7 +2201,6 @@ Moreover CSS3 animations are optimized by browser-vendors for their reflow/repai
   <li>Handlebars.js</li>
 </ul>
   
-
 <h4>Performance Testing and Profiling</h4>
 <ul>
   <li>jsPerf.com</li>
