@@ -1,28 +1,23 @@
 
 
 <!DOCTYPE html>                                         
-<!--[if lt IE 7]>
-<html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7">
-<![endif]-->
-<!--[if IE 7]>
-<html lang="en" class="no-js lt-ie9 lt-ie8">
-<![endif]--><!--[if IE 8]>
-<html lang="en" class="no-js lt-ie9">
-<![endif]--><!--[if gt IE 8]><!--> 
-<html lang="en" class="no-js">
-<!--<![endif]-->
+                                                      <!--[if lt IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7">   <![endif]--><!--[if IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8">          <![endif]--><!--[if IE 8]>
+<html lang="en" class="no-js lt-ie9">                 <![endif]--><!--[if gt IE 8]><!--> 
+<html lang="en" class="no-js">                        <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <title>Sapient Global Interactive Dev Standards</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sapient Front End Developers use these to work together smoothly, across geographies and on large scale projects. Not necessarily the only way to do things right when it comes to HTML/CSS/JS/Processes, but working well for us." />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />  
-  
-  <link rel="stylesheet" href="assets/stylesheets/all.combined.min.css" type="text/css" />
 
-  <link rel="shortcut icon" href="assets/images/favicon.ico" />
-  <link rel="icon" href="assets/images/favicon.ico" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sapient Front End Developers use these to work together smoothly, across geographies and on large scale projects. Not necessarily the only way to do things right when it comes to HTML/CSS/JS/Processes, but it works well for us." />
   <meta name="google-site-verification" content="zJfA8m1SUdIU5TDrULJOEstqsFXtBdbdbPUYPlKq40I" />
+  
+  <link rel="shortcut icon" href="assets/images/favicon.ico" />
+  <link rel="icon" href="assets/images/favicon.ico" />
+
+  <link rel="stylesheet" href="assets/stylesheets/all.combined.min.css" type="text/css" />
 </head>
 <body class="row">
 <div class="twelve columns l-document row">
@@ -69,30 +64,26 @@
 <p>We&#39;re happy to share this with the community and are excited to hear back form you - send us your comments and suggestions please create a fork and submit a pull request to start the conversation.</p>
 
 
-    <h2 id="general">General Stuff</h2>
-
+    <p><a id="general" aria-hidden="true"></a></p>
+<h2 id="general-stuff">General Stuff</h2>
 <p>Here are a few basics to keep a common base in terms of documents and collaboration:</p>
-<h3 id="general-control">Source Control</h3>
-
-<p>All Sapient Projects use source control. While we generally have a self-hosted SVN repository setup, some projects use Git. All members of a team must have access to the SVN repo (yes, including Designers) and are mandated (yes, especially Designers!) to use it.</p>
-<h3 id="general-utf8">UTF-8</h3>
-
+<p><a id="general-control" aria-hidden="true"></a></p>
+<h3 id="source-control">Source Control</h3>
+<p>All Sapient Projects use source control. While we generally have a self-hosted SVN repository setup, some projects use Git. All members of a team must have access to the repo (yes, including Designers) and are mandated (yes, especially Designers!) to use it.</p>
+<p><a id="general-utf8" aria-hidden="true"></a></p>
+<h3 id="utf-8">UTF-8</h3>
 <p>Save your text-based files as UTF-8. For HTML files, <a href="#head-encoding">don&#39;t forget to declare it with a meta-tag</a>. Serve them as UTF-8 as well, by working with the backend team to set the right HTTP headers.</p>
-<h3 id="general-settings">Document Settings</h3>
-
+<p><a id="general-settings" aria-hidden="true"></a></p>
+<h3 id="document-settings">Document Settings</h3>
 <p>Use Unix line endings <code>LF</code> to make documents. Many DIFF clients choke on mismatched line endings (MS Windows defaults to <code>CR+LF</code>).</p>
-<h3 id="general-whitespace">Whitespace / Indentation</h3>
-
+<p><a id="general-whitespace" aria-hidden="true"></a></p>
+<h3 id="whitespace-indentation">Whitespace / Indentation</h3>
 <p>Only one style should exist across the entire source of your project. Always be consistent in your use of whitespace. Use whitespace to improve the readability of any code.</p>
 <ul>
 <li>Never mix spaces and tabs for indentation.</li>
 <li>Choose between soft indents (spaces) or real tabs. Stick to your choice without fail.</li>
 <li>If using spaces, choose the number of characters used per indentation level. (Preference: 4 spaces / Tab size 4)</li>
 </ul>
-<!--
-    (I've removed the preference for spaces as the Vox poll backs tabs. And we'll only argue. - RyanM)
--->
-
 <p>Use indentation consistently to enhance the readability of the code. When elements carry over more than one line of code, indent the contents of elements between the start tag and the end tag. This will make it easy to see where the element begins and ends. Also, use indentation to align code at attribute names.</p>
 <p>It is a good idea to use no more than two to four spaces for each level in indentation, so as not to use up all the available line length in indentation. If possible, set up the development tool to convert tabs to spaces so that the indentation will be the same when the source is viewed in different editors or as printed output.</p>
 <p>Tip: configure your editor to &quot;show invisibles&quot;. This will allow you to eliminate end of line whitespace, eliminate unintended blank line whitespace, and avoid polluting commits.</p>
@@ -128,8 +119,8 @@
 <p>A reasonable effort should be made to write code that passes validation services and linters. There are exceptions created by third party libraries or by certain back-end systems, but you, as a developer, are responsible for creating standards based, valid HMTL, CSS and JS code.</p>
 
 
-    <h3 id="comments">Comments</h3>
-
+    <p><a id="comments" aria-hidden="true"></a></p>
+<h3 id="comments">Comments</h3>
 <p>Comments are the lifeblood of a successful development environment. It&#39;s a vital communication channel for developers separated by both time and geography.</p>
 <p>More information about commenting style can be found in the HTML, CSS and JavaScript sections.</p>
 
@@ -201,7 +192,7 @@
 <p>Note: HTML5 can written as valid XML, but unlike XHTML it is an option and not a requirement.</p>
 
 
-    <p><a id="head-encoding" class="anchor" href="#head-encoding" aria-hidden="true"></a></p>
+    <p><a id="head-encoding" aria-hidden="true"></a></p>
 <h3 id="character-encoding-">Character Encoding:</h3>
 <p>Use UTF-8 to encode your files, and declare it by placing</p>
 <pre data-rel="html" class="prettyprint lang-html"><code>
@@ -280,8 +271,8 @@ Avoid multi-level html comments. (shown below)</p>
 <p><a href="http://www.w3.org/TR/html4/intro/sgmltut.html#h-3.2.4">W3 reference on comments</a></p>
 
 
-    <h3 id="comments-conditional">Conditional Comments</h3>
-
+    <p><a id="comments-conditional" aria-hidden="true"></a></p>
+<h3 id="conditional-comments">Conditional Comments</h3>
 <p>Conditional comments are the preferred means of differentiating Cascading Style Sheets (CSS) rules intended for specific versions of Internet Explorer.</p>
 <p>The basic syntax of each type of comment is shown in the following table. The first comment shown is the basic HTML Comment, which is included for the purpose of comparison and to illustrate the different syntax used by each type of conditional comment.</p>
 <table class="table-layout">
@@ -570,19 +561,18 @@ Avoid multi-level html comments. (shown below)</p>
 
 
 
-    <p><h3 id="head-favicon">Favicon</h3></p>
-<p>
-  Have a designer create a favicon for any site you&#39;re working on. It&#39;s just part of doing it right&trade;. Your Favicon should have an .ico extension and include a 32x32px and 16x16px version. Read more over at <a data-reference="true" href="http://www.html-kit.com/support/favicon/image-size/">html-kit</a> or <a data-reference="true" href="http://mathiasbynens.be/notes/rel-shortcut-icon">Mathias Bynens</a>.
-</p>
-<p>
-  Your Favicon should sit in the root folder - that way you don&#39;t need a <code>&lt;link rel=&quot;icon shortcut&quot; href=&quot;&quot;/&gt;</code> in your html. If you have to put the favicon in a different folder, create a redirect rule for it.
-</p>
+    <p><a id="head-favicon" aria-hidden="true"></a></p>
+<h3 id="favicon">Favicon</h3>
+<p>Have a designer create a favicon for any site you&#39;re working on. It&#39;s just part of doing it right&trade;. Your Favicon should have an .ico extension and include a 32x32px and 16x16px version. Read more over at <a data-reference="true" href="http://www.html-kit.com/support/favicon/image-size/">html-kit</a> or <a data-reference="true" href="http://mathiasbynens.be/notes/rel-shortcut-icon">Mathias Bynens</a>.</p>
+
+<p>Your Favicon should sit in the root folder - that way you don&#39;t need a <code>&lt;link rel=&quot;icon shortcut&quot; href=&quot;&quot;/&gt;</code> in your html. If you have to put the favicon in a different folder, create a redirect rule for it.</p>
 
 
-    <p><h3 id="head-touchicons">Apple-touch icons</h3></p>
-<p>
-  Have a designer create touch icons for your site. That way your bookmark will look pretty when mobile users place it on their home screens. You should  use this snippet instead of placing the files in the document root:
-</p>
+
+    <h3 id="head-touchicons">Apple-touch icons</h3>
+
+<p>Have a designer create touch icons for your site. That way your bookmark will look pretty when mobile users place it on their home screens. You should  use this snippet instead of placing the files in the document root:</p>
+
 <pre data-rel="html" class="prettyprint lang-html"><code>
 &lt;!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: --&gt;
 &lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;apple-touch-icon-precomposed.png&quot;&gt;
@@ -593,12 +583,13 @@ Avoid multi-level html comments. (shown below)</p>
 &lt;!-- For third-generation iPad with high-resolution Retina display: --&gt;
 &lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;144x144&quot; href=&quot;apple-touch-icon-144x144-precomposed.png&quot;&gt;
 </code></pre>
-<p>
-  Note: if your filename and rel-attribute ends in -precomposed, iOS will not put its fancy gloss over your icon. Read more over at <a data-reference="true" href="http://mathiasbynens.be/notes/touch-icons#sizes">Mathias Bynens</a> or straight from <a data-reference="true" href="https://developer.apple.com/library/safari/documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html">Apple</a>.
-</p>
+
+<p>Note: if your filename and rel-attribute ends in -precomposed, iOS will not put its fancy gloss over your icon. Read more over at <a data-reference="true" href="http://mathiasbynens.be/notes/touch-icons#sizes">Mathias Bynens</a> or straight from <a data-reference="true" href="https://developer.apple.com/library/safari/documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html">Apple</a>.</p>
 
 
-    <p><h3>And now - everybody together!</h3></p>
+
+    <h3>And now - everybody together!</h3>
+
 <pre data-rel="standard HTML head structure" class="prettyprint lang-html"><code>
 &lt;!DOCTYPE html&gt;
 &lt;!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --&gt;
@@ -629,7 +620,10 @@ Avoid multi-level html comments. (shown below)</p>
 </code></pre>
 
 
-    <h3 id="head-deprecated">Avoid deprecated elements</h3>
+
+    
+<h3 id="head-deprecated">Avoid deprecated elements</h3>
+
 <p>In general, it's best to avoid deprecated elements. Our goal is to use the best solutions possible. Its going to be a rare case indeed when a dead element from the 1990s is the best available solution. </p>
 
 <h4>How do you handle Deprecated elements</h4>
@@ -947,71 +941,54 @@ a:active { color: red; }<br>
 
 </details>
 
-    <p><h2 id="css">CSS</h2></p>
-<p>
-  The following chapter outlines a reasonable style guide for CSS development. It is liberally based on <a data-reference="true" href="http://nicolasgallagher.com/" class="url" rel="nofollow me" >Nicolas Gallagher </a><a data-reference="true" href="https://github.com/necolas/idiomatic-css">idiomatic-css</a>.
+    <p><a id="css" aria-hidden="true"></a></p>
+<h2 id="css">CSS</h2>
+<p>The following chapter outlines a reasonable style guide for CSS development. It is liberally based on <a data-reference="true" href="http://nicolasgallagher.com/" class="url" rel="nofollow me">Nicolas Gallagher </a><a data-reference="true" href="https://github.com/necolas/idiomatic-css">idiomatic-css</a>.</p>
+
+<h3 id="css-organization">Organization</h3>
+
+<p>Code organization is an important part of any CSS code base, and crucial for large code bases.</p>
+
+<ul>
+  <li>Logically separate distinct pieces of code, in long CSS files use section identifiers (i.e. =SECTION NAME in a comment).</li>
+  <li>Use separate files (concatenated by a build step) to help break up code for distinct components.</li>
+  <li>Apply comments liberally, in module files declare any dependencies (there shouldn&#39;t be many).</li>
+  <li>Use the standard CSS-file header in each file (see below). You could use <a data-reference="true" href="http://blog.krisrange.com/2010/07/inserting-keywordsvariables-in-subversion-with-auto_props/">SVN variables</a> to populate the values in there or just do it manually.
+  </li>
+  <li>If using a preprocessor, abstract common code into variables for color, typography, etc.</li>
+  <li>Don&#39;t forget to merge all CSS files into one and all JS files into another as a step of your build process.</li>
+</ul>
+
+<p>Here&#39;s a typical set-up for your CSS-files:</p>
+
+<p><code>/css/framework/framework.css</code> (if applicable)
+  <br><code>/css/core.client.css</code> (contains your reset basic, coloring, layouts [e.g. framework overwrites or your own declarations] and general declarations that don&#39;t belong into the other files)
+  <br><code>/css/modules/modulename.client.css</code> (contains styles for a specific module, only dependent on core and if necessary the framework)
+  <br><code>/css/modules/modulename2.client.css</code> (etc...)
+  <br><code>/css/forms/forms.client.css</code> (if necessary - generic form declarations)
+  <br><code>/css/forms/forms.contact-us.client.css</code> (for declarations for a specific contact-us module)
 </p>
-  <h3 id="css-organization">Organization</h3>
-  <p>
-  Code organization is an important part of any CSS code base, and crucial for large code bases.
-  </p>
-  <ul>
-  <li>
-    Logically separate distinct pieces of code, in long CSS files use section identifiers (i.e. =SECTION NAME in a comment).
-  </li>
-  <li>
-    Use separate files (concatenated by a build step) to help break up code for distinct components.
-  </li>
-  <li>
-    Apply comments liberally, in module files declare any dependencies (there shouldn&#39;t be many).
-  </li>
-  <li>
-    Use the standard CSS-file header in each file (see below). You could use <a data-reference="true" href="http://blog.krisrange.com/2010/07/inserting-keywordsvariables-in-subversion-with-auto_props/">SVN variables</a> to populate the values in there or just do it manually.
-    <br>
-  </li>
-  <li>
-    If using a preprocessor, abstract common code into variables for color, typography, etc.
-  </li>
-  <li>
-    Don&#39;t forget to merge all CSS files into one and all JS files into another as a step of your build process.
-  </li>
-  </ul>
-  <p>Here&#39;s a typical set-up for your CSS-files:</p>
-  <p>
-  <code>/css/framework/framework.css</code>
-  (if applicable)
-  <br><br>  <code>/css/core.client.css</code>
-  (contains your reset basic, coloring, layouting [e.g. framework overwrites or your own declarations] and general declarations that don&#39;t belong into the other files)
-  <br><br>  <code>/css/modules/modulename.client.css</code>
-  (contains styles for a specific module, only dependent on core and if necessary the framework)
-  <br><br>  <code>/css/modules/modulename2.client.css</code>
-  (etc...)
-  <br><br>  <code>/css/forms/forms.client.css</code>
-  (if necessary - generic form declarations)
-  <br><br>  <code>/css/forms/forms.contact-us.client.css</code>
-  (for declarations for a specific contact-us module)
-  </p>
-<p>
-  On each CSS-file, add the standard CSS file header before the first declaration:
-</p>
+
+<p>On each CSS-file, add the standard CSS file header before the first declaration:</p>
+
 <pre data-rel="css" class="prettyprint lang-css"><code>
-/<em>*
-</em> NAME OF THE STYLESHEET (e.g. core.client.css)
-<em> The styles in this file represent all basic styles for the &lt;CLIENT&gt; &lt;PROJECTNAME&gt; site.
-</em> It includes a reset, the basic grid and some default components.
-<em>&lt;br&gt;</em> Why we are using the equals sign in the section identifier:
-<em> stopdesign.com/archive/2005/05/03/css-tip-flags.html
-</em> 
-<em> @project   PROJECT NAME
-</em> @date      YYYY-MM-DD 
-<em> @author    YOUR NAME, SapientNitro &lt;YOUREMAIL@sapient.com&gt;
-</em> @licensor  CLIENTNAME
-<em> @site      PROJECTNAME
-</em>
-<em> @dependency framework.css
-</em> @dependency core.client.css
-<em>
-</em>/
+/**
+* NAME OF THE STYLESHEET (e.g. core.client.css)
+* The styles in this file represent all basic styles for the &lt;CLIENT&gt; &lt;PROJECTNAME&gt; site.
+* It includes a reset, the basic grid and some default components.
+*&lt;br&gt;* Why we are using the equals sign in the section identifier:
+* stopdesign.com/archive/2005/05/03/css-tip-flags.html
+* 
+* @project   PROJECT NAME
+* @date      YYYY-MM-DD 
+* @author    YOUR NAME, SapientNitro &lt;YOUREMAIL@sapient.com&gt;
+* @licensor  CLIENTNAME
+* @site      PROJECTNAME
+*
+* @dependency framework.css
+* @dependency core.client.css
+*
+*/
 </code></pre>
 
 <p>In core.client.css, also include a block that lists out the colors per styleguide.</p>
@@ -1024,7 +1001,8 @@ a:active { color: red; }<br>
 * ..... Replace and enhance with your specific project colors      
 </code></pre>
 
-<h4 id="css-comments">Comment your CSS code</h4>
+<p><a id="css-comments" aria-hidden="true"></a></p>
+<h4 id="comment-your-css-code">Comment your CSS code</h4>
 <p>Well commented code is extremely important. Take time to describe components, how they work, their limitations, and the way they are constructed. Don&#39;t leave others in the team guessing as to the purpose of uncommon or non-obvious code.</p>
 
 <p>Comment style should be simple and consistent within a single code base.</p>
@@ -1042,19 +1020,19 @@ a:active { color: red; }<br>
 <p>CSS example:</p>
 
 <pre data-rel="css" class="prettyprint lang-css"><code>
-/<em> ==========================================================================
+/* ==========================================================================
 =SECTIONNAME 
-========================================================================== </em>/
+========================================================================== */
 
-/<em> =SUB-SECTION NAME comment block
-========================================================================== </em>/
+/* =SUB-SECTION NAME comment block
+========================================================================== */
 
-/<em>
-</em> Group comment block.
-<em> Ideal for multi-line explanations and documentation.
+/*
+* Group comment block.
+* Ideal for multi-line explanations and documentation.
 
 
-/</em> Basic comment */
+/* Basic comment */
 </code></pre>
 
 <p>SCSS example:</p>
@@ -1075,12 +1053,8 @@ a:active { color: red; }<br>
 // Basic comment
 </code></pre>
 
-<h3 id="css-format">Format</h3>
-<!-- p>
-  <mark>
-    (I know that at Sapient a lot of people like the Alphabetical approach - Team should agree at the beginning of a project)
-  </mark>
-</p -->
+<p><a id="css-format" aria-hidden="true"></a></p>
+<h3 id="format">Format</h3>
 <p>The chosen code format must ensure that code:</p>
 
 <ul>
@@ -1101,7 +1075,7 @@ a:active { color: red; }<br>
   <li>Always include a semicolon at the end of the last declaration in a declaration block.</li>
   <li>Place the closing brace of a ruleset in the same column as the first character of the ruleset.</li>
   <li>Separate each ruleset by a blank line.</li>
-  <li>Seperating words in a class name or id only with &quot;-&quot;</li>
+  <li>Separating words in a class name or id only with &quot;-&quot;</li>
   <li>Rules with various vendor-prefixes should always be next to each other</li>
 </ul>
 
@@ -1118,8 +1092,7 @@ a:active { color: red; }<br>
 }
 </code></pre>
 
-<h4>Declaration order</h4>
-
+<h4 id="declaration-order">Declaration order</h4>
 <p>Declarations should be ordered in accordance with a single principle, the team should initially agree to one of the suggested approaches. There are two basic approaches: alphabetical order and grouping by related properties.</p>
 
 <p>Alphabetical order is a popular choice and is suggested as a baseline for those who have no strong preference in this matter. Alphabetical order has the benefit of always being in sync across project teams, where the importance or connectedness of properties can change depending on the developer or team making the associations.</p>
@@ -1154,8 +1127,7 @@ a:active { color: red; }<br>
 }
 </code></pre>
 
-<h4>Exceptions and slight deviations</h4>
-
+<h4 id="exceptions-and-slight-deviations">Exceptions and slight deviations</h4>
 <p>Large blocks of single declarations can use a slightly different, single-line format. In this case, a space should be included after the opening brace and before the closing brace.</p>
 
 <pre data-rel="css" class="prettyprint lang-css"><code>
@@ -1177,16 +1149,14 @@ background-image:
 }
 </code></pre>
 
-<h4>Miscellaneous Standards</h4>
-
+<h4 id="miscellaneous-standards">Miscellaneous Standards</h4>
 <p>Use lowercase hex values, e.g., #aaa.
   <br>Use single or double quotes consistently. Preference is for double quotes, e.g., content: &quot;&quot;.
   <br>Always quote attribute values in selectors, e.g., input[type=&quot;checkout&quot;].
   <br>Where allowed, avoid specifying units for zero-values, e.g., margin: 0.
 </p>
 
-<h4>Preprocessors: additional format considerations</h4>
-
+<h4 id="preprocessors-additional-format-considerations">Preprocessors: additional format considerations</h4>
 <p>Different CSS preprocessors have different features, functionality, and syntax. Your conventions should be extended to accommodate the particularities of any preprocessor in use. The following guidelines are in reference to Sass.</p>
 
 <ul>
@@ -1207,8 +1177,8 @@ background-image:
 }
 </code></pre>
 
-<h3 id="css-naming">Naming</h3>
-
+<p><a id="css-naming" aria-hidden="true"></a></p>
+<h3 id="naming">Naming</h3>
 <p>We are not human code compiler/compressors, so don&#39;t try to be one. Use clear and thoughtful names for HTML classes. Pick an understandable and consistent naming pattern that makes sense both within HTML files and CSS files.</p>
 
 <pre data-rel="css" class="prettyprint lang-css"><code>
@@ -1250,8 +1220,8 @@ background-image:
 }
 </code></pre>
 
-<h3 id="css-examples">Practical example</h3>
-
+<p><a id="css-examples" aria-hidden="true"></a></p>
+<h3 id="practical-example">Practical example</h3>
 <p>The following example is designed to illustrate the various style conventions. It&#39;s not meant to be used as a solution to any specific problem. It&#39;s here merely to illustrate coding conventions and style.</p>
 
 <pre data-rel="css" class="prettyprint lang-css"><code>
@@ -1309,8 +1279,7 @@ Grid layout
 }
 </code></pre>
 
-<h3>How to write good CSS (Selectors)</h3>
-
+<h3 id="how-to-write-good-css-selectors-">How to write good CSS (Selectors)</h3>
 <p><a data-reference="true" href="http://csswizardry.com/2011/09/writing-efficient-css-selectors/">Writing Efficient CSS selectors</a> is a good article to understand why writing efficient CSS selectors is important. Here&#39;s a summary:</p>
 
 <ul>
@@ -1321,7 +1290,7 @@ Grid layout
   <li>Avoid the <code>*</code> selector unless you can explain why you MUST use it.</li>
 </ul>
 
-<p>In terms of performance, memorize Steve Souder&#39;s list (Quoted from <a data-reference="true" href="http://stevesouders.com/">Even Faster Websites by Steve Souders</a>) of efficient CSS selectors - ordered from higher to lower efficiency:</p>
+<p>In terms of performance, memorize Steve Souders&#39; list (Quoted from <a data-reference="true" href="http://stevesouders.com/">Even Faster Websites by Steve Souders</a>) of efficient CSS selectors - ordered from higher to lower efficiency:</p>
 
 <ol>
   <li>ID, e.g. <code>#header</code> </li>
@@ -2169,20 +2138,23 @@ Moreover CSS3 animations are optimized by browser-vendors for their reflow/repai
 
 <p>Accessibility (often abbreviated as a11y) is hugely important in the modern web. It&#39;s a legal requirement in many geographies, an excellent indicator of a quality product and shows you care! Projects should set out to develop to meet WCAG 2.0 Level AA. <a data-reference="true" href="http://www.w3.org/WAI/WCAG20/glance/">WCAG 2.0 at a Glance</a></p>
 
-<p>The start point for an accessible website is always solid, stuctured, semantic markup. Always use headings to convey structure and where possible start to use HTML5 tags such as main, section and aside to add meaning to your content areas. Be cautious. The article tag is easy to misunderstand, the article tag represents a complete or self-contained item. This could be a forum post, a blog entry, an interactive widget, or a user-submitted comment. <a data-reference="true" href="http://css-tricks.com/thinking-async/">W3 reference on the article element</a>.</p>
+<p>The start point for an accessible website is always solid, structured, semantic markup. Always use headings to convey structure and where possible start to use HTML5 tags such as main, section and aside to add meaning to your content areas. Be cautious. The article tag is easy to misunderstand, the article tag represents a complete or self-contained item. This could be a forum post, a blog entry, an interactive widget, or a user-submitted comment. <a data-reference="true" href="http://css-tricks.com/thinking-async/">W3 reference on the article element</a>.</p>
 
-<p><strong>Do not expect users of assistive technologies to have JavaScript disabled</strong>. Whilst having a non-JS fallback is often good practive it is not longer acceptable to make this your &quot;accessible version&quot;. By using using recognised markup, allowing keyboard focus and interaction, and being mindful of user interaction your JS work can be accessible.</p>
+<p><strong>Do not expect users of assistive technologies to have JavaScript disabled</strong>. Whilst having a non-JS fallback is often good proactive it is not longer acceptable to make this your &quot;accessible version&quot;. By using using recognized markup, allowing keyboard focus and interaction, and being mindful of user interaction your JS work can be accessible.</p>
 
+<h3>The WAI-ARIA Specification &ndash; The Next Level.</h3>
 
-<p><h3>The WAI-ARIA Specification &ndash; The Next Level.</h3></p>
-<p>The elements introduced in HTML5 have growing but limited accessibilty support in browers. Fortunatly the WAI-ARIA (Web Accessibility Initiative - Accessible Rich Internet Applications) specification has excellent support. Modern web applications are complicated; There are unusual mixes of tags to create UI controls and there are regions on a page which update on screen without a page refresh. ARIA introduces a range of roles (added to tags as attributes) that act as hooks for assistive technologies.</p>
+<p>The elements introduced in HTML5 have growing but limited accessibility support in browsers. Fortunately the WAI-ARIA (Web Accessibility Initiative - Accessible Rich Internet Applications) specification has excellent support. Modern web applications are complicated; There are unusual mixes of tags to create UI controls and there are regions on a page which update on screen without a page refresh. ARIA introduces a range of roles (added to tags as attributes) that act as hooks for assistive technologies.</p>
 
-<p><a data-reference="true" href="http://www.w3.org/TR/wai-aria-primer/">WAI-ARIA Primer</a><br />
-  <a data-reference="true" href="http://www.w3.org/TR/wai-aria-practices/">WAI-ARIA Best Practices</a></p>
+<p><a data-reference="true" href="http://www.w3.org/TR/wai-aria-primer/">WAI-ARIA Primer</a>
+  <br /><a data-reference="true" href="http://www.w3.org/TR/wai-aria-practices/">WAI-ARIA Best Practices</a>
+</p>
 
-<p><h3>Accessible Design</h3></p>
-<p>Many of the accessibilty guidelines have a direct impact upon wireframes and designs. Accessibilty is the responsibility of the whole team so <strong>please highlight any issues you spot in the documents supplied to you</strong>.</p>
-<p>A common issue is colour contrast; AA requires a contrast ratio of 4.5:1 for normal text and 3:1 for large text. Level AAA requires a contrast ratio of 7:1 for normal text and 4.5:1 for large text. It may not be possible to correct all issues but it is important for us to be open about these challenges both internally and with our clients.</p>
+<h3>Accessible Design</h3>
+
+<p>Many of the accessibility guidelines have a direct impact upon wireframes and designs. Accessibility is the responsibility of the whole team so <strong>please highlight any issues you spot in the documents supplied to you</strong>.</p>
+
+<p>A common issue is color contrast; AA requires a contrast ratio of 4.5:1 for normal text and 3:1 for large text. Level AAA requires a contrast ratio of 7:1 for normal text and 4.5:1 for large text. It may not be possible to correct all issues but it is important for us to be open about these challenges both internally and with our clients.</p>
 
 
 
@@ -2294,7 +2266,7 @@ Moreover there are little helpers to fix orientation-change bugs like <a data-re
       
     </ul>
   </main>
- <footer>
+   <footer>
     <h2 id="footnotes">External links</h2>
     <nav id="legalese-footer" class="inline-list">
       <a href="http://www.sapient.com">&copy; SapientNitro - 2014</a>
