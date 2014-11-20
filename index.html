@@ -219,11 +219,11 @@
 
 <p>It has proven helpful to use <a href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/">Paul Irish&#39;s</a> and later used and enhanced by <a href="https://github.com/h5bp/html5-boilerplate/issues/425/#">HTML5 Boilerplate</a> conditional tag bomb around the head-tag, i.e.:</p>
 <pre data-rel="html" class="prettyprint lang-html"><code>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+&lt;!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --&gt;
+&lt;!--[if lt IE 7]&gt; &lt;html class=&quot;no-js lt-ie9 lt-ie8 lt-ie7&quot; lang=&quot;en&quot;&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7]&gt;    &lt;html class=&quot;no-js lt-ie9 lt-ie8&quot; lang=&quot;en&quot;&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8]&gt;    &lt;html class=&quot;no-js lt-ie9&quot; lang=&quot;en&quot;&gt; &lt;![endif]--&gt;
+&lt;!--[if gt IE 8]&gt;&lt;!--&gt; &lt;html class=&quot;no-js&quot; lang=&quot;en&quot;&gt; &lt;!--&lt;![endif]--&gt;
 </code></pre>
 
 <p>(Note that you shouldn&#39;t have to tailor your code to IE9...)</p>
@@ -532,19 +532,22 @@ Avoid multi-level html comments. (shown below)</p>
 
 
 
-    <p><h3 id="head-including-css-js">Including CSS and JS</h3></p>
-<p>Before you can get started with CSS and JavaScript you need to get them onto the page. This section outlines the best practices surrounding this common and important task. </p>
+    <h3 id="head-including-css-js">Including CSS and JS</h3>
+
+<p>Before you can get started with CSS and JavaScript you need to get them onto the page. This section outlines the best practices surrounding this common and important task.</p>
 
 <h4 id="markup-syntax-semantics-includes-css">Including CSS</h4>
 
-<p>For including CSS use <code>&lt;link&gt;</code> and not <code>@import</code> <a data-reference="true" href="http://www.stevesouders.com/blog/2009/04/09/dont-use-import/">as a standard</a>. This is an important performance consideration. </p>
+<p>For including CSS use <code>&lt;link&gt;</code> and not <code>@import</code> <a data-reference="true" href="http://www.stevesouders.com/blog/2009/04/09/dont-use-import/">as a standard</a>. This is an important performance consideration.</p>
+
 <p>Here is an example of the correct way to link a stylesheet:</p>
 
 <pre data-rel="HTML" class="prettyprint lang-html"><code>
 &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;yourStylesheetName.css&quot; /&gt;
 </code></pre>
 
-<p>CSS files should always be included in the HEAD of the document. Again, this is important from a performance perspective. This is especially important when you consider the perceived performance of a page. With the CSS rules in place before the body element is reached the browser is able to go about the important task of rendering your markup as early as possible. </p>
+<p>CSS files should always be included in the HEAD of the document. Again, this is important from a performance perspective. This is especially important when you consider the perceived performance of a page. With the CSS rules in place before the body element is reached the browser is able to go about the important task of rendering your markup as early as possible.</p>
+
 <p>For more information on CSS please see our <a href="#css">CSS Standards</a>.</p>
 
 <h4 id="markup-syntax-semantics-includes-js">Including JS</h4>
@@ -559,10 +562,10 @@ Avoid multi-level html comments. (shown below)</p>
 <pre data-rel="HTML 4.01" class="prettyprint lang-html"><code>
 &lt;script type=&quot;text/javascript&quot; src=&quot;yourJavascript.js&quot;&gt;&lt;/script&gt;</code></pre>
 
-
 <p>The type attribute that is required in required in HTML 4, is an optional attribute in HTML5.</p>
 
 <p>JS files should always be included near the END of a document, unless there is specific reason for importing elsewhere in the document. This is to maximize page performance. Keep the number of JS files to a minimum and avoid inline-JS (unless you know why it might be ok, don&#39;t do it)</p>
+
 <p>For more information on JS please see our <a href="#javascript">Javascript Standards</a>.</p>
 
 
